@@ -30,9 +30,6 @@ namespace Game_of_the_YEAR
             DataContext = mainWindowViewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            test = GetAmountOfYears();
-        }
+       
     }
 }

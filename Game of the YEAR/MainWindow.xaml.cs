@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Game_of_the_YEAR.Repositories.DBRepo;
+
 
 namespace Game_of_the_YEAR
 {
@@ -20,9 +22,17 @@ namespace Game_of_the_YEAR
     /// </summary>
     public partial class MainWindow : Window
     {
+        int test;
         public MainWindow()
         {
             InitializeComponent();
+            MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
+            DataContext = mainWindowViewModel;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            test = GetAmountOfYears();
         }
     }
 }

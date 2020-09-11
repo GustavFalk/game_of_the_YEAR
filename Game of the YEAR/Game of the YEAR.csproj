@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Fonts\PressStart2P-vaV7.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Fonts\PressStart2P-vaV7.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Assets\Images\BackgroundBlixt_Test.png" />
   </ItemGroup>
   <ItemGroup>
@@ -15,6 +24,7 @@
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.9" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\Images\" />
     <Folder Include="Assets\Fonts\" />
     <Folder Include="Assets\Sound\" />
     <Folder Include="Models\" />

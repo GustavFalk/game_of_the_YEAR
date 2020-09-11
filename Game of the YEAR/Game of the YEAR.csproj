@@ -12,9 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Assets\Fonts\PressStart2P-vaV7.ttf">
+    <Resource Include="Assets\Fonts\PressStart2P-vaV7.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Assets\Images\BackgroundBlixt_Test.png" />

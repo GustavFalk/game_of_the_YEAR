@@ -9,6 +9,37 @@
       Title="StartpagePage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="GAME OF THE" Padding="30" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="top" Foreground="White" FontSize="50" FontFamily="/Asset/Fonts/PressStart2P-vaV7.ttf"/>
+            <Label Content="YEAR" Padding="0,60,0,0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="250" FontFamily="/Asset/Fonts/PressStart2P-vaV7.ttf"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button  Content="NY SPELARE" Grid.Column="1" Command="" FontFamily="Press Start 2P" FontSize="30" Padding="40,10,40,10" />
+            </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button  Content="BEFINTLIG SPELARE" Grid.Column="1" Command="" FontFamily="Press Start 2P" FontSize="30" Padding="40,10,40,10" />
+        </Grid>
     </Grid>
 </Page>

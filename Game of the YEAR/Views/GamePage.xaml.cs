@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game_of_the_YEAR.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,21 @@ namespace Game_of_the_YEAR.Views
     /// </summary>
     public partial class GamePage : Page
     {
+        GamePageViewModel gamePageViewModel = new GamePageViewModel();
         public GamePage()
         {
             InitializeComponent();
+            DataContext = gamePageViewModel;
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if ((sender as TextBox).MaxLength == (sender as TextBox).Text.Length)
+            {
+                var ue = e.OriginalSource as FrameworkElement;
+                e.Handled = true;
+                ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            }
         }
     }
 }

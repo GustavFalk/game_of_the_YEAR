@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Game_of_the_YEAR"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="PressStart2P">./Assets/Fonts/PressStart2P-vaV7.ttf#Press Start 2P</FontFamily>
     </Application.Resources>
 </Application>

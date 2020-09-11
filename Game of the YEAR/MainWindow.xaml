@@ -7,8 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Command="{Binding ButtonCommand}" Content="knapp" HorizontalAlignment="Left" Margin="341,217,0,0" VerticalAlignment="Top"/>
+        <Frame x:Name="Main" Background="#2d5df9">
+            
+        </Frame>
+        <!--<Button Command="{Binding ButtonCommand}" Content="knapp" HorizontalAlignment="Left" Margin="341,217,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Center" Margin="0,128,0,0" Text="{Binding AmountOutput}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="545,356,0,0" VerticalAlignment="Top" />
+        <Button Content="Button" HorizontalAlignment="Left" Margin="545,356,0,0" VerticalAlignment="Top" />-->
     </Grid>
 </Window>

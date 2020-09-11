@@ -6,12 +6,21 @@
     <RootNamespace>Game_of_the_YEAR</RootNamespace>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Fonts\PressStart2P-vaV7.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Fonts\PressStart2P-vaV7.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql" Version="4.1.4" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Images\" />
-    <Folder Include="Assets\Fonts\" />
     <Folder Include="Assets\Sound\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Base\" />

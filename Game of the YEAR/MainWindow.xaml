@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Frame x:Name="Main" Background="#2d5df9">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Images/BackgroundBlixt_Test.png" />
+
+        </Grid.Background>
+        <Frame x:Name="Main" >
             
         </Frame>
         <!--<Button Command="{Binding ButtonCommand}" Content="knapp" HorizontalAlignment="Left" Margin="341,217,0,0" VerticalAlignment="Top"/>

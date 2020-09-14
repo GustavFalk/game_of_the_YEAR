@@ -57,7 +57,7 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="1" Grid.Row="0" MinHeight="20">
-                <TextBox Text="test@mail.se" MinWidth="300"  BorderBrush="HotPink" BorderThickness="2" FontFamily="{StaticResource PressStart2P}" FontSize="18" Padding="3" HorizontalAlignment="Left" />
+                <TextBox Text="test@mail.se" Width="300"  BorderBrush="HotPink" BorderThickness="2" FontFamily="{StaticResource PressStart2P}" FontSize="18" Padding="3" HorizontalAlignment="Left" />
             </Viewbox>
 
         </Grid>

@@ -26,7 +26,7 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="0,0,40,0" >
-                <Label Content="GAME OF THE YEAR" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="{StaticResource PressStart2P}" />
+                <Label Content="GAME OF THE YEAR" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="{StaticResource PressStart2P}"/>
             </Viewbox>
 
         </Grid>
@@ -56,13 +56,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
-                <Label Content="SPELARE88" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="{Binding HighScore1Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
                 <Label Content="POÄNG:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                <Label Content="99998" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                <Label Content="{Binding HighScore1Points}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="3">
@@ -72,13 +72,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
-                <Label Content="SPELARE57" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="{Binding HighScore2Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
                 <Label Content="POÄNG:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                <Label Content="69959" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                <Label Content="{Binding HighScore2Points}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="4">
@@ -88,13 +88,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
-                <Label Content="SPELARE234" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="{Binding HighScore3Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
                 <Label Content="POÄNG:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                <Label Content="49959" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                <Label Content="{Binding HighScore3Points}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="5">
@@ -104,13 +104,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
-                <Label Content="SPELARE11" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="{Binding HighScore4Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
                 <Label Content="POÄNG:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                <Label Content="39969" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                <Label Content="{Binding HighScore4Points}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="6">
@@ -120,13 +120,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
-                <Label Content="SPELARE43" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="{Binding HighScore5Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
                 <Label Content="POÄNG:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                <Label Content="19619" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                <Label Content="{Binding HighScore5Points}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="7">
@@ -141,7 +141,7 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Fill" >
-                <Button  Content="NEW GAME" Command="" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
+                <Button  Content="NEW GAME" Command="{Binding ButtonCommand}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
             </Viewbox>
         </Grid>
     </Grid>

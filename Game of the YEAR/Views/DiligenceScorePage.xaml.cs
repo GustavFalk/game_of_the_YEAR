@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace Game_of_the_YEAR.Views
 {
     /// <summary>
-    /// Interaction logic for HighScorePage.xaml
+    /// Interaction logic for GamePage.xaml
     /// </summary>
-    public partial class HighScorePage : Page
+    public partial class DiligenceScorePage : Page
     {
-        public HighScorePage()
+        public DiligenceScorePage()
         {
             InitializeComponent();
         }

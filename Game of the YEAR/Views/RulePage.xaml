@@ -1,0 +1,50 @@
+﻿<Page x:Class="Game_of_the_YEAR.Views.RulePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Game_of_the_YEAR.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RulePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.2*"/>            
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Stretch="Uniform" Grid.Column="1" Grid.Row="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="GAME OF THE" Padding="0,60,0,0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" FontSize="60" FontFamily="{StaticResource PressStart2P}"/>
+                    <Label Content="YEAR" Padding="0,0,0,0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="top" Foreground="White" FontSize="275" FontFamily="{StaticResource PressStart2P}"/>
+                </Grid>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="1" >
+                <TextBox Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit tortor massa. Fusce vel laoreet nisi, in dignissim risus. Sed a massa nec mi varius elementum. Nullam feugiat convallis sapien gravida pharetra. In eget nunc quam. Curabitur est erat, malesuada eget mauris at, venenatis congue augue. Suspendisse aliquet, tortor ac suscipit viverra, libero purus blandit elit, sit amet rhoncus purus magna non ligula. Vivamus vulputate tortor at erat ultricies aliquam. Nam in dolor mattis, luctus mauris et, posuere ipsum. Morbi in urna leo.
+
+Donec condimentum enim nec diam dictum dapibus. Vestibulum at quam eget augue accumsan laoreet. Aenean condimentum nunc nec justo ornare, sed efficitur sem sagittis. Nullam id malesuada sem, nec tempus arcu. Vestibulum metus est, pellentesque quis magna vitae, placerat finibus enim. Nam eleifend, dui eget aliquam vestibulum, lorem massa commodo turpis, molestie iaculis diam mi quis turpis. Donec vehicula, lorem ut fermentum tempor, turpis arcu pharetra erat, eget pretium odio dolor eget magna. Duis nec est id enim eleifend placerat. Donec quis sodales massa. Duis mauris est, vestibulum quis felis quis, vestibulum posuere nisl. Morbi sit amet elit lobortis, tincidunt metus eget, efficitur nibh. Sed commodo elementum tellus vel eleifend. Phasellus eleifend ex vitae urna vehicula venenatis at a enim. Etiam vestibulum egestas lorem, quis laoreet nisi iaculis sed." TextWrapping="Wrap" Background="White" BorderBrush="HotPink" BorderThickness="2" Height="110" Width="250" FontSize="5" TextAlignment="Left" Padding="1,1,1,1" FontFamily="{StaticResource PressStart2P}" VerticalScrollBarVisibility="Auto" />
+            </Viewbox>
+
+
+
+        </Grid>
+    </Grid>
+</Page>

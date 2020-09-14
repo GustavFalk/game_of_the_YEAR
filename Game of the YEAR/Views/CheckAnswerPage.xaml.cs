@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,27 +10,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Game_of_the_YEAR.Repositories.DBRepo;
 
-
-namespace Game_of_the_YEAR
+namespace Game_of_the_YEAR.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CheckAnswer.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CheckAnswerPage : Page
     {
-        Page page = new Views.CheckAnswerPage();
-        //int test;
-        public MainWindow()
+        ViewModels.CheckAnswerViewModel checkAnswerViewModel = new ViewModels.CheckAnswerViewModel();
+        public CheckAnswerPage()
         {
             InitializeComponent();
-
-            Main.Content = page;
-
-
+            DataContext = checkAnswerViewModel;
         }
-
-       
     }
 }

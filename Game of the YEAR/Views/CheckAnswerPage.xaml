@@ -1,0 +1,133 @@
+﻿<Page x:Class="Game_of_the_YEAR.Views.CheckAnswerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Game_of_the_YEAR.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CheckAnswer">
+
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding BackgroundImage}" />
+        </Grid.Background>
+        <!--#region Main Grid definition-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <!--#region Title -->
+        <Viewbox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="120,0,120,0">
+            <Label Content="GAME OF THE" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0">
+            <Label Content="YEAR" FontFamily="{StaticResource PressStart2P}"  VerticalContentAlignment="Top" VerticalAlignment="Top" Foreground="White"/>
+        </Viewbox>
+        <!--#endregion-->
+        <!--#region First View-->
+        <Grid Grid.Row="2" Grid.Column="1" Visibility="{Binding VisibilityFirstView}">
+            <!--#region Grid Definition First View-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="1*"/>
+
+            </Grid.RowDefinitions>
+
+            <!--#endregion-->
+            <!--#region Content First View-->
+            <Viewbox Grid.Row="0" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityUserAnswer}">
+                <Label Content="DITT SVAR" FontFamily="{StaticResource PressStart2P}" Foreground="White"/>
+            </Viewbox>
+            <Viewbox Grid.Row="1" HorizontalAlignment="Center"  Stretch="Uniform" Visibility="{Binding VisibilityUserAnswer}">
+                <Label Content="{Binding UserAnswer}" FontFamily="{StaticResource PressStart2P}" Foreground="White"/>
+            </Viewbox>
+            <Viewbox Grid.Row="2" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityCorrectAnswer}">
+                <Label Content="RÄTT SVAR" FontFamily="{StaticResource PressStart2P}" Foreground="White"/>
+            </Viewbox>
+            <Viewbox Grid.Row="3" HorizontalAlignment="Center"  Stretch="Uniform" Visibility="{Binding VisibilityCorrectAnswer}">
+                <Label Content="{Binding CorrectAnswer}" FontFamily="{StaticResource PressStart2P}" Foreground="White"/>
+            </Viewbox>
+            
+            
+        <!--#endregion-->
+        </Grid>
+        <!--#endregion-->
+        <!--#region Second View-->
+        <Grid Grid.Row="2" Grid.Column="1" Visibility="{Binding VisibilitySecondView}">
+            <!--#region Grid Definition Second View-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="2.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <!--#endregion-->
+            <!--#region Content Second View-->
+            <Viewbox Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityTimePoints}">
+                <Label Content="TID KVAR" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityTimePoints}">
+                <Label Content="=" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityTimePoints}">
+                <Label Content="{Binding TimePoints}" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityDifferance}">
+                <Label Content="SKILLNAD" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityDifferance}">
+                <Label Content="=" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityDifferance}">
+                <Label Content="{Binding DifferanceAnswers}" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityDeduction}">
+                <Label Content="AVDRAG" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityDeduction}">
+                <Label Content="=" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityDeduction}">
+                <Label Content="{Binding Deduction}" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Border BorderBrush="White" BorderThickness="1" Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Visibility="{Binding VisibilityPointsGained}"/>
+            <Viewbox Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityPointsGained}">
+                <Label Content="POÄNG" FontFamily="{StaticResource PressStart2P}" Foreground="White" Visibility="{Binding VisibilityPointsGained}"/>
+            </Viewbox>
+            <Viewbox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityPointsGained}">
+                <Label Content="=" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityPointsGained}">
+                <Label Content="{Binding PointsGained}" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" Stretch="Uniform" Margin="0,10,0,0" Visibility="{Binding VisibilityTotalPoints}">
+                <Label Content="TOTAL POÄNG" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityTotalPoints}" >
+                <Label Content="{Binding TotalPoints}" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <!--#endregion-->
+        </Grid>
+        <!--#endregion-->
+        
+    </Grid>
+</Page>

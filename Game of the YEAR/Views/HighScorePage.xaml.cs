@@ -8,12 +8,13 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Game_of_the_YEAR.Views
 {
     /// <summary>
-    /// Interaction logic for HighScorePage.xaml
+    /// Interaction logic for GamePage.xaml
     /// </summary>
     public partial class HighScorePage : Page
     {

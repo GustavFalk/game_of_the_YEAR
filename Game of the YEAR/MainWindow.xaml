@@ -14,8 +14,6 @@
         <Frame x:Name="Main" >
             
         </Frame>
-        <!--<Button Command="{Binding ButtonCommand}" Content="knapp" HorizontalAlignment="Left" Margin="341,217,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,128,0,0" Text="{Binding AmountOutput}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="545,356,0,0" VerticalAlignment="Top" />-->
+        
     </Grid>
 </Window>

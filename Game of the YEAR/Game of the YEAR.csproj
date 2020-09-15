@@ -50,10 +50,5 @@
   <ItemGroup>
     <Resource Include="Assets\Images\BackgroundBlixt_Test.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Page Update="Views\DiligenceScorePage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
 
 </Project>

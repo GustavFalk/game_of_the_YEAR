@@ -52,5 +52,17 @@ namespace Game_of_the_YEAR.Views
             BlinkOn = !BlinkOn;
         }
 
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            var window = Window.GetWindow(this);
+            window.KeyDown += HandleKeyPress;
+            window.MouseLeftButtonDown += HandleKeyPress;
+            window.MouseRightButtonDown += HandleKeyPress;
+        }
+        private void HandleKeyPress(object sender, RoutedEventArgs e)
+        {
+            Page page = new LoadingPageTwo();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+        }
     }
 }

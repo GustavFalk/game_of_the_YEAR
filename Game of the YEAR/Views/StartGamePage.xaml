@@ -40,7 +40,7 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Fill" Grid.Column="1" Grid.Row="0">
-                <Button  Content="STARTA SPEL" Grid.Column="1" Command="" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" FontSize="20" Padding="40,10,40,10" />
+                <Button  Content="STARTA SPEL" Grid.Column="1" Command="{Binding StartGameBtn}" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" FontSize="20" Padding="40,10,40,10" />
             </Viewbox>
         </Grid>
         <Grid Grid.Row="3">
@@ -50,7 +50,7 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Fill" Grid.Column="1" Grid.Row="0">
-                <Button Content="SPELREGLER" Grid.Column="1" Command="" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" FontSize="20" Padding="15,15,15,15" />
+                <Button Content="SPELREGLER" Grid.Column="1" Command="{Binding RulesBtn}" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" FontSize="20" Padding="15,15,15,15" />
             </Viewbox>
         </Grid>
     </Grid>

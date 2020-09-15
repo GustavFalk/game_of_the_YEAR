@@ -16,9 +16,9 @@ namespace Game_of_the_YEAR.Views
     /// <summary>
     /// Interaction logic for GamePage.xaml
     /// </summary>
-    public partial class Highscore : Page
+    public partial class HighScorePage : Page
     {
-        public Highscore()
+        public HighScorePage()
         {
             InitializeComponent();
         }

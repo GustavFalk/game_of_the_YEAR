@@ -57,7 +57,7 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="1" Grid.Row="0" MinHeight="20">
-                <TextBox Text="test@mail.se" Width="300"  BorderBrush="HotPink" BorderThickness="2" FontFamily="{StaticResource PressStart2P}" FontSize="18" Padding="3" HorizontalAlignment="Left" />
+                <TextBox Text="{Binding EmailTxt}" Width="300"  BorderBrush="HotPink" BorderThickness="2" FontFamily="{StaticResource PressStart2P}" FontSize="18" Padding="3" HorizontalAlignment="Left" />
             </Viewbox>
 
         </Grid>
@@ -83,13 +83,13 @@
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Fill" Margin="2">
-                <TextBox Grid.Row="1" Grid.Column="2"  Text="1" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
+                <TextBox Grid.Row="1" Grid.Column="2"  Text="{Binding Value1}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
             </Viewbox>
             <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Fill" Margin="2">
-                <TextBox Grid.Row="1" Grid.Column="2"  Text="1" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
+                <TextBox Grid.Row="1" Grid.Column="2"  Text="{Binding Value2}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
             </Viewbox>
             <Viewbox Grid.Row="1" Grid.Column="3" Stretch="Fill" Margin="2">
-                <TextBox Grid.Row="1" Grid.Column="2"  Text="1" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
+                <TextBox Grid.Row="1" Grid.Column="2"  Text="{Binding Value3}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="5" Margin="10" >
@@ -99,7 +99,7 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Fill" Grid.Column="1" Grid.Row="0">
-                <Button Content="SKAPA SPELARE" Grid.Column="1" Command="" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" FontSize="20" Padding="10,10,10,10" />
+                <Button Command="{Binding CreateUserBtn}" Content="SKAPA SPELARE" Grid.Column="1"  BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" FontSize="20" Padding="10,10,10,10" />
             </Viewbox>
 
         </Grid>

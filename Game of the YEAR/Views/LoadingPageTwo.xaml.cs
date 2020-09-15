@@ -32,7 +32,7 @@ namespace Game_of_the_YEAR.Views
         {
             if ((e as KeyEventArgs).Key == Key.Enter)
             {
-                Page page = new StartGamePage();
+                Page page = new StartpagePage();
                 ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
             }
             

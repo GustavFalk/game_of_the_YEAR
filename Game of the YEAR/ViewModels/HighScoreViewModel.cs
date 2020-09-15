@@ -5,9 +5,9 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 
-namespace LovesTestGitHub
+namespace Game_of_the_YEAR.ViewModels
 {
-    class HighScoreViewModel : INotifyPropertyChanged
+    class HighScoreViewModel:Base.BaseViewModel
     {
         public string HighScore1Player { get; set; }
         public string HighScore2Player { get; set; }
@@ -20,8 +20,6 @@ namespace LovesTestGitHub
         public string HighScore4Points { get; set; }
         public string HighScore5Points { get; set; }
         public ICommand ButtonCommand { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public void InputToOutput()
         {

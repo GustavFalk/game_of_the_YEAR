@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace Game_of_the_YEAR.ViewModels
 {
-    public class CreateUserPageViewModel: Base.BaseViewModel
+    class CreateUserPageViewModel: Base.BaseViewModel
 
     {
         public string EmailTxt { get; set; }

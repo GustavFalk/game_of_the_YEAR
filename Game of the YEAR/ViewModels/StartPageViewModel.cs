@@ -13,7 +13,8 @@ namespace Game_of_the_YEAR.ViewModels
 
         public StartPageViewModel()
         {
-
+            NewPlayerBtn = new RelayCommand(GoToCreateUserPage);
+            ExistingPlayerBtn = new RelayCommand(GoToExistingUserPage);
         }
 
         public void GoToCreateUserPage()

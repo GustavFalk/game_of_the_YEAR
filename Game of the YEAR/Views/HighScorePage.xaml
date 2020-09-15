@@ -141,7 +141,7 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Fill" >
-                <Button  Content="NEW GAME" Command="" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
+                <Button  Content="NEW GAME" Command="{Binding ButtonCommand}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
             </Viewbox>
         </Grid>
     </Grid>

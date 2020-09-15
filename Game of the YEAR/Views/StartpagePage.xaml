@@ -41,7 +41,7 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Fill" Grid.Column="1" Grid.Row="0">
-                <Button  Content="NY SPELARE" Grid.Column="1" Command="" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" FontSize="20" Padding="60,10,60,10" />
+                <Button  Content="NY SPELARE" Grid.Column="1" Command="{Binding NewPlayerBtn}" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" FontSize="20" Padding="60,10,60,10" />
             </Viewbox>
         </Grid>
         <Grid Grid.Row="3">
@@ -51,7 +51,7 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Fill" Grid.Column="1" Grid.Row="0">
-                <Button Content="BEFINTLIG SPELARE" Grid.Column="1" Command="" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" FontSize="20" Padding="10,10,10,10" />
+                <Button Content="BEFINTLIG SPELARE" Grid.Column="1" Command="{Binding ExistingPlayerBtn}" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" FontSize="20" Padding="10,10,10,10" />
             </Viewbox>
         </Grid>
         <Grid Grid.Row="4"  Margin="0,0,0,0" >

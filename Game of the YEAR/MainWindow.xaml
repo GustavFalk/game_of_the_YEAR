@@ -11,7 +11,7 @@
             <ImageBrush ImageSource="/Assets/Images/BackgroundBlixt_Test.png" />
 
         </Grid.Background>
-        <Frame x:Name="Main" >
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden" >
             
         </Frame>
         

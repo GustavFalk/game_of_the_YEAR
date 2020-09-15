@@ -10,69 +10,71 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="2.5*"/>
-            <RowDefinition Height="2*"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-            <Viewbox Stretch="Uniform" Grid.Column="0" Margin="0,0,40,0" >
-                <Label Content="GAME OF THE YEAR" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="{StaticResource PressStart2P}" />
-            </Viewbox>
-            <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
-                <Label Content="POÄNG:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
-            </Viewbox>
-            <Rectangle Fill="White" Stroke="HotPink" StrokeThickness="2" Margin="5" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-            <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                <Label Content="99999" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+             <RowDefinition Height="1.5*"/>
+             <RowDefinition Height="4*"/>
+             <RowDefinition Height="2.5*"/>
+             <RowDefinition Height="2*"/>
+         </Grid.RowDefinitions>
+         <Grid Grid.Row="0">
+             <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="3*"/>
+                 <ColumnDefinition Width="1*"/>
+                 <ColumnDefinition Width="1*"/>
+             </Grid.ColumnDefinitions>
+             <Viewbox Stretch="Uniform" Grid.Column="0" Margin="0,0,40,0" >
+                 <Label Content="GAME OF THE YEAR" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="{StaticResource PressStart2P}" />
+             </Viewbox>
+             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
+                 <Label Content="POÄNG:" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+             </Viewbox>
+             <Rectangle Fill="White" Stroke="HotPink" StrokeThickness="2" Margin="5" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+             <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
+                 <Label Content="{Binding Points}" HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+             </Viewbox>
+         </Grid>
+         <Grid Grid.Row="1">
+             <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="1*"/>
+                 <ColumnDefinition Width="4*"/>
+                 <ColumnDefinition Width="1*"/>
+             </Grid.ColumnDefinitions>
+             <Viewbox Grid.Column="1" Stretch="Uniform">
+                 <TextBox BorderBrush="HotPink" BorderThickness="2" Text="{Binding Hint}"  TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" VerticalScrollBarVisibility="Disabled" MinLines="3" Width="600"  FontFamily="{StaticResource PressStart2P}" FontSize="18" Padding="10"/>
+             </Viewbox>
+         </Grid>
+         <Grid Grid.Row="2">
+             <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="3*"/>
+                 <ColumnDefinition Width="1*"/>
+                 <ColumnDefinition Width="1*"/>
+                 <ColumnDefinition Width="1*"/>
+                 <ColumnDefinition Width="1*"/>
+                 <ColumnDefinition Width="3*"/>
+             </Grid.ColumnDefinitions>
+             <Grid.RowDefinitions>
+                 <RowDefinition Height="1*"/>
+                 <RowDefinition Height="2*"/>
+             </Grid.RowDefinitions>
+             <Viewbox Stretch="Uniform" Grid.Column="1" Grid.Row="0">
+                 <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Svar:" FontFamily="{StaticResource PressStart2P}"/>
+             </Viewbox>
+             <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Fill" Margin="2">
+                 <TextBox TextChanged="TextBox_TextChanged" Text="{Binding Number1}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
+             </Viewbox>
+             <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Fill" Margin="2">
+                 <TextBox TextChanged="TextBox_TextChanged" Text="{Binding Number2}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
+             </Viewbox>
+             <Viewbox Grid.Row="1" Grid.Column="3" Stretch="Fill" Margin="2">
+                 <TextBox TextChanged="TextBox_TextChanged" Text="{Binding Number3}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
+             </Viewbox>
+             <Viewbox Grid.Row="1" Grid.Column="4" Stretch="Fill" Margin="2">
+                <TextBox TextChanged="TextBox_TextChanged" Text="{Binding Number4}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
+             </Viewbox>
+            <Viewbox Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Left"  VerticalAlignment="Center" Stretch="Uniform">
+                <Label Content="DU KAN ENDAST MATA IN SIFFROR!!!" Grid.Column="2" Grid.ColumnSpan="3"  FontFamily="{StaticResource PressStart2P}" Foreground="Red" Visibility="{Binding NotNumberVisibility}" />
             </Viewbox>
         </Grid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-            <Viewbox Grid.Column="1" Stretch="Uniform">
-                <TextBox BorderBrush="HotPink" BorderThickness="2" Text="ADK SAKDLSD SKDLOAD DKWSÖAKWP KÖWSÖD;S SD LÖSD ÖALSÖD "  TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" VerticalScrollBarVisibility="Disabled" MinLines="3" MinWidth="400" MaxWidth="700" FontFamily="{StaticResource PressStart2P}" FontSize="18" Padding="10"/>
-            </Viewbox>
-        </Grid>
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="3*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="2*"/>
-            </Grid.RowDefinitions>
-            <Viewbox Stretch="Uniform" Grid.Column="1" Grid.Row="0">
-                <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Svar:" FontFamily="{StaticResource PressStart2P}"/>
-            </Viewbox>
-            <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Fill" Margin="2">
-                <TextBox Grid.Row="1" Grid.Column="2"  Text="1" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
-            </Viewbox>
-            <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Fill" Margin="2">
-                <TextBox Text="1" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
-            </Viewbox>
-            <Viewbox Grid.Row="1" Grid.Column="3" Stretch="Fill" Margin="2">
-                <TextBox  Text="1" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
-            </Viewbox>
-            <Viewbox Grid.Row="1" Grid.Column="4" Stretch="Fill" Margin="2">
-                <TextBox Grid.Row="1" Grid.Column="1"  Text="1" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
-            </Viewbox>
-
-        </Grid>
-        <Grid Grid.Row="4">
+         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -84,8 +86,8 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Fill" >
-                <Button  Content="OK" Command="" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
+                <Button  Content="OK" Command="{Binding OKCommand}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
             </Viewbox>
-        </Grid>
+         </Grid>
     </Grid>
 </Page>

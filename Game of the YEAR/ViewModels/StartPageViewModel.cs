@@ -30,17 +30,5 @@ namespace Game_of_the_YEAR.ViewModels
             
 
     }
-
-    
-
-    
-       
-
-       
-
-        public CreateUserPageViewModel()
-        {
-
-        }
-    }
+         
 }

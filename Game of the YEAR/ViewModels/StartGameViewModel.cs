@@ -13,7 +13,8 @@ namespace Game_of_the_YEAR.ViewModels
 
         public StartGameViewModel()
         {
-
+            StartGameBtn = new RelayCommand(GoToGamePage);
+            RulesBtn = new RelayCommand(GoToRulePage);
         }
 
         public void GoToGamePage()

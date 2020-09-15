@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game_of_the_YEAR.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,24 @@ namespace Game_of_the_YEAR.Views
         public RulePage()
         {
             InitializeComponent();
+            RuleViewModel ruleViewModel = new RuleViewModel();
+            DataContext = ruleViewModel;
+        }
+
+
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            var window = Window.GetWindow(this);
+            window.KeyDown += HandleKeyPress;
+        }
+        private void HandleKeyPress(object sender, RoutedEventArgs e)
+        {
+            if ((e as KeyEventArgs).Key == Key.Enter)
+            {
+                Page page = new StartGamePage();
+                ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+            }
         }
     }
 }

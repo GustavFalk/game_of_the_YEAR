@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
+using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -10,11 +11,7 @@ namespace Game_of_the_YEAR.ViewModels
 
     {
         #region models
-        public void GoToStartGamePage()
-        {
-            Page page = new Views.StartGamePage();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
-        }
+      
 
         public void ValuesToUserID()
         {
@@ -22,8 +19,8 @@ namespace Game_of_the_YEAR.ViewModels
         }
     
         #endregion
-
-
+        
+        
         public string EmailTxt { get; set; }
         public string UserIdTxt { get; set; }
         public string Value1 { get; set; }

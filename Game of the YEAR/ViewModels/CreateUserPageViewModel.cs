@@ -42,7 +42,7 @@ namespace Game_of_the_YEAR.ViewModels
         }
         public void ValuesToUserID()
         {
-            NicknameTxt = Value1 + Value2 + Value2;
+            NicknameTxt = Value1 + Value2 + Value3;
 
         }
 

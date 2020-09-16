@@ -60,6 +60,43 @@ namespace Game_of_the_YEAR.Repositories
             }
             
         }
+        public static Player GetPlayer(string email)
+        {
+            string stmt = "SELECT e_mail, nickname FROM player WHERE e_mail=@email";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                Player player = null;
+                conn.Open();
+                try
+                {
+
+                    using (var command = new NpgsqlCommand(stmt, conn))
+                    {
+                        command.Parameters.AddWithValue("email", email);
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                player = new Player
+                                {
+                                    Email = email,
+                                    Nickname = (string)reader["nickname"]
+                                };
+
+                            }
+                            return player;
+                        }
+                    }
+                }
+                catch (PostgresException)
+                {
+                    throw;
+                }
+               
+
+            }
+            
+        }
         #endregion
         #region UPDATE
         #endregion

@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Game_of_the_YEAR.Models;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,6 +11,28 @@ namespace Game_of_the_YEAR.Repositories
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["connectDb"].ConnectionString;
         #region CREATE
+        public static void  AddPlayerToDB (Player player) 
+        {
+            string stmt = "INSERT INTO player (e_mail,nickname) VALUES (@email, @playername) ";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+
+                conn.Open();
+                try
+                {
+                    using (var command = new NpgsqlCommand(stmt, conn))
+                    {
+                        command.Parameters.AddWithValue("email", player.Email);
+                        command.Parameters.AddWithValue("playername", player.Nickname);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch(PostgresException)
+                {
+                    throw;
+                }
+            }
+        }
         #endregion
         #region READ
         public static int GetAmountOfYears() 

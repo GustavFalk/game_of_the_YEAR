@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
+using static Game_of_the_YEAR.Repositories.DBRepo;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -27,36 +28,48 @@ namespace Game_of_the_YEAR.ViewModels
             return true;     
         
         }
+        private bool CheckIfEmail(string text)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(text);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public void ValuesToUserID()
         {
-            UserIdTxt = Value1 + Value2 + Value2;
+            NicknameTxt = Value1 + Value2 + Value2;
 
         }
 
         public void AddPlayer()
         {
             ValuesToUserID();           
-            if (CheckIfLetters(UserIdTxt))
+            if (CheckIfLetters(NicknameTxt) && CheckIfEmail(EmailTxt))
             {
                 Player player = new Player();
                 player.Email = EmailTxt;
-                player.Nickname = UserIdTxt;
-                //metod för att amta in i DB
+                player.Nickname = NicknameTxt;
+                AddPlayerToDB(player);
             }
             else
             {
                 /*u får bara ha bokstäver*/
-            }
-         
+            }         
 
         }
 
-    
+       
+
         #endregion
-        
-        
+
+
         public string EmailTxt { get; set; }
-        public string UserIdTxt { get; set; }
+        public string NicknameTxt { get; set; }
         public string Value1 { get; set; }
         public string Value2 { get; set; }
         public string Value3 { get; set; }

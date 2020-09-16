@@ -28,9 +28,9 @@ namespace Game_of_the_YEAR.Repositories
                     }
                     
                 }
-                catch(PostgresException e)
+                catch(PostgresException )
                 {
-                    throw e;                  
+                    throw;                  
                 }
             }
            

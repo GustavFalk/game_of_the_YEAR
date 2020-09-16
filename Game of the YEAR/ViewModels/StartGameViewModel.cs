@@ -16,19 +16,7 @@ namespace Game_of_the_YEAR.ViewModels
         {
             StartGameBtn = new RelayCommand(GoToStartGameCountdownPage);
             RulesBtn = new RelayCommand(GoToRulePage);
-        }
-
-        //public void GoToGamePage()
-        //{
-        //    Page page = new Views.GamePage();
-        //    ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
-        //}
-
-        //public void GoToRulePage()
-        //{
-        //    Page page = new Views.RulePage();
-        //    ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
-        //}
+        }      
 
     }
 }

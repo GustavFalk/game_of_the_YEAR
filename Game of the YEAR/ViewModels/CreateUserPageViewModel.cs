@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 using static Game_of_the_YEAR.Repositories.DBRepo;
+using Npgsql;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -59,17 +60,16 @@ namespace Game_of_the_YEAR.ViewModels
                 try
                 {
                     AddPlayerToDB(player);
-                    GoToStartGamePage();
-
+                    GoToStartGamePage();                    
                 }
-                catch(Exception e)
+                catch(PostgresException e)
                 {
                     
-                    if(e.Message == "23505: duplicate key value violates unique constraint \"email_unique\"" )
+                    if(e.ConstraintName == "email_unique")
                     {
                         ErrorLbl = "din mail är redan registrerad";
                     }
-                    else if(e.Message == "23505: duplicate key value violates unique constraint \"nickname_unique\"")
+                    else if(e.ConstraintName == "nickname_unique")
                     {
                         ErrorLbl = "användarnamnet är redan taget";
                     }
@@ -77,7 +77,9 @@ namespace Game_of_the_YEAR.ViewModels
                     {
                         ErrorLbl = "fråga Philip vad som är fel";
                     }
-                }             
+                   
+                    
+                }          
 
 
             }

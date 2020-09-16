@@ -92,7 +92,7 @@
                 <TextBox TextChanged="TextBox_TextChanged" CharacterCasing="Upper" Grid.Row="1" Grid.Column="2"  Text="{Binding Value3}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
             </Viewbox>
             <Viewbox Grid.Row="1" Grid.Column="4" Stretch="Uniform" Margin="2">
-                <Label Content="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label Content="{Binding ErrorLbl}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" FontFamily="{StaticResource PressStart2P}" />
             </Viewbox>
         </Grid>
         <Grid Grid.Row="5" Margin="10" >

@@ -7,6 +7,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
+using static Game_of_the_YEAR.Models.GameEngine;
+using Game_of_the_YEAR.Models;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -14,13 +16,13 @@ namespace Game_of_the_YEAR.ViewModels
     {
         #region Number Properties
 
-        public int UserAnswer { get; set; } = 1986;
-        public int CorrectAnswer { get; set; } = 1983;
-        public int DifferanceAnswers { get; set; } = 3;
-        public string Deduction { get; set; } = "3 X 1000";
-        public int TimePoints { get; set; } = 33307;
-        public int PointsGained { get; set; } = 99999;
-        public int TotalPoints { get; set; } = 183456;
+        public int UserAnswer { get; set; } 
+        public int CorrectAnswer { get; set; } 
+        public int DifferanceAnswers { get; set; }
+        public int Deduction { get; set; } 
+        public int TimePoints { get; set; }
+        public int PointsGained { get; set; }
+        public int TotalPoints { get; set; } 
 
         #endregion
 
@@ -63,6 +65,7 @@ namespace Game_of_the_YEAR.ViewModels
 
         public CheckAnswerViewModel()
         {
+            AssignPropertyValues();
             NextQuestionCommand = new RelayCommand(GoToGamePage);
             ShowOrder();
         }
@@ -149,6 +152,16 @@ namespace Game_of_the_YEAR.ViewModels
             mediaPlayer.Stop();
         }
 
+        public void AssignPropertyValues()
+        {
+            UserAnswer = CurrentGame.UserAnswer;
+            CorrectAnswer = CurrentGame.CurrentQuestion.Year;
+            DifferanceAnswers = CheckAnswerDifferance();
+            Deduction = CalculateDeduction(DifferanceAnswers);
+            TimePoints = CurrentGame.TimePoints;
+            PointsGained = CalculateQuestionPoints(Deduction);
+            TotalPoints = CurrentGame.TotalPoints;
+        }
        
 
 

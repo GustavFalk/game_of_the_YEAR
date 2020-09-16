@@ -4,10 +4,13 @@ using System.Text;
 
 namespace Game_of_the_YEAR.Models
 {
-    class CurrentGame
+    static class CurrentGame
     {
-        public int Points { get; set; }
-        public IEnumerable<Question> QuestionsAnswered { get; set; }
-        public Player CurrentPlayer { get; set; }
+        static public int TotalPoints { get; set; } = 180000;
+        static public IEnumerable<Question> QuestionsAnswered { get; set; }
+        static public Player CurrentPlayer { get; set; }
+        static public Question CurrentQuestion { get; set; }
+        static public int UserAnswer { get; set; }
+        static public int TimePoints { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game_of_the_YEAR.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace Game_of_the_YEAR.ViewModels
     {
         #region Properties
 
-        public int Points { get; set; } = 99999;
+        public int TimePoints { get; set; } = 99999;
         public bool CountDown { get; set; } = true;
         public string Hint { get; set; }
         public string Number1 { get; set; }
@@ -40,18 +41,18 @@ namespace Game_of_the_YEAR.ViewModels
 
         public async void CountDownPoints()
         {
-            while (Points > 0)
+            while (TimePoints > 0)
             {
-                Points -= 47;
+                TimePoints -= 47;
                 await Task.Delay(1);
                 if ( CountDown == false)
                 {
                     break;
                 }
             }
-            if (Points < 0)
+            if (TimePoints < 0)
             {
-                Points = 0;
+                TimePoints = 0;
             }
         }
 
@@ -105,6 +106,8 @@ namespace Game_of_the_YEAR.ViewModels
             else
             {
                 StopCountDown();
+                CurrentGame.UserAnswer = Answer;
+                CurrentGame.TimePoints = TimePoints;
                 mediaPlayer.Stop();
                 GoToCheckAnswerPage();
             }

@@ -43,6 +43,11 @@ namespace Game_of_the_YEAR.ViewModels.Base
             Page page = new Views.RulePage();
             ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
         }
+        public static void GoToStartGameCountdownPage()
+        {
+            Page page = new Views.StartGameCountdownPage();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+        }
         public static void GoToGamePage()
         {
             Page page = new Views.GamePage();

@@ -14,6 +14,7 @@
     <None Remove="Assets\Sound\194182__theatomicbrain__high-score-fill-descending-faster.wav" />
     <None Remove="Assets\Sound\320181__dland__hint.wav" />
     <None Remove="Assets\Sound\donnerre2.mp3" />
+    <None Remove="Assets\Sound\Mario_Kart_Race_Start_-_Gaming_Sound_Effect.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +34,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Sound\donnerre2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Sound\Mario_Kart_Race_Start_-_Gaming_Sound_Effect.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

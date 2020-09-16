@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
+using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -13,21 +14,21 @@ namespace Game_of_the_YEAR.ViewModels
 
         public StartGameViewModel()
         {
-            StartGameBtn = new RelayCommand(GoToGamePage);
+            StartGameBtn = new RelayCommand(GoToStartGameCountdownPage);
             RulesBtn = new RelayCommand(GoToRulePage);
         }
 
-        public void GoToGamePage()
-        {
-            Page page = new Views.GamePage();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
-        }
+        //public void GoToGamePage()
+        //{
+        //    Page page = new Views.GamePage();
+        //    ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+        //}
 
-        public void GoToRulePage()
-        {
-            Page page = new Views.RulePage();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
-        }
+        //public void GoToRulePage()
+        //{
+        //    Page page = new Views.RulePage();
+        //    ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+        //}
 
     }
 }

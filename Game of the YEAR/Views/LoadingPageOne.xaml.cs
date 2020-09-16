@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.Views
 {
@@ -61,8 +62,7 @@ namespace Game_of_the_YEAR.Views
         }
         private void HandleKeyPress(object sender, RoutedEventArgs e)
         {
-            Page page = new LoadingPageTwo();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+            GoToLoadingPageTwo();            
         }
     }
 }

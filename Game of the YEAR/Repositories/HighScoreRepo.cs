@@ -35,7 +35,6 @@ namespace Game_of_the_YEAR.Repositories
                             players.Add(player);
                         }
                     }
-
                 }
                 return players;
             }

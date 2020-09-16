@@ -26,12 +26,14 @@ namespace Game_of_the_YEAR.Repositories
                         command.Parameters.AddWithValue("playername", player.Nickname);
                         command.ExecuteNonQuery();
                     }
+                    
                 }
-                catch(PostgresException)
+                catch(PostgresException e)
                 {
-                    throw;
+                    throw e;                  
                 }
             }
+           
         }
         #endregion
         #region READ

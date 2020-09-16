@@ -25,5 +25,15 @@ namespace Game_of_the_YEAR.Views
             CreateUserPageViewModel createUserPageViewModel = new CreateUserPageViewModel();
             DataContext = createUserPageViewModel;
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if ((sender as TextBox).MaxLength == (sender as TextBox).Text.Length)
+            {
+                var ue = e.OriginalSource as FrameworkElement;
+                e.Handled = true;
+                ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            }
+        }
     }
 }

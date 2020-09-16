@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.Views
 {
@@ -32,8 +33,7 @@ namespace Game_of_the_YEAR.Views
         {
             if ((e as KeyEventArgs).Key == Key.Enter)
             {
-                Page page = new StartpagePage();
-                ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+                GoToStartpagePage();
             }
             
         }

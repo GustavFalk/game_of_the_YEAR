@@ -27,10 +27,7 @@ namespace Game_of_the_YEAR
         public MainWindow()
         {
             InitializeComponent();
-
             Main.Content = page;
-
-
         }
 
        

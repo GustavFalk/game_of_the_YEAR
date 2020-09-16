@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.ViewModels
@@ -28,6 +29,7 @@ namespace Game_of_the_YEAR.ViewModels
         #region Constructors
         public GamePageViewModel()
         {
+            mediaPlayer.Open(new Uri(@".\Assets\Sound\morton_gould_1913_1996_spirituals_for_strings_choir_and_orchestra_1959_1_2_1959050878275738400.wav", UriKind.Relative));
             OpenPage();
             OKCommand = new RelayCommand(OKButton);
         }
@@ -40,7 +42,7 @@ namespace Game_of_the_YEAR.ViewModels
         {
             while (Points > 0)
             {
-                Points -= 43;
+                Points -= 47;
                 await Task.Delay(1);
                 if ( CountDown == false)
                 {
@@ -80,7 +82,8 @@ namespace Game_of_the_YEAR.ViewModels
         public async void OpenPage()
         {
             await TypeClueSlower();
-            
+
+            mediaPlayer.Play();
             CountDownPoints();
         }
 
@@ -102,8 +105,13 @@ namespace Game_of_the_YEAR.ViewModels
             else
             {
                 StopCountDown();
+                mediaPlayer.Stop();
+                GoToCheckAnswerPage();
             }
         }
+        private MediaPlayer mediaPlayer = new MediaPlayer();
+        
+        
             
     }
 }

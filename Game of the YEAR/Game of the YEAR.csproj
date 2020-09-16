@@ -15,6 +15,7 @@
     <None Remove="Assets\Sound\320181__dland__hint.wav" />
     <None Remove="Assets\Sound\donnerre2.mp3" />
     <None Remove="Assets\Sound\Mario_Kart_Race_Start_-_Gaming_Sound_Effect.mp3" />
+    <None Remove="Assets\Sound\morton_gould_1913_1996_spirituals_for_strings_choir_and_orchestra_1959_1_2_1959050878275738400.wav" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +38,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Sound\Mario_Kart_Race_Start_-_Gaming_Sound_Effect.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Sound\morton_gould_1913_1996_spirituals_for_strings_choir_and_orchestra_1959_1_2_1959050878275738400.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

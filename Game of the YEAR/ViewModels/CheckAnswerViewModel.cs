@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
@@ -34,18 +35,36 @@ namespace Game_of_the_YEAR.ViewModels
         public Visibility VisibilityDeduction { get; set; } = Visibility.Hidden;
         public Visibility VisibilityPointsGained { get; set; } = Visibility.Hidden;
         public Visibility VisibilityTotalPoints { get; set; } = Visibility.Hidden;
+        public Visibility VisibilityNextQuestion { get; set; } = Visibility.Hidden;
+
         public ImageSource BackgroundImage { get; set; }
 
         #endregion
-        
+
+        #region ICommand Properties
+
+        public ICommand NextQuestionCommand { get; set; }
+
+        #endregion
+
+        #region Media Player
+
         MediaPlayer mediaPlayer = new MediaPlayer();
+
+        public void PlaySoundFromZero()
+        {
+            mediaPlayer.Position = TimeSpan.Zero;
+            mediaPlayer.Play();
+        }
+
+        #endregion
 
         #region Constructor
 
         public CheckAnswerViewModel()
         {
+            NextQuestionCommand = new RelayCommand(GoToGamePage);
             ShowOrder();
-
         }
 
         #endregion
@@ -80,6 +99,7 @@ namespace Game_of_the_YEAR.ViewModels
             await Task.Delay(500);
             PlaySoundFromZero();
             VisibilityTotalPoints = Visibility.Visible;
+            VisibilityNextQuestion = Visibility.Visible;
             await Task.Delay(500);
             ConvertToTotalPoints();
 
@@ -129,11 +149,7 @@ namespace Game_of_the_YEAR.ViewModels
             mediaPlayer.Stop();
         }
 
-        public void PlaySoundFromZero()
-        {
-            mediaPlayer.Position = TimeSpan.Zero;
-            mediaPlayer.Play();
-        }
+       
 
 
         #endregion

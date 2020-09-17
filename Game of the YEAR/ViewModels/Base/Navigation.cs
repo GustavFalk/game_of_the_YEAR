@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Game_of_the_YEAR.ViewModels.Base
 {
@@ -58,6 +59,19 @@ namespace Game_of_the_YEAR.ViewModels.Base
             Page page = new Views.CheckAnswerPage();
             ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
         }
+        #endregion
+        #region Sound navigation
+
+        public static void PlayMenuMusic()
+        {
+            ((MainWindow)System.Windows.Application.Current.MainWindow).menuMusic.Play();
+        }
+
+        public static void PauseMenuMusic()
+        {
+            ((MainWindow)System.Windows.Application.Current.MainWindow).menuMusic.Pause();
+        }
+
         #endregion
     }
 }

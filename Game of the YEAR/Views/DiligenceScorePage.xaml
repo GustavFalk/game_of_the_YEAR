@@ -1,0 +1,135 @@
+﻿<Page x:Class="Game_of_the_YEAR.Views.DiligenceScorePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Game_of_the_YEAR.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HighScorePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Stretch="Uniform" Grid.Column="1" Margin="0,0,40,0" >
+                <Label Content="GAME OF THE YEAR" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="{StaticResource PressStart2P}" />
+            </Viewbox>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Viewbox Grid.Column="0" Stretch="Uniform">
+                <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Content="DILIGENCE SCORE!!!:" FontFamily="{StaticResource PressStart2P}" FontSize="30"/>
+            </Viewbox>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
+                <Label Content="{Binding HighScore1Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+            </Viewbox>
+            <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
+                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+            </Viewbox>
+            <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
+                <Label Content="{Binding HighScore1Points}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
+                <Label Content="{Binding HighScore2Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+            </Viewbox>
+            <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
+                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+            </Viewbox>
+            <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
+                <Label Content="{Binding HighScore2Points}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
+                <Label Content="{Binding HighScore3Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+            </Viewbox>
+            <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
+                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+            </Viewbox>
+            <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
+                <Label Content="{Binding HighScore3Points}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
+                <Label Content="{Binding HighScore4Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+            </Viewbox>
+            <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
+                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+            </Viewbox>
+            <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
+                <Label Content="{Binding HighScore4Points}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
+                <Label Content="{Binding HighScore5Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+            </Viewbox>
+            <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
+                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+            </Viewbox>
+            <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
+                <Label Content="{Binding HighScore5Points}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Fill" >
+                <Button  Content="NEW GAME" Command="{Binding ButtonCommand}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
+            </Viewbox>
+        </Grid>
+    </Grid>
+</Page>

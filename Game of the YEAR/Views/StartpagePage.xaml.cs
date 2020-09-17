@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Game_of_the_YEAR.Views
 {
     /// <summary>
@@ -23,7 +24,7 @@ namespace Game_of_the_YEAR.Views
         {
             InitializeComponent();
             StartPageViewModel startPageViewModel = new StartPageViewModel();
-            DataContext = startPageViewModel;
+            DataContext = startPageViewModel;            
         }
     }
 }

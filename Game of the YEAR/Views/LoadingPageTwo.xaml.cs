@@ -22,6 +22,7 @@ namespace Game_of_the_YEAR.Views
         public LoadingPageTwo()
         {
             InitializeComponent();
+            
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)

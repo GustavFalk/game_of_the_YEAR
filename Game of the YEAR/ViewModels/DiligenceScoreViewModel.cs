@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Game_of_the_YEAR.ViewModels
 {
-    class DiligenceScoreViewmodel : Base.BaseViewModel
+    class DiligenceScoreViewModel : Base.BaseViewModel
     {
 
         public string DiligenceScore1Player { get; set; }
@@ -37,7 +37,7 @@ namespace Game_of_the_YEAR.ViewModels
 
         }
 
-        public DiligenceScoreViewmodel()
+        public DiligenceScoreViewModel()
         {
             ButtonCommand = new RelayCommand(InputToOutput);
         }

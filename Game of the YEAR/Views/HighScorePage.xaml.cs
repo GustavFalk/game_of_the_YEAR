@@ -23,6 +23,7 @@ namespace Game_of_the_YEAR.Views
         public HighScorePage()
         {
             InitializeComponent();
+            DataContext = highScore;
         }
     }
 }

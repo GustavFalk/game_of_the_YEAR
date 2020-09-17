@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoadingPageOne">
-    <UserControl Loaded="UserControl_Loaded">
+    <!--<UserControl Loaded="UserControl_Loaded">-->
     
     <Grid>
         <Grid.RowDefinitions>
@@ -54,5 +54,5 @@
         </Grid>
 
     </Grid>
-    </UserControl>
+    <!--</UserControl>-->
 </Page>

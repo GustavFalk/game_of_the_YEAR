@@ -114,10 +114,10 @@ namespace Game_of_the_YEAR.Repositories
             
         //}
                        
-                }
-            }
+        //        }
+        //    }
             
-        }
+        //}
         public static Player GetPlayerFromDB(string email)
         {
             string stmt = "SELECT e_mail, nickname FROM player WHERE e_mail=@email";

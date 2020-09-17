@@ -66,7 +66,7 @@ namespace Game_of_the_YEAR.ViewModels
         public CheckAnswerViewModel()
         {
             AssignPropertyValues();
-            NextQuestionCommand = new RelayCommand(GoToGamePage);
+            NextQuestionCommand = new RelayCommand(NextQuestion);
             ShowOrder();
         }
 
@@ -163,6 +163,12 @@ namespace Game_of_the_YEAR.ViewModels
             TotalPoints = CurrentGame.TotalPoints;
             CalculateTotalPoints();
             CurrentGame.CurrentQuestion++;
+        }
+
+        public void NextQuestion()
+        {
+            mediaPlayer.Stop();
+            GoToGamePage();
         }
        
 

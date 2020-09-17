@@ -8,7 +8,7 @@ using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 using static Game_of_the_YEAR.Repositories.DBRepo;
 using Npgsql;
 using System.Linq.Expressions;
-using static Game_of_the_YEAR.Models.CurrentGame;
+
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -45,18 +45,28 @@ namespace Game_of_the_YEAR.ViewModels
                 player.Nickname = NicknameTxt;
                 
                 try
-                {
-                    
+                {                    
                     player=GetPlayerFromDB(player.Email);
-                    CurrentGame.CurrentPlayer
-                    GoToStartGamePage();
+                    if (player == null)
+                    {
+                        ErrorLbl = "E-postadressen verkar inte finnas. Pröva igen";
+                    }
+                    else
+                    {
+                        CurrentGame.CurrentPlayer = player;
+                        GoToStartGamePage();
+                    }
                 }
-                catch (PostgresException e)
+                catch (PostgresException)
                 {
-                    //visa felmeddelande
+                    ErrorLbl = "Fråga Philip vad som är fel";
                 }
                      
            
+            }
+           else
+            {
+                ErrorLbl = "Vi hittar inte din e-postadress";
             }
           
         }

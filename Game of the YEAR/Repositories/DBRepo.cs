@@ -62,7 +62,7 @@ namespace Game_of_the_YEAR.Repositories
             }
             
         }
-        public static Player GetPlayer(string email)
+        public static Player GetPlayerFromDB(string email)
         {
             string stmt = "SELECT e_mail, nickname FROM player WHERE e_mail=@email";
             using (var conn = new NpgsqlConnection(connectionString))

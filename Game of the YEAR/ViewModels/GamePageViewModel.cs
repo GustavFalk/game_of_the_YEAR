@@ -67,7 +67,7 @@ namespace Game_of_the_YEAR.ViewModels
 
         public async Task TypeClueSlower()
         {
-            string fullHint = "Långfredagsavtalet signerades mellan England och Irland detta år";
+            string fullHint = CurrentGame.Questions[CurrentGame.CurrentQuestion].Clues[0];
 
             foreach (var letter in fullHint)
             {

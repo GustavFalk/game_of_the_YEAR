@@ -8,7 +8,7 @@ namespace Game_of_the_YEAR.Models
     public class Question
     {
         public int Year { get; set; }
-        public IEnumerable<string> Clues { get; set; }
+        public List<string> Clues { get; set; }
 
         public Question(int year)
         {

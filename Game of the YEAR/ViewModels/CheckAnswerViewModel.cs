@@ -155,12 +155,14 @@ namespace Game_of_the_YEAR.ViewModels
         public void AssignPropertyValues()
         {
             UserAnswer = CurrentGame.UserAnswer;
-            CorrectAnswer = CurrentGame.CurrentQuestion.Year;
+            CorrectAnswer = CurrentGame.Questions[CurrentGame.CurrentQuestion].Year;
             DifferanceAnswers = CheckAnswerDifferance();
             Deduction = CalculateDeduction(DifferanceAnswers);
             TimePoints = CurrentGame.TimePoints;
             PointsGained = CalculateQuestionPoints(Deduction);
             TotalPoints = CurrentGame.TotalPoints;
+            CalculateTotalPoints();
+            CurrentGame.CurrentQuestion++;
         }
        
 

@@ -29,7 +29,7 @@
              </Viewbox>
              <Rectangle Fill="White" Stroke="HotPink" StrokeThickness="2" Margin="5" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
              <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                 <Label Content="{Binding Points}" HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                 <Label Content="{Binding TimePoints}" HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
              </Viewbox>
          </Grid>
          <Grid Grid.Row="1">

@@ -8,10 +8,10 @@ namespace Game_of_the_YEAR.Models
     {
         public static int CheckAnswerDifferance()
         {
-            int differance = CurrentGame.UserAnswer - CurrentGame.CurrentQuestion.Year;
+            int differance = CurrentGame.UserAnswer - CurrentGame.Questions[CurrentGame.CurrentQuestion].Year;
             if (differance < 0)
             {
-                differance =  CurrentGame.CurrentQuestion.Year - CurrentGame.UserAnswer;
+                differance =  CurrentGame.Questions[CurrentGame.CurrentQuestion].Year - CurrentGame.UserAnswer;
             }
             return differance;
         }

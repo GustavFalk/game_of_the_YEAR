@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using Game_of_the_YEAR.Models;
+using static Game_of_the_YEAR.Repositories.DBRepo;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.ViewModels
@@ -13,6 +15,8 @@ namespace Game_of_the_YEAR.ViewModels
         public StartGameCountdownModelView()
         {
             StartUpPage();
+            LoadQuestionsToGame();
+            
         }
         public async Task StartCountdown()
         {
@@ -32,6 +36,12 @@ namespace Game_of_the_YEAR.ViewModels
             await StartCountdown();
             await Task.Delay(1500);
             GoToGamePage();
+        }
+        public void LoadQuestionsToGame()
+        {
+            CurrentGame.Questions = null;
+            CurrentGame.Questions = GetQuestions();
+            CurrentGame.CurrentQuestion = 0;
         }
     }
 }

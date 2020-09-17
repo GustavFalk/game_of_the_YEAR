@@ -60,6 +60,7 @@ namespace Game_of_the_YEAR.ViewModels
                 try
                 {
                     AddPlayerToDB(player);
+                    CurrentGame.CurrentPlayer = player;
                     GoToStartGamePage();                    
                 }
                 catch(PostgresException e)

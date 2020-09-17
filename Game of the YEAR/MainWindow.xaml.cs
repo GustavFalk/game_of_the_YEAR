@@ -22,7 +22,7 @@ namespace Game_of_the_YEAR
     /// </summary>
     public partial class MainWindow : Window
     {
-        Page page = new Views.ExistingUserPage();
+        Page page = new Views.StartGamePage();
         //int test;
         public MainWindow()
         {

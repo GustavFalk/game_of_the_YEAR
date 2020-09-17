@@ -37,26 +37,82 @@ namespace Game_of_the_YEAR.Repositories
         }
         #endregion
         #region READ
-        public static int GetAmountOfYears() 
+        public static List<Question> GetQuestions()
         {
-            string stmt = "SELECT COUNT (the_year_id) FROM the_year";
+        
+            string stmt = "SELECT (the_year) FROM  the_year ORDER BY RANDOM() LIMIT 10";
+
             using (var conn = new NpgsqlConnection(connectionString))
             {
-                long amount = 0;
+                
+                List<Question> questions = new List<Question>();
                 conn.Open();
-                using (var command = new NpgsqlCommand(stmt,conn))
+                using (var command = new NpgsqlCommand(stmt, conn))
                 {
-                    
-                    using (var reader = command.ExecuteReader())
+                    using (var reader = command.ExecuteReader ())
                     {
                         while (reader.Read())
                         {
-                            amount = (long)reader["count"];
+                            Question question = new Question((int)reader["the_year"]);                          
+                               
+                            questions.Add(question);
                         }
-
                     }
-                    return Convert.ToInt32(amount);
+                }
+                return questions;
+            }            
+        }
 
+        public static List<string> GetClues(int year)
+        {
+            string stmt = "SELECT clues_text FROM clues INNER JOIN the_year ON the_year.the_year_id=clues.the_year_id WHERE the_year.the_year= @year ORDER BY RANDOM()";
+            
+            using (var conn = new NpgsqlConnection(connectionString))
+            {                
+                List<string> clues = new List<string>();
+                string clue;
+                conn.Open();
+                using (var command = new NpgsqlCommand(stmt, conn))
+                {
+                    command.Parameters.AddWithValue("year", year);
+                    using (var reader = command.ExecuteReader())
+                    {                       
+                        while(reader.Read())
+                        {
+                            clue = (string)reader["clues_text"];
+                            clues.Add(clue);
+                        }
+                    }                    
+                }
+                return clues;
+            }
+        }
+        
+        //public static int GetAmountOfYears() 
+        //{
+            //string stmt = "SELECT COUNT (the_year_id) FROM the_year";
+            //using (var conn = new NpgsqlConnection(connectionString))
+            //{
+                //long amount = 0;
+                //conn.Open();
+                //using (var command = new NpgsqlCommand(stmt,conn))
+                //{
+                    
+                    //using (var reader = command.ExecuteReader())
+                    //{
+                        //while (reader.Read())
+                        //{
+                            //amount = (long)reader["count"];
+                        //}
+
+                    //}
+                    //return Convert.ToInt32(amount);
+
+                       
+                //}
+            //}
+            
+        //}
                        
                 }
             }

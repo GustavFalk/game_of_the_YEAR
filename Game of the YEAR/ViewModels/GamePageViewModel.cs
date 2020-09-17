@@ -10,7 +10,7 @@ using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.ViewModels
 {
-    class GamePageViewModel:Base.BaseViewModel
+    class GamePageViewModel : Base.BaseViewModel
     {
         #region Properties
 
@@ -45,7 +45,7 @@ namespace Game_of_the_YEAR.ViewModels
             {
                 TimePoints -= 47;
                 await Task.Delay(1);
-                if ( CountDown == false)
+                if (CountDown == false)
                 {
                     break;
                 }
@@ -71,7 +71,7 @@ namespace Game_of_the_YEAR.ViewModels
 
             foreach (var letter in fullHint)
             {
-                
+
                 Hint += char.ToUpper(letter);
                 await Task.Delay(30);
             }
@@ -113,8 +113,9 @@ namespace Game_of_the_YEAR.ViewModels
             }
         }
         private MediaPlayer mediaPlayer = new MediaPlayer();
-        
-        
-            
-    }
+
+
+
+    } 
+           
 }

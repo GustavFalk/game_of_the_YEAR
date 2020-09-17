@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static Game_of_the_YEAR.Repositories.DBRepo;
-using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 
 namespace Game_of_the_YEAR
@@ -23,15 +22,14 @@ namespace Game_of_the_YEAR
     /// </summary>
     public partial class MainWindow : Window
     {
-        Page page = new Views.LoadingPageTwo();
-        public MediaPlayer menuMusic = new MediaPlayer();
-
+        Page page = new Views.ExistingUserPage();
+        //int test;
         public MainWindow()
         {
             InitializeComponent();
             Main.Content = page;
-            menuMusic.Open(new Uri(@".\Assets\Sound\455017__annoyedcactus__8bit-music-for-game.wav", UriKind.Relative));         
+        }
 
-        }       
+       
     }
 }

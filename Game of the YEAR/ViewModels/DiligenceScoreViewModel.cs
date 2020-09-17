@@ -29,11 +29,11 @@ namespace Game_of_the_YEAR.ViewModels
             DiligenceScore3Player = "SUD";
             DiligenceScore4Player = "LOL";
             DiligenceScore5Player = "BRU";
-            DiligenceScore1Rounds = "98992";
-            DiligenceScore2Rounds = "77948";
-            DiligenceScore3Rounds = "71993";
-            DiligenceScore4Rounds = "58448";
-            DiligenceScore5Rounds = "22291";
+            DiligenceScore1Rounds = "101";
+            DiligenceScore2Rounds = "88";
+            DiligenceScore3Rounds = "86";
+            DiligenceScore4Rounds = "65";
+            DiligenceScore5Rounds = "4";
 
         }
 

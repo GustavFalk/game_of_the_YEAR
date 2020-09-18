@@ -129,9 +129,21 @@ namespace Game_of_the_YEAR.ViewModels
         {
             mediaPlayer.Open(new Uri(@".\Assets\Sound\194182__theatomicbrain__high-score-fill-descending-faster.wav", UriKind.Relative));
             mediaPlayer.Play();
+            if (PointsGained < 0)
+            {
+               await CountTotalPointsNegative();
+            }
+            else
+            {
+                await CountTotalPointsPositive();
+            }
+            mediaPlayer.Stop();
+        }
+        public async Task CountTotalPointsPositive()
+        {
             while (PointsGained > 0)
             {
-                if(PointsGained > 1133)
+                if (PointsGained > 1133)
                 {
                     PointsGained -= 333;
                     TotalPoints += 333;
@@ -145,12 +157,36 @@ namespace Game_of_the_YEAR.ViewModels
                 }
                 else
                 {
-                    PointsGained --;
-                    TotalPoints ++;
+                    PointsGained--;
+                    TotalPoints++;
                     await Task.Delay(1);
                 }
             }
-            mediaPlayer.Stop();
+        }
+        public async Task CountTotalPointsNegative()
+        {
+            while (PointsGained < 0)
+            {
+                if (PointsGained < -1133)
+                {
+                    PointsGained += 333;
+                    TotalPoints -= 333;
+                    await Task.Delay(1);
+                }
+                else if (PointsGained < -133)
+                {
+                    PointsGained += 133;
+                    TotalPoints -= 133;
+                    await Task.Delay(1);
+                }
+                else
+                {
+                    PointsGained++;
+                    TotalPoints--;
+                    await Task.Delay(1);
+                }
+            }
+        
         }
 
         public void AssignPropertyValues()

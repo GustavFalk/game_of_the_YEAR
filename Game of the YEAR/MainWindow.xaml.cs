@@ -23,7 +23,7 @@ namespace Game_of_the_YEAR
     /// </summary>
     public partial class MainWindow : Window
     {
-        Page page = new Views.CreateUserPage();
+        Page page = new Views.StartGameCountdownPage();
         public MediaPlayer menuMusic = new MediaPlayer();
 
         public MainWindow()

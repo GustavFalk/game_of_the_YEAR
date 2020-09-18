@@ -164,11 +164,21 @@ namespace Game_of_the_YEAR.ViewModels
             CalculateTotalPoints();
             CurrentGame.CurrentQuestion++;
         }
-
+        public void CheckIfLastQuestion()
+        {
+            if (CurrentGame.Questions.Count > CurrentGame.CurrentQuestion)
+            {
+                GoToGamePage();
+            }
+            else
+            {
+                GoToHighScorePage();
+            }
+        }
         public void NextQuestion()
         {
             mediaPlayer.Stop();
-            GoToGamePage();
+            CheckIfLastQuestion();
         }
        
 

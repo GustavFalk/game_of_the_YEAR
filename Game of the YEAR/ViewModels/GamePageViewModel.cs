@@ -12,6 +12,13 @@ namespace Game_of_the_YEAR.ViewModels
 {
     class GamePageViewModel : Base.BaseViewModel
     {
+        #region Variables
+
+        private MediaPlayer mediaPlayer = new MediaPlayer();
+        private int clueIndex = 0;
+
+        #endregion
+
         #region Properties
 
         public int TimePoints { get; set; } = 99999;
@@ -43,6 +50,7 @@ namespace Game_of_the_YEAR.ViewModels
         {
             while (TimePoints > 0)
             {
+                NextClue();
                 TimePoints -= 47;
                 await Task.Delay(1);
                 if (CountDown == false)
@@ -65,9 +73,10 @@ namespace Game_of_the_YEAR.ViewModels
 
         #region Clue Methods/Tasks
 
-        public async Task TypeClueSlower()
+        public async Task TypeClueSlower(int clueIndex)
         {
-            string fullHint = CurrentGame.Questions[CurrentGame.CurrentQuestion].Clues[0];
+            Hint = "";
+            string fullHint = CurrentGame.Questions[CurrentGame.CurrentQuestion].Clues[clueIndex];
 
             foreach (var letter in fullHint)
             {
@@ -76,13 +85,26 @@ namespace Game_of_the_YEAR.ViewModels
                 await Task.Delay(30);
             }
         }
+        public void NextClue()
+        {
+            if (clueIndex == 0 && TimePoints < 68000)
+            {
+                clueIndex++;
+                TypeClueSlower(clueIndex);
+            }
+            else if (clueIndex == 1 && TimePoints < 35000)
+            {
+                clueIndex++;
+                TypeClueSlower(clueIndex);
+            }
+        }
 
         #endregion
 
 
         public async void OpenPage()
         {
-            await TypeClueSlower();
+            await TypeClueSlower(clueIndex);
 
             mediaPlayer.Play();
             CountDownPoints();
@@ -112,10 +134,6 @@ namespace Game_of_the_YEAR.ViewModels
                 GoToCheckAnswerPage();
             }
         }
-        private MediaPlayer mediaPlayer = new MediaPlayer();
-
-
-
     } 
            
 }

@@ -33,6 +33,7 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
 
             PlayCoinDrop();
             GoToLoadingPageTwoWithDelay();
+            PlayMenuMusicWithDelay();
            
             e.Handled = true;
         }

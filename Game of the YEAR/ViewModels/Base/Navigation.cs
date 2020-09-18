@@ -80,6 +80,11 @@ namespace Game_of_the_YEAR.ViewModels.Base
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).menuMusic.Play();
         }
+        public static async void PlayMenuMusicWithDelay()
+        {
+            await Task.Delay(2500);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).menuMusic.Play();
+        }
 
         public static void PauseMenuMusic()
         {

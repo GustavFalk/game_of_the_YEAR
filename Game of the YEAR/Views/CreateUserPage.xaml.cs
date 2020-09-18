@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 namespace Game_of_the_YEAR.Views
 {
     /// <summary>
@@ -34,6 +34,11 @@ namespace Game_of_the_YEAR.Views
                 e.Handled = true;
                 ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            GoToStartpagePage();
         }
     }
 }

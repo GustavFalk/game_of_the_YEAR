@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game_of_the_YEAR.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -11,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Game_of_the_YEAR.Views
 {
     /// <summary>
@@ -21,6 +23,8 @@ namespace Game_of_the_YEAR.Views
         public StartpagePage()
         {
             InitializeComponent();
+            StartPageViewModel startPageViewModel = new StartPageViewModel();
+            DataContext = startPageViewModel;            
         }
     }
 }

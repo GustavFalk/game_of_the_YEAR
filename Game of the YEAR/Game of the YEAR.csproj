@@ -13,7 +13,10 @@
     <None Remove="Assets\Images\BackgroundBlixt_Test_white.png" />
     <None Remove="Assets\Sound\194182__theatomicbrain__high-score-fill-descending-faster.wav" />
     <None Remove="Assets\Sound\320181__dland__hint.wav" />
+    <None Remove="Assets\Sound\455017__annoyedcactus__8bit-music-for-game.wav" />
     <None Remove="Assets\Sound\donnerre2.mp3" />
+    <None Remove="Assets\Sound\Mario_Kart_Race_Start_-_Gaming_Sound_Effect.mp3" />
+    <None Remove="Assets\Sound\morton_gould_1913_1996_spirituals_for_strings_choir_and_orchestra_1959_1_2_1959050878275738400.wav" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,7 +35,16 @@
     <Content Include="Assets\Sound\320181__dland__hint.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Sound\455017__annoyedcactus__8bit-music-for-game.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Sound\donnerre2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Sound\Mario_Kart_Race_Start_-_Gaming_Sound_Effect.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Sound\morton_gould_1913_1996_spirituals_for_strings_choir_and_orchestra_1959_1_2_1959050878275738400.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -44,7 +56,6 @@
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.9" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

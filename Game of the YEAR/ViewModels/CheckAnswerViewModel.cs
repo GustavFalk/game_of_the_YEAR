@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using static Game_of_the_YEAR.ViewModels.Base.Navigation;
+using static Game_of_the_YEAR.Models.GameEngine;
+using Game_of_the_YEAR.Models;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -12,13 +16,13 @@ namespace Game_of_the_YEAR.ViewModels
     {
         #region Number Properties
 
-        public int UserAnswer { get; set; } = 1986;
-        public int CorrectAnswer { get; set; } = 1983;
-        public int DifferanceAnswers { get; set; } = 3;
-        public string Deduction { get; set; } = "3 X 1000";
-        public int TimePoints { get; set; } = 33307;
-        public int PointsGained { get; set; } = 99999;
-        public int TotalPoints { get; set; } = 183456;
+        public int UserAnswer { get; set; } 
+        public int CorrectAnswer { get; set; } 
+        public int DifferanceAnswers { get; set; }
+        public int Deduction { get; set; } 
+        public int TimePoints { get; set; }
+        public int PointsGained { get; set; }
+        public int TotalPoints { get; set; } 
 
         #endregion
 
@@ -33,18 +37,37 @@ namespace Game_of_the_YEAR.ViewModels
         public Visibility VisibilityDeduction { get; set; } = Visibility.Hidden;
         public Visibility VisibilityPointsGained { get; set; } = Visibility.Hidden;
         public Visibility VisibilityTotalPoints { get; set; } = Visibility.Hidden;
+        public Visibility VisibilityNextQuestion { get; set; } = Visibility.Hidden;
+
         public ImageSource BackgroundImage { get; set; }
 
         #endregion
-        
+
+        #region ICommand Properties
+
+        public ICommand NextQuestionCommand { get; set; }
+
+        #endregion
+
+        #region Media Player
+
         MediaPlayer mediaPlayer = new MediaPlayer();
+
+        public void PlaySoundFromZero()
+        {
+            mediaPlayer.Position = TimeSpan.Zero;
+            mediaPlayer.Play();
+        }
+
+        #endregion
 
         #region Constructor
 
         public CheckAnswerViewModel()
         {
+            AssignPropertyValues();
+            NextQuestionCommand = new RelayCommand(NextQuestion);
             ShowOrder();
-
         }
 
         #endregion
@@ -79,6 +102,7 @@ namespace Game_of_the_YEAR.ViewModels
             await Task.Delay(500);
             PlaySoundFromZero();
             VisibilityTotalPoints = Visibility.Visible;
+            VisibilityNextQuestion = Visibility.Visible;
             await Task.Delay(500);
             ConvertToTotalPoints();
 
@@ -128,11 +152,25 @@ namespace Game_of_the_YEAR.ViewModels
             mediaPlayer.Stop();
         }
 
-        public void PlaySoundFromZero()
+        public void AssignPropertyValues()
         {
-            mediaPlayer.Position = TimeSpan.Zero;
-            mediaPlayer.Play();
+            UserAnswer = CurrentGame.UserAnswer;
+            CorrectAnswer = CurrentGame.Questions[CurrentGame.CurrentQuestion].Year;
+            DifferanceAnswers = CheckAnswerDifferance();
+            Deduction = CalculateDeduction(DifferanceAnswers);
+            TimePoints = CurrentGame.TimePoints;
+            PointsGained = CalculateQuestionPoints(Deduction);
+            TotalPoints = CurrentGame.TotalPoints;
+            CalculateTotalPoints();
+            CurrentGame.CurrentQuestion++;
         }
+
+        public void NextQuestion()
+        {
+            mediaPlayer.Stop();
+            GoToGamePage();
+        }
+       
 
 
         #endregion

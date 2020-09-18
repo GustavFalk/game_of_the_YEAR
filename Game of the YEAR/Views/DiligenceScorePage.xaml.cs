@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game_of_the_YEAR.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,11 @@ namespace Game_of_the_YEAR.Views
     /// </summary>
     public partial class DiligenceScorePage : Page
     {
+        DiligenceScoreViewModel diligenceScore = new DiligenceScoreViewModel();
         public DiligenceScorePage()
         {
             InitializeComponent();
+            DataContext = diligenceScore;
         }
     }
 }

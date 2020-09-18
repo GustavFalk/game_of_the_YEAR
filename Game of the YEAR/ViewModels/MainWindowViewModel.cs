@@ -21,7 +21,7 @@ namespace Game_of_the_YEAR
 
         public void Amount()
         {
-            AmountOutput = GetAmountOfYears();
+            //AmountOutput = GetAmountOfYears();
         }
 
     }

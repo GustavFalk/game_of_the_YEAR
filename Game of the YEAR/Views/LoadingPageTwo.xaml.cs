@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.Views
 {
@@ -21,6 +22,21 @@ namespace Game_of_the_YEAR.Views
         public LoadingPageTwo()
         {
             InitializeComponent();
+            
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            var window = Window.GetWindow(this);
+            window.KeyDown += HandleKeyPress;
+        }
+        private void HandleKeyPress(object sender, RoutedEventArgs e)
+        {
+            if ((e as KeyEventArgs).Key == Key.Enter)
+            {
+                GoToStartpagePage();
+            }
+            
         }
     }
 }

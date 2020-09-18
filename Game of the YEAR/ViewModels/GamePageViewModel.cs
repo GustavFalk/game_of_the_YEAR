@@ -1,17 +1,20 @@
-﻿using System;
+﻿using Game_of_the_YEAR.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
+using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.ViewModels
 {
-    class GamePageViewModel:Base.BaseViewModel
+    class GamePageViewModel : Base.BaseViewModel
     {
         #region Properties
 
-        public int Points { get; set; } = 99999;
+        public int TimePoints { get; set; } = 99999;
         public bool CountDown { get; set; } = true;
         public string Hint { get; set; }
         public string Number1 { get; set; }
@@ -27,6 +30,7 @@ namespace Game_of_the_YEAR.ViewModels
         #region Constructors
         public GamePageViewModel()
         {
+            mediaPlayer.Open(new Uri(@".\Assets\Sound\morton_gould_1913_1996_spirituals_for_strings_choir_and_orchestra_1959_1_2_1959050878275738400.wav", UriKind.Relative));
             OpenPage();
             OKCommand = new RelayCommand(OKButton);
         }
@@ -37,18 +41,18 @@ namespace Game_of_the_YEAR.ViewModels
 
         public async void CountDownPoints()
         {
-            while (Points > 0)
+            while (TimePoints > 0)
             {
-                Points -= 43;
+                TimePoints -= 47;
                 await Task.Delay(1);
-                if ( CountDown == false)
+                if (CountDown == false)
                 {
                     break;
                 }
             }
-            if (Points < 0)
+            if (TimePoints < 0)
             {
-                Points = 0;
+                TimePoints = 0;
             }
         }
 
@@ -63,11 +67,11 @@ namespace Game_of_the_YEAR.ViewModels
 
         public async Task TypeClueSlower()
         {
-            string fullHint = "Långfredagsavtalet signerades mellan England och Irland detta år";
+            string fullHint = CurrentGame.Questions[CurrentGame.CurrentQuestion].Clues[0];
 
             foreach (var letter in fullHint)
             {
-                
+
                 Hint += char.ToUpper(letter);
                 await Task.Delay(30);
             }
@@ -79,7 +83,8 @@ namespace Game_of_the_YEAR.ViewModels
         public async void OpenPage()
         {
             await TypeClueSlower();
-            
+
+            mediaPlayer.Play();
             CountDownPoints();
         }
 
@@ -101,8 +106,16 @@ namespace Game_of_the_YEAR.ViewModels
             else
             {
                 StopCountDown();
+                CurrentGame.UserAnswer = Answer;
+                CurrentGame.TimePoints = TimePoints;
+                mediaPlayer.Stop();
+                GoToCheckAnswerPage();
             }
         }
-            
-    }
+        private MediaPlayer mediaPlayer = new MediaPlayer();
+
+
+
+    } 
+           
 }

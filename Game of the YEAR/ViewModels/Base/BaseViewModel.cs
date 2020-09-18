@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.ViewModels.Base
 {
-    class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
     }
+
+    
 }

@@ -7,7 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoadingPageOne">
-
+    <!--<UserControl Loaded="UserControl_Loaded">-->
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -30,7 +31,7 @@
                     <Label Content="GAME OF THE" Padding="0,60,0,0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" FontSize="60" FontFamily="{StaticResource PressStart2P}"/>
                     <Label Content="YEAR" Padding="0,0,0,0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="top" Foreground="White" FontSize="275" FontFamily="{StaticResource PressStart2P}"/>
                 </Grid>
-            </Viewbox>            
+            </Viewbox>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -51,5 +52,7 @@
                 <Label Content="© 2020 Copyright SUP Grupp 11" Padding="0,10,100,3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="White" FontSize="10" FontFamily="{StaticResource PressStart2P}"/>
             </Viewbox>
         </Grid>
+
     </Grid>
+    <!--</UserControl>-->
 </Page>

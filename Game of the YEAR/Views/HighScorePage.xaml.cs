@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace Game_of_the_YEAR.Views
 {
     /// <summary>
-    /// Interaction logic for GamePage.xaml
+    /// Interaction logic for HighScorePage.xaml
     /// </summary>
     public partial class HighScorePage : Page
     {

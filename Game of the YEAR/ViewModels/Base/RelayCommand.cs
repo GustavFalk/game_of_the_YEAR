@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace Game_of_the_YEAR
 {
-    class RelayCommand : ICommand
+    public class RelayCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
         private Action action;

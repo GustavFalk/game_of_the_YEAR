@@ -174,11 +174,34 @@ namespace Game_of_the_YEAR.Repositories
                 catch (PostgresException)
                 {
                     throw;
-                }
-               
+                }  
+            }            
+        }
 
+        public static List<Highscore> GetHighscores()
+        {
+
+            string stmt = "SELECT (player_id) FROM  player ORDER BY points DESC LIMIT 5";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+
+                List<Highscore> highscores = new List<Highscore>();
+                conn.Open();
+                using (var command = new NpgsqlCommand(stmt, conn))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Highscore highscore = new Highscore((string)reader["PlayerID"]);
+
+                            highscores.Add(highscore);
+                        }
+                    }
+                }
+                return highscores;
             }
-            
         }
         #endregion
         #region UPDATE

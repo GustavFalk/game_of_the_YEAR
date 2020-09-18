@@ -6,7 +6,7 @@ namespace Game_of_the_YEAR.Models
 {
     class Highscore
     {
-        public Player Player { get; set; }
+        public string Player { get; set; }
         public int Points { get; set; }
     }
 }

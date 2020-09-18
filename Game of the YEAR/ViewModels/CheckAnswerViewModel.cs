@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 using static Game_of_the_YEAR.Models.GameEngine;
 using Game_of_the_YEAR.Models;
+using static Game_of_the_YEAR.Repositories.DBRepo;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -66,7 +67,7 @@ namespace Game_of_the_YEAR.ViewModels
         public CheckAnswerViewModel()
         {
             AssignPropertyValues();
-            NextQuestionCommand = new RelayCommand(GoToGamePage);
+            NextQuestionCommand = new RelayCommand(NextQuestion);
             ShowOrder();
         }
 
@@ -163,6 +164,23 @@ namespace Game_of_the_YEAR.ViewModels
             TotalPoints = CurrentGame.TotalPoints;
             CalculateTotalPoints();
             CurrentGame.CurrentQuestion++;
+        }
+        public void CheckIfLastQuestion()
+        {
+            if (CurrentGame.Questions.Count > CurrentGame.CurrentQuestion)
+            {
+                GoToGamePage();
+            }
+            else
+            {
+                AddGameRoundToDB();
+                GoToHighScorePage();
+            }
+        }
+        public void NextQuestion()
+        {
+            mediaPlayer.Stop();
+            CheckIfLastQuestion();
         }
        
 

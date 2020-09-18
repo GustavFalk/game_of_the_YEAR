@@ -12,19 +12,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace Game_of_the_YEAR.Views
 {
     /// <summary>
-    /// Interaction logic for StartpagePage.xaml
+    /// Interaction logic for HighScorePage.xaml
     /// </summary>
-    public partial class StartpagePage : Page
+    public partial class HighScorePage : Page
     {
-        public StartpagePage()
+        HighScoreViewModel highScore = new HighScoreViewModel();
+        public HighScorePage()
         {
             InitializeComponent();
-            StartPageViewModel startPageViewModel = new StartPageViewModel();
-            DataContext = startPageViewModel;            
+            DataContext = highScore;
         }
     }
 }

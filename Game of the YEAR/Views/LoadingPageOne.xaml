@@ -3,7 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Game_of_the_YEAR.Views"
+      
+      xmlns:local="clr-namespace:Game_of_the_YEAR.Views.Drag_and_drop_objects"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoadingPageOne">
@@ -41,6 +42,12 @@
             </Grid.ColumnDefinitions>
             <Viewbox Grid.Column="1" Stretch="Uniform" VerticalAlignment="Center">
                 <Label x:Name="insertCoinLbl" Content="INSERT COIN" FontFamily="{StaticResource PressStart2P}" Foreground="#CAC8B1"/>
+            </Viewbox>
+            <Viewbox Grid.Column="0" Stretch="Uniform" VerticalAlignment="Center">
+            <local:Coin Margin="2"/>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Stretch="Uniform" VerticalAlignment="Center">
+                <local:CoinCompartment Margin="2"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="4"  Margin="0,0,0,0" >

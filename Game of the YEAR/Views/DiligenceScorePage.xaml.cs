@@ -19,7 +19,7 @@ namespace Game_of_the_YEAR.Views
     /// </summary>
     public partial class DiligenceScorePage : Page
     {
-        DiligenceScoreViewModel diligenceScore = new DiligenceScoreViewModel();
+        DiligenceScoreViewmodel diligenceScore = new DiligenceScoreViewmodel();
         public DiligenceScorePage()
         {
             InitializeComponent();

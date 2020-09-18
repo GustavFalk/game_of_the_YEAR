@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -19,6 +20,14 @@ namespace Game_of_the_YEAR.ViewModels.Base
             Page page = new Views.LoadingPageTwo();
             ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
         }
+
+        public static async void GoToLoadingPageTwoWithDelay()
+        {
+            await Task.Delay(2000);
+            Page page = new Views.LoadingPageTwo();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+        }
+
         public static void GoToStartpagePage()
         {
             Page page = new Views.StartpagePage();
@@ -59,6 +68,11 @@ namespace Game_of_the_YEAR.ViewModels.Base
             Page page = new Views.CheckAnswerPage();
             ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
         }
+        public static void GoToHighScorePage()
+        {
+            Page page = new Views.HighScorePage();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+        }
         #endregion
         #region Sound navigation
 
@@ -66,10 +80,19 @@ namespace Game_of_the_YEAR.ViewModels.Base
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).menuMusic.Play();
         }
+        public static async void PlayMenuMusicWithDelay()
+        {
+            await Task.Delay(2500);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).menuMusic.Play();
+        }
 
         public static void PauseMenuMusic()
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).menuMusic.Pause();
+        }
+        public static void PlayCoinDrop()
+        {
+            ((MainWindow)System.Windows.Application.Current.MainWindow).coinDrop.Play();
         }
 
         #endregion

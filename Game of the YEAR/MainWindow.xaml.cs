@@ -23,15 +23,16 @@ namespace Game_of_the_YEAR
     /// </summary>
     public partial class MainWindow : Window
     {
-        Page page = new Views.CreateUserPage();
+        Page page = new Views.LoadingPageOne();
         public MediaPlayer menuMusic = new MediaPlayer();
+        public MediaPlayer coinDrop = new MediaPlayer();
 
         public MainWindow()
         {
             InitializeComponent();
             Main.Content = page;
-            menuMusic.Open(new Uri(@".\Assets\Sound\455017__annoyedcactus__8bit-music-for-game.wav", UriKind.Relative));         
-
+            menuMusic.Open(new Uri(@".\Assets\Sound\455017__annoyedcactus__8bit-music-for-game.wav", UriKind.Relative));
+            coinDrop.Open(new Uri(@".\Assets\Sound\coindrop.wav", UriKind.Relative));
         }       
     }
 }

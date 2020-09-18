@@ -35,6 +35,30 @@ namespace Game_of_the_YEAR.Repositories
             }
            
         }
+        public static void AddGameRoundToDB()
+        {
+            string stmt = "INSERT INTO game_round (points, player_id) VALUES (@points, @player_id) ";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+
+                conn.Open();
+                try
+                {
+                    using (var command = new NpgsqlCommand(stmt, conn))
+                    {
+                        command.Parameters.AddWithValue("player_id", CurrentGame.CurrentPlayer.PlayerID);
+                        command.Parameters.AddWithValue("points", CurrentGame.TotalPoints);
+                        command.ExecuteNonQuery();
+                    }
+
+                }
+                catch (PostgresException)
+                {
+                    throw;
+                }
+            }
+
+        }
         #endregion
         #region READ
         public static List<Question> GetQuestions()
@@ -120,7 +144,7 @@ namespace Game_of_the_YEAR.Repositories
         //}
         public static Player GetPlayerFromDB(string email)
         {
-            string stmt = "SELECT e_mail, nickname FROM player WHERE e_mail=@email";
+            string stmt = "SELECT player_id, e_mail, nickname FROM player WHERE e_mail=@email";
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 Player player = null;
@@ -137,6 +161,7 @@ namespace Game_of_the_YEAR.Repositories
                             {
                                 player = new Player
                                 {
+                                    PlayerID = (int)reader["player_id"],
                                     Email = email,
                                     Nickname = (string)reader["nickname"]
                                 };

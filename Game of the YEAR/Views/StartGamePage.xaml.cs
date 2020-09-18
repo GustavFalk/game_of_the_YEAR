@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.Views
 {
@@ -24,6 +25,11 @@ namespace Game_of_the_YEAR.Views
             InitializeComponent();
             StartGameViewModel startGameViewModel = new StartGameViewModel();
             DataContext = startGameViewModel;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            GoToLoadingPageTwo(); //kan den få veta från vilken sida man kom? Då både ny spelare och befintlig spelare leder hit?
         }
     }
 }

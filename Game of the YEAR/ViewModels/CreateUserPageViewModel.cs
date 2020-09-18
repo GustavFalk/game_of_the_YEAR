@@ -102,6 +102,7 @@ namespace Game_of_the_YEAR.ViewModels
         public string Value3 { get; set; }   
         public string ErrorLbl { get; set; }
         public ICommand CreateUserBtn { get; set; }
+
         #endregion
 
         public CreateUserPageViewModel() 

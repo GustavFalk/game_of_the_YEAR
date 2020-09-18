@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 using static Game_of_the_YEAR.Models.GameEngine;
 using Game_of_the_YEAR.Models;
+using static Game_of_the_YEAR.Repositories.DBRepo;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -172,6 +173,7 @@ namespace Game_of_the_YEAR.ViewModels
             }
             else
             {
+                AddGameRoundToDB();
                 GoToHighScorePage();
             }
         }

@@ -1,10 +1,13 @@
-﻿using Game_of_the_YEAR;
+﻿using Game_of_the_YEAR.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
+using System.Windows.Controls;
 using System.Windows.Input;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
+using static Game_of_the_YEAR.Repositories.DBRepo;
+using Npgsql;
+using System.Linq.Expressions;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -34,6 +37,11 @@ namespace Game_of_the_YEAR.ViewModels
             HighScore3Points = "71993";
             HighScore4Points = "58448";
             HighScore5Points = "22291";
+
+        }
+
+        public void GetHighScores()
+        {
 
         }
 

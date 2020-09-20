@@ -181,7 +181,7 @@ namespace Game_of_the_YEAR.Repositories
         public static List<Highscore> GetHighscores()
         {
 
-            string stmt = "SELECT (player_id) FROM  player ORDER BY points DESC LIMIT 5";
+            string stmt = "SELECT (points) FROM  game_round ORDER BY points DESC LIMIT 5";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {

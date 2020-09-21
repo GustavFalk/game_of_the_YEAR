@@ -34,11 +34,11 @@ namespace Game_of_the_YEAR.ViewModels
             DiligenceScore3Player = $"{diligenceScores[2].PlayerNickName}";
             DiligenceScore4Player = $"{diligenceScores[3].PlayerNickName}";
             DiligenceScore5Player = $"{diligenceScores[4].PlayerNickName}";
-            DiligenceScore1Rounds = $"8877";
-            DiligenceScore2Rounds = "88";
-            DiligenceScore3Rounds = "86";
-            DiligenceScore4Rounds = "65";
-            DiligenceScore5Rounds = "4";
+            DiligenceScore1Rounds = $"{diligenceScores[0].GameRounds}";
+            DiligenceScore2Rounds = $"{diligenceScores[1].GameRounds}";
+            DiligenceScore3Rounds = $"{diligenceScores[2].GameRounds}";
+            DiligenceScore4Rounds = $"{diligenceScores[3].GameRounds}";
+            DiligenceScore5Rounds = $"{diligenceScores[4].GameRounds}";
 
         }
 

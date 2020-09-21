@@ -140,8 +140,11 @@
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Fill" >
-                <Button  Content="GET HIGH SCORES" Command="{Binding ButtonCommand}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
+            <Viewbox Grid.Row="1" Grid.Column="0" Stretch="Fill" >
+                <Button  Content="FLITIGHETSTOPP" Command="{Binding ButtonCommand}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
+            </Viewbox>
+            <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Fill" >
+                <Button  Content="NYTT SPEL" Command="{Binding ButtonCommand}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
             </Viewbox>
         </Grid>
     </Grid>

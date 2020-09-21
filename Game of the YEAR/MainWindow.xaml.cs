@@ -23,7 +23,7 @@ namespace Game_of_the_YEAR
     /// </summary>
     public partial class MainWindow : Window
     {
-        Page page = new Views.LoadingPageOne(); //LoadingPageOne();
+        Page page = new Views.DiligenceScorePage(); //LoadingPageOne();
         public MediaPlayer menuMusic = new MediaPlayer();
         public MediaPlayer coinDrop = new MediaPlayer();
 

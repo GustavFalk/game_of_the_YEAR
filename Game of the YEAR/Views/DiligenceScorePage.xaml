@@ -128,10 +128,10 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Viewbox Grid.Row="1" Grid.Column="0" Stretch="Fill" >
-                <Button  Content="TOPPLISTA" Command="{Binding ButtonCommand}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
+                <Button  Content="TOPPLISTA" Command="{Binding HighScorePageBTN}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
             </Viewbox>
             <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Fill" >
-                <Button  Content="NYTT SPEL" Command="{Binding ButtonCommand}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
+                <Button  Content="NYTT SPEL" Command="{Binding NewGameBTN}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
             </Viewbox>
         </Grid>
     </Grid>

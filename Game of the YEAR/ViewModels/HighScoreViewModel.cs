@@ -23,7 +23,8 @@ namespace Game_of_the_YEAR.ViewModels
         public string HighScore3Points { get; set; }
         public string HighScore4Points { get; set; }
         public string HighScore5Points { get; set; }
-        public ICommand DiligenceScoreBTN { get; set; }
+        public ICommand DiligenceScorePageBTN { get; set; }
+        public ICommand NewGameBTN { get; set; }
 
         List<Highscore> highscores = new List<Highscore>();
 
@@ -46,7 +47,8 @@ namespace Game_of_the_YEAR.ViewModels
         {
             highscores = GetHighscores();
             InputToOutput();
-            DiligenceScoreBTN = new RelayCommand(InputToOutput);
+            DiligenceScorePageBTN = new RelayCommand(GoToDiligenceScorePage);
+            NewGameBTN = new RelayCommand(GoToLoadingPageOne);
         }
     }
 }

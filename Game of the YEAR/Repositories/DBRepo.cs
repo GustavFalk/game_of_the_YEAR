@@ -179,8 +179,7 @@ namespace Game_of_the_YEAR.Repositories
         }
 
         public static List<Highscore> GetHighscores()
-        {
-            //"SELECT clues_text FROM clues INNER JOIN the_year ON the_year.the_year_id=clues.the_year_id WHERE the_year.the_year= @year ORDER BY RANDOM()";
+        {            
             string stmt = "SELECT points, nickname FROM  game_round INNER JOIN player ON player.player_id=game_round.player_id ORDER BY points DESC LIMIT 5";
 
             using (var conn = new NpgsqlConnection(connectionString))
@@ -205,6 +204,35 @@ namespace Game_of_the_YEAR.Repositories
                     }
                 }
                 return highscores;
+            }
+        }
+
+        public static List<DiligenceScore> GetDiligenceScores()
+        {            
+            string stmt = "SELECT game_rounds, nickname FROM  game_round INNER JOIN player ON player.player_id=game_round.player_id ORDER BY points DESC LIMIT 5";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+
+                List<DiligenceScore> diligenceScores = new List<DiligenceScore>();
+                conn.Open();
+                using (var command = new NpgsqlCommand(stmt, conn))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DiligenceScore diligenceScore = new DiligenceScore()
+                            {
+                                PlayerNickName = (string)reader["nickname"],
+                                GameRounds = (int)reader["game_rounds"]
+                            };
+
+                            diligenceScores.Add(diligenceScore);
+                        }
+                    }
+                }
+                return diligenceScores;
             }
         }
         #endregion

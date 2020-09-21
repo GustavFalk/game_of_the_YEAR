@@ -29,11 +29,11 @@ namespace Game_of_the_YEAR.ViewModels
 
         public void InputToOutput()
         {
-            HighScore1Player = "NVM";
-            HighScore2Player = "BOB";
-            HighScore3Player = "SUD";
-            HighScore4Player = "LOL";
-            HighScore5Player = "BRU";
+            HighScore1Player = $"{highscores[0].PlayerNickName}";
+            HighScore2Player = $"{highscores[1].PlayerNickName}";
+            HighScore3Player = $"{highscores[2].PlayerNickName}";
+            HighScore4Player = $"{highscores[3].PlayerNickName}";
+            HighScore5Player = $"{highscores[4].PlayerNickName}";
             HighScore1Points = $"{highscores[0].Points}";
             HighScore2Points = $"{highscores[1].Points}";
             HighScore3Points = $"{highscores[2].Points}";

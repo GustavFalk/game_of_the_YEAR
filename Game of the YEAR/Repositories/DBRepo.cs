@@ -180,8 +180,8 @@ namespace Game_of_the_YEAR.Repositories
 
         public static List<Highscore> GetHighscores()
         {
-
-            string stmt = "SELECT (points) FROM  game_round ORDER BY points DESC LIMIT 5";
+            //"SELECT clues_text FROM clues INNER JOIN the_year ON the_year.the_year_id=clues.the_year_id WHERE the_year.the_year= @year ORDER BY RANDOM()";
+            string stmt = "SELECT points, nickname FROM  game_round INNER JOIN player ON player.player_id=game_round.player_id ORDER BY points DESC LIMIT 5";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
@@ -196,7 +196,7 @@ namespace Game_of_the_YEAR.Repositories
                         {
                             Highscore highscore = new Highscore()
                             {
-                                
+                                PlayerNickName = (string)reader["nickname"],
                                 Points = (int)reader["points"]
                             };
 

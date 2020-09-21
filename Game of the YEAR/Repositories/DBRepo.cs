@@ -209,7 +209,7 @@ namespace Game_of_the_YEAR.Repositories
 
         public static List<DiligenceScore> GetDiligenceScores()
         {            
-            string stmt = "SELECT game_rounds, nickname FROM  game_round INNER JOIN player ON player.player_id=game_round.player_id ORDER BY points DESC LIMIT 5";
+            string stmt = "SELECT COUNT(game_round.player_id) AS antal_rundor, player.nickname FROM game_round INNER JOIN player ON game_round.player_id = player.player_id GROUP BY player.nickname ORDER BY antal_rundor DESC LIMIT 5";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
@@ -224,8 +224,8 @@ namespace Game_of_the_YEAR.Repositories
                         {
                             DiligenceScore diligenceScore = new DiligenceScore()
                             {
-                                PlayerNickName = (string)reader["nickname"],
-                                GameRounds = (int)reader["game_rounds"]
+                                PlayerNickName = (string)reader["player.nickname"],
+                                GameRounds = (int)reader["antal_rundor"]
                             };
 
                             diligenceScores.Add(diligenceScore);

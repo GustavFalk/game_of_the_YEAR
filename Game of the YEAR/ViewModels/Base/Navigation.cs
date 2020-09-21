@@ -73,6 +73,12 @@ namespace Game_of_the_YEAR.ViewModels.Base
             Page page = new Views.HighScorePage();
             ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
         }
+        public static void GoToDiligenceScorePage()
+        {
+            Page page = new Views.DiligenceScorePage();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+        }
+
         #endregion
         #region Sound navigation
 

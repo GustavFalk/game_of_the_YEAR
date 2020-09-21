@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Game_of_the_YEAR.Models
 {
-    class DiligenceScore
+    public class DiligenceScore
     {
 
         public string PlayerNickName { get; set; }

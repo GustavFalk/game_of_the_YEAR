@@ -224,8 +224,8 @@ namespace Game_of_the_YEAR.Repositories
                         {
                             DiligenceScore diligenceScore = new DiligenceScore()
                             {
-                                PlayerNickName = (string)reader["player.nickname"],
-                                GameRounds = (int)reader["antal_rundor"]
+                                PlayerNickName = (string)reader["nickname"],
+                                GameRounds = (int)(long)reader["antal_rundor"]
                             };
 
                             diligenceScores.Add(diligenceScore);

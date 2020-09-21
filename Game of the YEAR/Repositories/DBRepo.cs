@@ -194,7 +194,11 @@ namespace Game_of_the_YEAR.Repositories
                     {
                         while (reader.Read())
                         {
-                            Highscore highscore = new Highscore((string)reader["PlayerID"]);
+                            Highscore highscore = new Highscore()
+                            {
+                                
+                                Points = (int)reader["points"]
+                            };
 
                             highscores.Add(highscore);
                         }

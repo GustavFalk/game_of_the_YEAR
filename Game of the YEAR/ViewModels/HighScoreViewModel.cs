@@ -25,6 +25,8 @@ namespace Game_of_the_YEAR.ViewModels
         public string HighScore5Points { get; set; }
         public ICommand ButtonCommand { get; set; }
 
+        List<Highscore> highscores = new List<Highscore>();
+
         public void InputToOutput()
         {
             HighScore1Player = "NVM";
@@ -32,21 +34,18 @@ namespace Game_of_the_YEAR.ViewModels
             HighScore3Player = "SUD";
             HighScore4Player = "LOL";
             HighScore5Player = "BRU";
-            HighScore1Points = "98992";
-            HighScore2Points = "77948";
-            HighScore3Points = "71993";
-            HighScore4Points = "58448";
-            HighScore5Points = "22291";
-
-        }
-
-        public void GetHighScores()
-        {
+            HighScore1Points = $"{highscores[0].Points}";
+            HighScore2Points = $"{highscores[1].Points}";
+            HighScore3Points = $"{highscores[2].Points}";
+            HighScore4Points = $"{highscores[3].Points}";
+            HighScore5Points = $"{highscores[4].Points}";
 
         }
 
         public HighScoreViewModel()
         {
+            highscores = GetHighscores();
+            InputToOutput();
             ButtonCommand = new RelayCommand(InputToOutput);
         }
     }

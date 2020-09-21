@@ -97,8 +97,11 @@
             <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityDifferance}">
                 <Label Content="=" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
             </Viewbox>
-            <Viewbox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityDifferance}">
+            <Viewbox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityDifferance}" Margin="0,0,100,0">
                 <Label Content="{Binding DifferanceAnswers}" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
+            </Viewbox>
+            <Viewbox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Stretch="Uniform" Visibility="{Binding VisibilityDifferance}" Margin="0,0,23,0">
+                <Label Content="X 1000" FontFamily="{StaticResource PressStart2P}" Foreground="White" />
             </Viewbox>
             <Viewbox Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" Visibility="{Binding VisibilityDeduction}">
                 <Label Content="AVDRAG" FontFamily="{StaticResource PressStart2P}" Foreground="White" />

@@ -90,12 +90,12 @@ namespace Game_of_the_YEAR.ViewModels
             if (clueIndex == 0 && TimePoints < 68000)
             {
                 clueIndex++;
-                TypeClueSlower(clueIndex);
+                _ = TypeClueSlower(clueIndex);
             }
             else if (clueIndex == 1 && TimePoints < 35000)
             {
                 clueIndex++;
-                TypeClueSlower(clueIndex);
+                _ =TypeClueSlower(clueIndex);
             }
         }
 

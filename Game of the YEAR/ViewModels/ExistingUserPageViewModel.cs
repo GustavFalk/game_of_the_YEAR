@@ -66,7 +66,7 @@ namespace Game_of_the_YEAR.ViewModels
             }
            else
             {
-                ErrorLbl = "Vi hittar inte din e-postadress";
+                ErrorLbl = "E-mail adressen du angett är inte gilitg.";
             }
           
         }

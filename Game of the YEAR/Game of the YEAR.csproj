@@ -11,6 +11,8 @@
     <None Remove="Assets\Fonts\PressStart2P-vaV7.ttf" />
     <None Remove="Assets\Images\BackgroundBlixt_Test_Black.png" />
     <None Remove="Assets\Images\BackgroundBlixt_Test_white.png" />
+    <None Remove="Assets\Images\icons8-low-volume-50.png" />
+    <None Remove="Assets\Images\icons8-low-volume-off.png" />
     <None Remove="Assets\Sound\194182__theatomicbrain__high-score-fill-descending-faster.wav" />
     <None Remove="Assets\Sound\320181__dland__hint.wav" />
     <None Remove="Assets\Sound\455017__annoyedcactus__8bit-music-for-game.wav" />
@@ -64,6 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\BackgroundBlixt_Test.png" />
+    <Resource Include="Assets\Images\icons8-low-volume-50.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\icons8-low-volume-off.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

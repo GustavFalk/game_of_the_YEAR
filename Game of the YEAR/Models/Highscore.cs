@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Game_of_the_YEAR.Models
 {
-    class Highscore
+    public class Highscore
     {
-        public Player Player { get; set; }
+        public string PlayerNickName { get; set; }
         public int Points { get; set; }
+
+
     }
 }

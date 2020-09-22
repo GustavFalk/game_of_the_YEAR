@@ -15,15 +15,15 @@ using System.Windows.Shapes;
 namespace Game_of_the_YEAR.Views
 {
     /// <summary>
-    /// Interaction logic for DiligenceScorePage.xaml
+    /// Interaction logic for HighScorePage.xaml
     /// </summary>
-    public partial class DiligenceScorePage : Page
+    public partial class HighScorePage : Page
     {
-        DiligenceScoreViewmodel diligenceScore = new DiligenceScoreViewmodel();
-        public DiligenceScorePage()
+        HighScoreViewModel highScore = new HighScoreViewModel();
+        public HighScorePage()
         {
             InitializeComponent();
-            DataContext = diligenceScore;
+            DataContext = highScore;
         }
     }
 }

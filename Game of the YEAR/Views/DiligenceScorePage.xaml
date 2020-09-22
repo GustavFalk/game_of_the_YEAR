@@ -26,13 +26,13 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="0,0,40,0" >
-                <Label Content="GAME OF THE YEAR" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="{StaticResource PressStart2P}" />
+                <Label Content="GAME OF THE YEAR" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"  Foreground="White" FontFamily="{StaticResource PressStart2P}" />
             </Viewbox>
 
         </Grid>
         <Grid Grid.Row="1">
             <Viewbox Grid.Column="0" Stretch="Uniform">
-                <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Content="DILIGENCE SCORE!!!:" FontFamily="{StaticResource PressStart2P}" FontSize="30"/>
+                <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Content="FLITIGHETSLISTA" Foreground="White" FontFamily="{StaticResource PressStart2P}" FontSize="30"/>
             </Viewbox>
         </Grid>
 
@@ -43,13 +43,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
-                <Label Content="{Binding DiligenceScore1Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="{Binding DiligenceScore1Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
-                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                <Label Content="{Binding DiligenceScore1Rounds}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                <Label Content="{Binding DiligenceScore1Rounds}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" Foreground="White" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="3">
@@ -59,13 +59,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
-                <Label Content="{Binding DiligenceScore2Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="{Binding DiligenceScore2Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
-                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                <Label Content="{Binding DiligenceScore2Rounds}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                <Label Content="{Binding DiligenceScore2Rounds}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" Foreground="White" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="4">
@@ -75,13 +75,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
-                <Label Content="{Binding DiligenceScore3Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="{Binding DiligenceScore3Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
-                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                <Label Content="{Binding DiligenceScore3Rounds}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                <Label Content="{Binding DiligenceScore3Rounds}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" Foreground="White" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="5">
@@ -91,13 +91,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
-                <Label Content="{Binding DiligenceScore4Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="{Binding DiligenceScore4Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
-                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                <Label Content="{Binding DiligenceScore4Rounds}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                <Label Content="{Binding DiligenceScore4Rounds}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" Foreground="White" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="6">
@@ -107,13 +107,13 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Stretch="Uniform" Grid.Column="0" Margin="10,0,0,0">
-                <Label Content="{Binding DiligenceScore5Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="{Binding DiligenceScore5Player}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="1" Margin="10,0,0,0">
-                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
+                <Label Content="Spelrundor:" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" FontFamily="{StaticResource PressStart2P}"  FontSize="24"/>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Column="2" Margin="5">
-                <Label Content="{Binding DiligenceScore5Rounds}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
+                <Label Content="{Binding DiligenceScore5Rounds}" Grid.Column="2"  HorizontalAlignment="Right" FontSize="24" Foreground="White" FontFamily="{StaticResource PressStart2P}" VerticalAlignment="Center" Margin="10,0,10,0"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="7">
@@ -127,8 +127,11 @@
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Viewbox Grid.Row="1" Grid.Column="1" Stretch="Fill" >
-                <Button  Content="NEW GAME" Command="{Binding ButtonCommand}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
+            <Viewbox Grid.Row="1" Grid.Column="0" Stretch="Fill" >
+                <Button  Content="TOPPLISTA" Command="{Binding HighScorePageBTN}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
+            </Viewbox>
+            <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Fill" >
+                <Button  Content="NYTT SPEL" Command="{Binding NewGameBTN}" FontFamily="{StaticResource PressStart2P}" FontSize="30" Padding="40,10,40,10" />
             </Viewbox>
         </Grid>
     </Grid>

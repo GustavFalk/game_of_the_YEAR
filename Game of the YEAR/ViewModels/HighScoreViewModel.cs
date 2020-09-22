@@ -1,10 +1,13 @@
-﻿using Game_of_the_YEAR;
+﻿using Game_of_the_YEAR.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
+using System.Windows.Controls;
 using System.Windows.Input;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
+using static Game_of_the_YEAR.Repositories.DBRepo;
+using Npgsql;
+using System.Linq.Expressions;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -20,26 +23,32 @@ namespace Game_of_the_YEAR.ViewModels
         public string HighScore3Points { get; set; }
         public string HighScore4Points { get; set; }
         public string HighScore5Points { get; set; }
-        public ICommand ButtonCommand { get; set; }
+        public ICommand DiligenceScorePageBTN { get; set; }
+        public ICommand NewGameBTN { get; set; }
+
+        List<Highscore> highscores = new List<Highscore>();
 
         public void InputToOutput()
         {
-            HighScore1Player = "NVM";
-            HighScore2Player = "BOB";
-            HighScore3Player = "SUD";
-            HighScore4Player = "LOL";
-            HighScore5Player = "BRU";
-            HighScore1Points = "98992";
-            HighScore2Points = "77948";
-            HighScore3Points = "71993";
-            HighScore4Points = "58448";
-            HighScore5Points = "22291";
+            HighScore1Player = $"{highscores[0].PlayerNickName}";
+            HighScore2Player = $"{highscores[1].PlayerNickName}";
+            HighScore3Player = $"{highscores[2].PlayerNickName}";
+            HighScore4Player = $"{highscores[3].PlayerNickName}";
+            HighScore5Player = $"{highscores[4].PlayerNickName}";
+            HighScore1Points = $"{highscores[0].Points}";
+            HighScore2Points = $"{highscores[1].Points}";
+            HighScore3Points = $"{highscores[2].Points}";
+            HighScore4Points = $"{highscores[3].Points}";
+            HighScore5Points = $"{highscores[4].Points}";
 
         }
 
         public HighScoreViewModel()
         {
-            ButtonCommand = new RelayCommand(InputToOutput);
+            highscores = GetHighscores();
+            InputToOutput();
+            DiligenceScorePageBTN = new RelayCommand(GoToDiligenceScorePage);
+            NewGameBTN = new RelayCommand(GoToLoadingPageOne);
         }
     }
 }

@@ -146,11 +146,66 @@ namespace Game_of_the_YEAR.Repositories
                 catch (PostgresException)
                 {
                     throw;
-                }
-               
+                }  
+            }            
+        }
 
+        public static List<Highscore> GetHighscores()
+        {            
+            string stmt = "SELECT points, nickname FROM  game_round INNER JOIN player ON player.player_id=game_round.player_id ORDER BY points DESC LIMIT 5";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+
+                List<Highscore> highscores = new List<Highscore>();
+                conn.Open();
+                using (var command = new NpgsqlCommand(stmt, conn))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Highscore highscore = new Highscore()
+                            {
+                                PlayerNickName = (string)reader["nickname"],
+                                Points = (int)reader["points"]
+                            };
+
+                            highscores.Add(highscore);
+                        }
+                    }
+                }
+                return highscores;
             }
-            
+        }
+
+        public static List<DiligenceScore> GetDiligenceScores()
+        {            
+            string stmt = "SELECT COUNT(game_round.player_id) AS antal_rundor, player.nickname FROM game_round INNER JOIN player ON game_round.player_id = player.player_id GROUP BY player.nickname ORDER BY antal_rundor DESC LIMIT 5";
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+
+                List<DiligenceScore> diligenceScores = new List<DiligenceScore>();
+                conn.Open();
+                using (var command = new NpgsqlCommand(stmt, conn))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DiligenceScore diligenceScore = new DiligenceScore()
+                            {
+                                PlayerNickName = (string)reader["nickname"],
+                                GameRounds = (int)(long)reader["antal_rundor"]
+                            };
+
+                            diligenceScores.Add(diligenceScore);
+                        }
+                    }
+                }
+                return diligenceScores;
+            }
         }
         #endregion
         #region UPDATE

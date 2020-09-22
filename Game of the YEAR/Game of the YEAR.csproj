@@ -11,6 +11,8 @@
     <None Remove="Assets\Fonts\PressStart2P-vaV7.ttf" />
     <None Remove="Assets\Images\BackgroundBlixt_Test_Black.png" />
     <None Remove="Assets\Images\BackgroundBlixt_Test_white.png" />
+    <None Remove="Assets\Images\icons8-low-volume-50.png" />
+    <None Remove="Assets\Images\icons8-low-volume-off.png" />
     <None Remove="Assets\Sound\321go.mp3" />
     <None Remove="Assets\Sound\bipbopsound.wav" />
     <None Remove="Assets\Sound\coindrop.wav" />
@@ -28,6 +30,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Images\BackgroundBlixt_Test_white.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\icons8-low-volume-50.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\icons8-low-volume-off.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Sound\pointcountdown.wav">

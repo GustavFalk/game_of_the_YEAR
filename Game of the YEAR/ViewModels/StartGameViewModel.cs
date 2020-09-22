@@ -16,8 +16,8 @@ namespace Game_of_the_YEAR.ViewModels
 
         public void StartGame()
         {
-            PauseMediaPlayerMusic();
-            LoadNewSound("321go.mp3");
+            MediaPlayerPause();
+            MediaPlayerLoad("321go.mp3");
             GoToStartGameCountdownPage();
         }
         public StartGameViewModel()

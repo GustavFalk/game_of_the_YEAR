@@ -23,7 +23,7 @@ namespace Game_of_the_YEAR
     /// </summary>
     public partial class MainWindow : Window
     {
-        Page page = new Views.HighScorePage();
+        Page page = new Views.LoadingPageTwo();
         public MediaPlayer mediaPlayer = new MediaPlayer();
         
 
@@ -31,7 +31,8 @@ namespace Game_of_the_YEAR
         {
             InitializeComponent();
             Main.Content = page;
-            
+            MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
+            DataContext = mainWindowViewModel;
         }       
     }
 }

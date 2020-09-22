@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game_of_the_YEAR.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,15 @@ namespace Game_of_the_YEAR.ViewModels.Base
         }
         public static void GoToStartGamePage()
         {
+            Page page = new Views.StartGamePage();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+        }
+        public static void PlayedGameGoToStartGamePage()
+        {
+            CurrentGame.TotalPoints = 0;
+            CurrentGame.Questions = null;
+            CurrentGame.CurrentQuestion = 0;
+            CurrentGame.TimePoints = 0;
             Page page = new Views.StartGamePage();
             ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
         }

@@ -31,7 +31,8 @@ namespace Game_of_the_YEAR
         {
             InitializeComponent();
             Main.Content = page;
-            
+            MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
+            DataContext = mainWindowViewModel;
         }       
     }
 }

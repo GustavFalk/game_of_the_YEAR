@@ -20,13 +20,7 @@ namespace Game_of_the_YEAR
 
         public MainWindowViewModel()
         {
-            MuteCommand = new RelayCommand(ChangeMute);
-            
-        }
-
-        public void Amount()
-        {
-           
+            MuteCommand = new RelayCommand(ChangeMute);            
         }
 
         public void ChangeMute()

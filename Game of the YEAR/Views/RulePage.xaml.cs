@@ -42,9 +42,9 @@ namespace Game_of_the_YEAR.Views
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            GoToStartGamePage();
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    GoToStartGamePage();
+        //}
     }
 }

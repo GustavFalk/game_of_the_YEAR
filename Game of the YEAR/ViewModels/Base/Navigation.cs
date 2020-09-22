@@ -95,6 +95,12 @@ namespace Game_of_the_YEAR.ViewModels.Base
             ((MainWindow)System.Windows.Application.Current.MainWindow).coinDrop.Play();
         }
 
+        public static void MuteMusic()
+        {
+            ((MainWindow)System.Windows.Application.Current.MainWindow).menuMusic.Volume=0; //menuMusic är gustavs spelare
+            ((MainWindow)System.Windows.Application.Current.MainWindow).coinDrop.Volume=0;
+        }
+
         #endregion
     }
 }

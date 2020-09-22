@@ -26,6 +26,8 @@ namespace Game_of_the_YEAR
         Page page = new Views.LoadingPageOne();
         public MediaPlayer menuMusic = new MediaPlayer();
         public MediaPlayer coinDrop = new MediaPlayer();
+        MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
+        
 
         public MainWindow()
         {
@@ -33,6 +35,16 @@ namespace Game_of_the_YEAR
             Main.Content = page;
             menuMusic.Open(new Uri(@".\Assets\Sound\455017__annoyedcactus__8bit-music-for-game.wav", UriKind.Relative));
             coinDrop.Open(new Uri(@".\Assets\Sound\coindrop.wav", UriKind.Relative));
-        }       
+            DataContext = mainWindowViewModel;
+            
+        }
+
+
+      
+
+
+
+
+
     }
 }

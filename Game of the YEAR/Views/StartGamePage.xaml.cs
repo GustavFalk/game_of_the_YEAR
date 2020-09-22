@@ -29,7 +29,7 @@ namespace Game_of_the_YEAR.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            GoToLoadingPageTwo(); //kan den få veta från vilken sida man kom? Då både ny spelare och befintlig spelare leder hit?
+            GoToLoadingPageOne(); 
         }
     }
 }

@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Game_of_the_YEAR"
+       
+        
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -11,9 +12,30 @@
             <ImageBrush ImageSource="/Assets/Images/BackgroundBlixt_Test.png" />
 
         </Grid.Background>
-        <Frame x:Name="Main" NavigationUIVisibility="Hidden" >
-            
+        <!--<Grid>
+            --><!--<Viewbox Stretch="Uniform" Height="25" Width="25" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <local:MuteControl/>
+            </Viewbox>--><!--
+        </Grid>-->
+
+
+
+
+
+
+
+
+
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden">
+
         </Frame>
+        <Viewbox Stretch="Uniform" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button x:Name="MuteBtn" Background="Transparent" BorderThickness="0" Command="{Binding MuteCommand}" Margin="700,0,0,0">
+                <Image x:Name="VolumeOn" Source="{Binding MuteImage}"/>
+            </Button>                      
+        </Viewbox>
+           
         
+
     </Grid>
 </Window>

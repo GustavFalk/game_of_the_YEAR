@@ -6,6 +6,7 @@ using System.Windows.Media;
 using Game_of_the_YEAR.Models;
 using static Game_of_the_YEAR.Repositories.DBRepo;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
+using static Game_of_the_YEAR.ViewModels.Base.Soundengine;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -29,10 +30,9 @@ namespace Game_of_the_YEAR.ViewModels
         }
         public async void StartUpPage()
         {
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            mediaPlayer.Open(new Uri(@".\Assets\Sound\Mario_Kart_Race_Start_-_Gaming_Sound_Effect.mp3", UriKind.Relative));
+            MediaPlayerLoad("321go.mp3");
             await Task.Delay(1000);
-            mediaPlayer.Play();
+            MediaPlayerPlay();
             await StartCountdown();
             await Task.Delay(1500);
             GoToGamePage();

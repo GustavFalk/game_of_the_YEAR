@@ -10,6 +10,7 @@ using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 using static Game_of_the_YEAR.Models.GameEngine;
 using Game_of_the_YEAR.Models;
 using static Game_of_the_YEAR.Repositories.DBRepo;
+using static Game_of_the_YEAR.ViewModels.Base.Soundengine;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -50,18 +51,6 @@ namespace Game_of_the_YEAR.ViewModels
 
         #endregion
 
-        #region Media Player
-
-        MediaPlayer mediaPlayer = new MediaPlayer();
-
-        public void PlaySoundFromZero()
-        {
-            mediaPlayer.Position = TimeSpan.Zero;
-            mediaPlayer.Play();
-        }
-
-        #endregion
-
         #region Constructor
 
         public CheckAnswerViewModel()
@@ -77,9 +66,9 @@ namespace Game_of_the_YEAR.ViewModels
 
         public async void ShowOrder()
         {
-            mediaPlayer.Open(new Uri(@".\Assets\Sound\320181__dland__hint.wav", UriKind.Relative));
+            MediaPlayerLoad("bipbopsound.wav");
             await Task.Delay(1000);
-            mediaPlayer.Play();
+            MediaPlayerPlay();
             VisibilityUserAnswer = Visibility.Visible;
             await Task.Delay(1000);
             await FlashLightning(); 
@@ -87,21 +76,21 @@ namespace Game_of_the_YEAR.ViewModels
             await Task.Delay(4000);
             VisibilityFirstView = Visibility.Hidden;
             VisibilitySecondView = Visibility.Visible;
+            MediaPlayerLoad("bipbopsound.wav");
             await Task.Delay(500);
-            mediaPlayer.Open(new Uri(@".\Assets\Sound\320181__dland__hint.wav", UriKind.Relative));
-            mediaPlayer.Play();
+            MediaPlayerPlay();
             VisibilityTimePoints = Visibility.Visible;
             await Task.Delay(500);
-            PlaySoundFromZero();
+            MediaPlayerPlayFromZero();
             VisibilityDifferance = Visibility.Visible;
             await Task.Delay(500);
-            PlaySoundFromZero();
+            MediaPlayerPlayFromZero();
             VisibilityDeduction = Visibility.Visible;
             await Task.Delay(500);
-            PlaySoundFromZero();
+            MediaPlayerPlayFromZero();
             VisibilityPointsGained = Visibility.Visible;
             await Task.Delay(500);
-            PlaySoundFromZero();
+            MediaPlayerPlayFromZero();
             VisibilityTotalPoints = Visibility.Visible;
             VisibilityNextQuestion = Visibility.Visible;
             await Task.Delay(500);
@@ -111,9 +100,8 @@ namespace Game_of_the_YEAR.ViewModels
 
         public async Task FlashLightning()
         {
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            mediaPlayer.Open(new Uri(@".\Assets\Sound\donnerre2.mp3", UriKind.Relative));
-            mediaPlayer.Play();
+            MediaPlayerLoad("lightning.mp3");
+            MediaPlayerPlay();
             for (int i = 0; i < 3; i++)
             {
                 BackgroundImage = new BitmapImage(new Uri(@".\Assets\Images\BackgroundBlixt_Test_Black.png", UriKind.Relative));
@@ -127,8 +115,8 @@ namespace Game_of_the_YEAR.ViewModels
 
         public async void ConvertToTotalPoints()
         {
-            mediaPlayer.Open(new Uri(@".\Assets\Sound\194182__theatomicbrain__high-score-fill-descending-faster.wav", UriKind.Relative));
-            mediaPlayer.Play();
+            MediaPlayerLoad("pointcountdown.wav");
+            MediaPlayerPlay();
             if (PointsGained < 0)
             {
                await CountTotalPointsNegative();
@@ -137,7 +125,7 @@ namespace Game_of_the_YEAR.ViewModels
             {
                 await CountTotalPointsPositive();
             }
-            mediaPlayer.Stop();
+            MediaPlayerPause();
         }
         public async Task CountTotalPointsPositive()
         {
@@ -215,7 +203,7 @@ namespace Game_of_the_YEAR.ViewModels
         }
         public void NextQuestion()
         {
-            mediaPlayer.Stop();
+            MediaPlayerPause();
             CheckIfLastQuestion();
         }
        

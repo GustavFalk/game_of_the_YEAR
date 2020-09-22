@@ -31,12 +31,12 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
         protected override async void OnDrop(DragEventArgs e)
         {
             base.OnDrop(e);
-            LoadNewSound("coindrop.wav");
-            MediaplayerPlay();
+            MediaPlayerLoad("coindrop.wav");
+            MediaPlayerPlay();
             await Task.Delay(2500);
             GoToLoadingPageTwo();            
-            LoadNewSound("menumusic.wav");
-            MediaplayerPlay();
+            MediaPlayerLoad("menumusic.wav");
+            MediaPlayerPlay();
             e.Handled = true;
         }
     }

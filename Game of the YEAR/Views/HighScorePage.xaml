@@ -208,17 +208,17 @@
         </Viewbox>
         
         <Viewbox Grid.Row="8" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center">
-            <Label Content="{Binding HighScore5Player}" Foreground="PaleVioletRed" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
+            <Label Content="MIN POÄNG" Foreground="PaleVioletRed" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
         <Viewbox Grid.Row="8" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Left">
-            <Label Content="{Binding HighScore5Points}" Foreground="PaleVioletRed" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
+            <Label Content="{Binding TotalPoints}" Foreground="PaleVioletRed" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
 
         <Viewbox Grid.Row="10" Grid.Column="1" Stretch="Fill" Margin="5">
-            <Button Command="{}" Content="SPELA IGEN" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Padding="10" FontSize="20" />
+            <Button Command="{Binding NewGameBTN}" Content="SPELA IGEN" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Padding="10" FontSize="20" />
         </Viewbox>
         <Viewbox Grid.Row="10" Grid.Column="2" Stretch="Fill" Margin="5">
-            <Button Command="{}" Content="MEST FLITIG" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Padding="10" FontSize="20" />
+            <Button Command="{Binding DiligenceScorePageBTN}" Content="MEST FLITIG" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Padding="10" FontSize="20" />
         </Viewbox>
 
     </Grid>

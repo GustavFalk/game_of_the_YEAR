@@ -34,7 +34,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Viewbox Stretch="Uniform" Grid.Column="0" Grid.Row="0">
-                    <Button Content="TILLBAKA" Padding="8" VerticalAlignment="Top" BorderThickness="1" BorderBrush="DimGray" FontFamily="{StaticResource PressStart2P}" Margin="10,0,0,0" Click="Button_Click"/>
+                    <Button Content="LOGGA UT" Padding="8" VerticalAlignment="Top" BorderThickness="1" BorderBrush="DimGray" FontFamily="{StaticResource PressStart2P}" Margin="10,0,0,0" Click="Button_Click"/>
                 </Viewbox>
             </Grid>
 

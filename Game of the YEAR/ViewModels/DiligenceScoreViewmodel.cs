@@ -48,7 +48,7 @@ namespace Game_of_the_YEAR.ViewModels
             diligenceScores = GetDiligenceScores();
             InputToOutput();
             HighScorePageBTN = new RelayCommand(GoToHighScorePage);
-            NewGameBTN = new RelayCommand(GoToLoadingPageOne);
+            NewGameBTN = new RelayCommand(GoToStartGamePage);
         }
 
     }

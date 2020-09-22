@@ -21,13 +21,6 @@ namespace Game_of_the_YEAR.ViewModels.Base
             ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
         }
 
-        public static async void GoToLoadingPageTwoWithDelay()
-        {
-            await Task.Delay(2000);
-            Page page = new Views.LoadingPageTwo();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
-        }
-
         public static void GoToStartpagePage()
         {
             Page page = new Views.StartpagePage();
@@ -80,27 +73,6 @@ namespace Game_of_the_YEAR.ViewModels.Base
         }
 
         #endregion
-        #region Sound navigation
-
-        public static void PlayMenuMusic()
-        {
-            ((MainWindow)System.Windows.Application.Current.MainWindow).menuMusic.Play();
-        }
-        public static async void PlayMenuMusicWithDelay()
-        {
-            await Task.Delay(2500);
-            ((MainWindow)System.Windows.Application.Current.MainWindow).menuMusic.Play();
-        }
-
-        public static void PauseMenuMusic()
-        {
-            ((MainWindow)System.Windows.Application.Current.MainWindow).menuMusic.Pause();
-        }
-        public static void PlayCoinDrop()
-        {
-            ((MainWindow)System.Windows.Application.Current.MainWindow).coinDrop.Play();
-        }
-
-        #endregion
+        
     }
 }

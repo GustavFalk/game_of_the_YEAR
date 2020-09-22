@@ -4,6 +4,8 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
+using static Game_of_the_YEAR.ViewModels.Base.Soundengine;
+
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -12,9 +14,15 @@ namespace Game_of_the_YEAR.ViewModels
         public ICommand StartGameBtn { get; set; }
         public ICommand RulesBtn { get; set; }
 
+        public void StartGame()
+        {
+            PauseMediaPlayerMusic();
+            LoadNewSound("321go.mp3");
+            GoToStartGameCountdownPage();
+        }
         public StartGameViewModel()
         {
-            StartGameBtn = new RelayCommand(GoToStartGameCountdownPage);
+            StartGameBtn = new RelayCommand(StartGame);
             RulesBtn = new RelayCommand(GoToRulePage);
         }      
 

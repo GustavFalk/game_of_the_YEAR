@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Game_of_the_YEAR.ViewModels.Base.Soundengine;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
@@ -27,14 +28,15 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
         }
       
 
-        protected override void OnDrop(DragEventArgs e)
+        protected override async void OnDrop(DragEventArgs e)
         {
             base.OnDrop(e);
-
-            PlayCoinDrop();
-            GoToLoadingPageTwoWithDelay();
-            PlayMenuMusicWithDelay();
-           
+            LoadNewSound("coindrop.wav");
+            MediaplayerPlay();
+            await Task.Delay(2500);
+            GoToLoadingPageTwo();            
+            LoadNewSound("menumusic.wav");
+            MediaplayerPlay();
             e.Handled = true;
         }
     }

@@ -47,6 +47,7 @@ namespace Game_of_the_YEAR.ViewModels.Base
             CurrentGame.TotalPoints = 0;
             CurrentGame.Questions = null;
             CurrentGame.CurrentQuestion = 0;
+            CurrentGame.UserAnswer = 0;
             CurrentGame.TimePoints = 0;
             Page page = new Views.StartGamePage();
             ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;

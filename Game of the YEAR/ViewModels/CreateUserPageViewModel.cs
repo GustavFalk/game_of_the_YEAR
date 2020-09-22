@@ -59,7 +59,7 @@ namespace Game_of_the_YEAR.ViewModels
                 
                 try
                 {
-                    AddPlayerToDB(player);
+                    player= AddPlayerToDB(player);
                     CurrentGame.CurrentPlayer = player;
                     GoToStartGamePage();                    
                 }

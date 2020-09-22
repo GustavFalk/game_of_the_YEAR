@@ -11,9 +11,9 @@ namespace Game_of_the_YEAR.Repositories
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["connectDb"].ConnectionString;
         #region CREATE
-        public static void  AddPlayerToDB (Player player) 
+        public static Player  AddPlayerToDB (Player player) 
         {
-            string stmt = "INSERT INTO player (e_mail,nickname) VALUES (@email, @playername) ";
+            string stmt = "INSERT INTO player (e_mail,nickname) VALUES (@email, @playername) RETURNING player_id ";
             using (var conn = new NpgsqlConnection(connectionString))
             {
 
@@ -24,7 +24,8 @@ namespace Game_of_the_YEAR.Repositories
                     {
                         command.Parameters.AddWithValue("email", player.Email);
                         command.Parameters.AddWithValue("playername", player.Nickname);
-                        command.ExecuteNonQuery();
+                        player.PlayerID = (Int32)command.ExecuteScalar();
+                        return player;
                     }
                     
                 }
@@ -112,36 +113,7 @@ namespace Game_of_the_YEAR.Repositories
             }
         }
         
-        //public static int GetAmountOfYears() 
-        //{
-            //string stmt = "SELECT COUNT (the_year_id) FROM the_year";
-            //using (var conn = new NpgsqlConnection(connectionString))
-            //{
-                //long amount = 0;
-                //conn.Open();
-                //using (var command = new NpgsqlCommand(stmt,conn))
-                //{
-                    
-                    //using (var reader = command.ExecuteReader())
-                    //{
-                        //while (reader.Read())
-                        //{
-                            //amount = (long)reader["count"];
-                        //}
-
-                    //}
-                    //return Convert.ToInt32(amount);
-
-                       
-                //}
-            //}
-            
-        //}
-                       
-        //        }
-        //    }
-            
-        //}
+      
         public static Player GetPlayerFromDB(string email)
         {
             string stmt = "SELECT player_id, e_mail, nickname FROM player WHERE e_mail=@email";

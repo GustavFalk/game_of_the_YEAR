@@ -65,7 +65,7 @@ namespace Game_of_the_YEAR.Repositories
         public static List<Question> GetQuestions()
         {
         
-            string stmt = "SELECT (the_year) FROM  the_year ORDER BY RANDOM() LIMIT 3";
+            string stmt = "SELECT (the_year) FROM  the_year ORDER BY RANDOM() LIMIT 10";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {

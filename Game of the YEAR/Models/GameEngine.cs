@@ -34,5 +34,14 @@ namespace Game_of_the_YEAR.Models
             CurrentGame.TotalPoints += (CurrentGame.TimePoints - (CheckAnswerDifferance() * 1000));
         }
 
+        public static void ResetGame()
+        {
+            CurrentGame.TotalPoints = 0;
+            CurrentGame.Questions = null;
+            CurrentGame.CurrentQuestion = 0;
+            CurrentGame.UserAnswer = 0;
+            CurrentGame.TimePoints = 0;
+        }
+
     }
 }

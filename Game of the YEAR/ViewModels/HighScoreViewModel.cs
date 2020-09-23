@@ -26,7 +26,7 @@ namespace Game_of_the_YEAR.ViewModels
         public int TotalPoints { get; set; }
         public string CurrentPlayerName { get; set; }
 
-        public int Placement { get; set; }
+        public Int64 Placement { get; set; }
         public ICommand DiligenceScorePageBTN { get; set; }
         public ICommand NewGameBTN { get; set; }
 
@@ -44,10 +44,8 @@ namespace Game_of_the_YEAR.ViewModels
             HighScore3Points = $"{highscores[2].Points}";
             HighScore4Points = $"{highscores[3].Points}";
             HighScore5Points = $"{highscores[4].Points}";
-            Placement = 0;
-            TotalPoints = CurrentGame.TotalPoints;
-            CurrentPlayerName = CurrentGame.CurrentPlayer.Nickname;
-
+            
+            
         }
 
         public HighScoreViewModel()
@@ -56,6 +54,9 @@ namespace Game_of_the_YEAR.ViewModels
             InputToOutput();            
             DiligenceScorePageBTN = new RelayCommand(GoToDiligenceScorePage);
             NewGameBTN = new RelayCommand(GoToStartGamePage);
+            TotalPoints = CurrentGame.TotalPoints;
+            CurrentPlayerName = CurrentGame.CurrentPlayer.Nickname;
+            Placement = GetPlacement(TotalPoints);
         }
     }
 }

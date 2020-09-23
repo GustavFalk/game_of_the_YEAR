@@ -207,6 +207,30 @@ namespace Game_of_the_YEAR.Repositories
                 return diligenceScores;
             }
         }
+
+        public static int GetPlacement(int score)
+        {
+            int placement;
+            string stmt = "select count (points) from game_round where points>= @score";
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+
+                conn.Open();
+                try
+                {
+                    using (var command = new NpgsqlCommand(stmt, conn))
+                    {
+                        command.Parameters.AddWithValue("score", score);                      
+                        placement = (Int32)command.ExecuteScalar();
+                        return placement;
+                    }
+                }
+                catch (PostgresException)
+                {
+                    throw;
+                }
+            }
+        }
         #endregion
         #region UPDATE
         #endregion

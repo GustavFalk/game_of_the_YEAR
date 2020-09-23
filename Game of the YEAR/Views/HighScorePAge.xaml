@@ -224,7 +224,7 @@
         </Viewbox>
 
         <Viewbox Grid.Row="8" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" Grid.ColumnSpan="2">
-            <Label Content="6" Foreground="White" FontSize="14" FontFamily="{StaticResource PressStart2P}"/>
+            <Label Content="{Binding Placement}" Foreground="White" FontSize="14" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
         <Viewbox Grid.Row="8" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Center">
             <Label Content="{Binding CurrentPlayerName}" Foreground="PaleVioletRed" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>

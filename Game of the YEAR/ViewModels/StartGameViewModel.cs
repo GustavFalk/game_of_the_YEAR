@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game_of_the_YEAR.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
@@ -22,6 +23,7 @@ namespace Game_of_the_YEAR.ViewModels
         }
         public StartGameViewModel()
         {
+            GameEngine.ResetGame();
             StartGameBtn = new RelayCommand(StartGame);
             RulesBtn = new RelayCommand(GoToRulePage);
         }      

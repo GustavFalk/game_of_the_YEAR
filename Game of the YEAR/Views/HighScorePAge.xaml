@@ -170,7 +170,7 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Viewbox Stretch="Uniform" Grid.Column="1" Grid.ColumnSpan="2">
-            <Label Content="HIGH SCORE!" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{StaticResource PressStart2P}" />
+            <Label Content="HIGH SCORE" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{StaticResource PressStart2P}" />
         </Viewbox>
         <Viewbox Grid.Row="2" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center">
             <Label Content="{Binding HighScore1Player}" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>

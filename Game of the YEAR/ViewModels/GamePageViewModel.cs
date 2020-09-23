@@ -15,7 +15,6 @@ namespace Game_of_the_YEAR.ViewModels
     {
         #region Variables
 
-        private MediaPlayer mediaPlayer = new MediaPlayer();
         private int clueIndex = 0;
 
         #endregion

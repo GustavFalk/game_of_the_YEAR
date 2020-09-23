@@ -231,52 +231,6 @@ namespace Game_of_the_YEAR.Repositories
                 }
             }
         }
-        public static Int64 GetDiligence(Int64 playerID)
-        {
-            Int64 playerDiligence;
-            string stmt = "select count (round_id) from game_round where player_id = @player_id";
-            using (var conn = new NpgsqlConnection(connectionString))
-            {
-
-                conn.Open();
-                try
-                {
-                    using (var command = new NpgsqlCommand(stmt, conn))
-                    {
-                        command.Parameters.AddWithValue("player_id", playerID);
-                        playerDiligence = (Int64)command.ExecuteScalar();
-                        return playerDiligence;
-                    }
-                }
-                catch (PostgresException)
-                {
-                    throw;
-                }
-            }
-        }
-        public static Int64 GetPlacementDiligence(Int64 gameRounds)
-        {
-            Int64 playerDiligencePlacement;
-            string stmt = "SELECT COUNT (antal_rundor) FROM (SELECT COUNT(game_round.player_id) AS antal_rundor, player.nickname FROM game_round INNER JOIN player ON game_round.player_id = player.player_id GROUP BY player.nickname) ss WHERE antal_rundor >= @game_rounds";
-            using (var conn = new NpgsqlConnection(connectionString))
-            {
-
-                conn.Open();
-                try
-                {
-                    using (var command = new NpgsqlCommand(stmt, conn))
-                    {
-                        command.Parameters.AddWithValue("game_rounds", gameRounds);
-                        playerDiligencePlacement = (Int64)command.ExecuteScalar();
-                        return playerDiligencePlacement;
-                    }
-                }
-                catch (PostgresException)
-                {
-                    throw;
-                }
-            }
-        }
         #endregion
         #region UPDATE
         #endregion

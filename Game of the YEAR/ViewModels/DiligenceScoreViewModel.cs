@@ -24,9 +24,8 @@ namespace Game_of_the_YEAR.ViewModels
         public string DiligenceScore4Rounds { get; set; }
         public string DiligenceScore5Rounds { get; set; }
         public string CurrentPlayerName { get; set; }
-        public int GameRounds { get; set; }
-
-        public int Placement { get; set; }
+        public Int64 GameRounds { get; set; }
+        public Int64 Placement { get; set; }
 
         public ICommand HighScorePageBTN { get; set; }
         public ICommand NewGameBTN { get; set; }
@@ -45,8 +44,8 @@ namespace Game_of_the_YEAR.ViewModels
             DiligenceScore3Rounds = $"{diligenceScores[2].GameRounds}";
             DiligenceScore4Rounds = $"{diligenceScores[3].GameRounds}";
             DiligenceScore5Rounds = $"{diligenceScores[4].GameRounds}";
-            GameRounds = 0;
-            Placement = 0;
+            GameRounds = GetDiligence(CurrentGame.CurrentPlayer.PlayerID);
+            Placement = GetPlacementDiligence(GameRounds);
             CurrentPlayerName = CurrentGame.CurrentPlayer.Nickname;
 
         }

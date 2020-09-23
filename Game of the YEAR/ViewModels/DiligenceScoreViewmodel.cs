@@ -45,9 +45,7 @@ namespace Game_of_the_YEAR.ViewModels
             DiligenceScore3Rounds = $"{diligenceScores[2].GameRounds}";
             DiligenceScore4Rounds = $"{diligenceScores[3].GameRounds}";
             DiligenceScore5Rounds = $"{diligenceScores[4].GameRounds}";
-            GameRounds = 0;
-            Placement = 0;
-            CurrentPlayerName = CurrentGame.CurrentPlayer.Nickname;
+           
 
         }
 

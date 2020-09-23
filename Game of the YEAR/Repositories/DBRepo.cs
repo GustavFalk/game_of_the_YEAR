@@ -208,9 +208,9 @@ namespace Game_of_the_YEAR.Repositories
             }
         }
 
-        public static int GetPlacement(int score)
+        public static Int64 GetPlacement(int score)
         {
-            int placement;
+            Int64 placement;
             string stmt = "select count (points) from game_round where points>= @score";
             using (var conn = new NpgsqlConnection(connectionString))
             {
@@ -221,7 +221,7 @@ namespace Game_of_the_YEAR.Repositories
                     using (var command = new NpgsqlCommand(stmt, conn))
                     {
                         command.Parameters.AddWithValue("score", score);                      
-                        placement = (Int32)command.ExecuteScalar();
+                        placement = (Int64)command.ExecuteScalar();
                         return placement;
                     }
                 }

@@ -20,10 +20,13 @@ namespace Game_of_the_YEAR.Views
     public partial class GamePage : Page
     {
         GamePageViewModel gamePageViewModel = new GamePageViewModel();
+        
+
         public GamePage()
         {
             InitializeComponent();
             DataContext = gamePageViewModel;
+            txtBox1.Focus();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

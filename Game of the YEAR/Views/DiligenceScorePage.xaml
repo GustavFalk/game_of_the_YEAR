@@ -31,7 +31,7 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Viewbox Stretch="Uniform" Grid.Column="2" Grid.ColumnSpan="2">
-            <Label Content="MEST FRITID" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{StaticResource PressStart2P}" />
+            <Label Content="SPELAT MEST" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{StaticResource PressStart2P}" />
         </Viewbox>
         <Viewbox Grid.Row="2" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" Grid.ColumnSpan="2">
             <Label Content="1" Foreground="White" FontSize="14" FontFamily="{StaticResource PressStart2P}"/>

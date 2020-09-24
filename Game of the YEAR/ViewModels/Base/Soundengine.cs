@@ -34,6 +34,11 @@ namespace Game_of_the_YEAR.ViewModels.Base
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).mediaPlayer.Volume = volume;
         }
+
+        public static void MediaPlayerLoop()
+        {
+
+        }
         #endregion
     }
 }

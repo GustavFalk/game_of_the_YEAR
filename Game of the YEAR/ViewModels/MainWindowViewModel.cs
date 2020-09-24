@@ -5,6 +5,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using static Game_of_the_YEAR.Repositories.DBRepo;
+using static Game_of_the_YEAR.ViewModels.Base.Soundengine;
 
 
 
@@ -27,12 +28,12 @@ namespace Game_of_the_YEAR
         {
             if (((MainWindow)System.Windows.Application.Current.MainWindow).mediaPlayer.Volume == 0)
             {
-                ((MainWindow)System.Windows.Application.Current.MainWindow).mediaPlayer.Volume = 0.5;
+                MediaPlayerVolume(0.2);
                 MuteImage = new BitmapImage(new Uri(@".\Assets\Images\icons8-low-volume-50.png", UriKind.Relative));
             }
             else
             {
-                ((MainWindow)System.Windows.Application.Current.MainWindow).mediaPlayer.Volume = 0;
+                MediaPlayerVolume(0);
                 MuteImage = new BitmapImage(new Uri(@".\Assets\Images\icons8-low-volume-off.png", UriKind.Relative));
                 
             }

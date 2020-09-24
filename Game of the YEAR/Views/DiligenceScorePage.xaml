@@ -25,59 +25,77 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.2*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Viewbox Stretch="Uniform" Grid.Column="1" Grid.ColumnSpan="2">
+        <Viewbox Stretch="Uniform" Grid.Column="2" Grid.ColumnSpan="2">
             <Label Content="MEST FRITID" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{StaticResource PressStart2P}" />
         </Viewbox>
-        <Viewbox Grid.Row="2" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center">
+        <Viewbox Grid.Row="2" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" Grid.ColumnSpan="2">
+            <Label Content="1" Foreground="White" FontSize="14" FontFamily="{StaticResource PressStart2P}"/>
+        </Viewbox>        
+        <Viewbox Grid.Row="2" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Center">
             <Label Content="{Binding DiligenceScore1Player}" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
-        <Viewbox Grid.Row="2" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Left">
+        <Viewbox Grid.Row="2" Grid.Column="3" Stretch="Uniform" HorizontalAlignment="Left">
             <Label Content="{Binding DiligenceScore1Rounds}" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
-        <Viewbox Grid.Row="3" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center">
+        <Viewbox Grid.Row="3" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" Grid.ColumnSpan="2">
+            <Label Content="2" Foreground="White" FontSize="14" FontFamily="{StaticResource PressStart2P}"/>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Center">
             <Label Content="{Binding DiligenceScore2Player}" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
-        <Viewbox Grid.Row="3" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Left">
+        <Viewbox Grid.Row="3" Grid.Column="3" Stretch="Uniform" HorizontalAlignment="Left">
             <Label Content="{Binding DiligenceScore2Rounds}" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
-        <Viewbox Grid.Row="4" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center">
+        <Viewbox Grid.Row="4" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" Grid.ColumnSpan="2">
+            <Label Content="3" Foreground="White" FontSize="14" FontFamily="{StaticResource PressStart2P}"/>
+        </Viewbox>
+        <Viewbox Grid.Row="4" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Center">
             <Label Content="{Binding DiligenceScore3Player}" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
-        <Viewbox Grid.Row="4" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Left">
+        <Viewbox Grid.Row="4" Grid.Column="3" Stretch="Uniform" HorizontalAlignment="Left">
             <Label Content="{Binding DiligenceScore3Rounds}" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
-        <Viewbox Grid.Row="5" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center">
+        <Viewbox Grid.Row="5" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" Grid.ColumnSpan="2">
+            <Label Content="4" Foreground="White" FontSize="14" FontFamily="{StaticResource PressStart2P}"/>
+        </Viewbox>
+        <Viewbox Grid.Row="5" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Center">
             <Label Content="{Binding DiligenceScore4Player}" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
-        <Viewbox Grid.Row="5" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Left">
+        <Viewbox Grid.Row="5" Grid.Column="3" Stretch="Uniform" HorizontalAlignment="Left">
             <Label Content="{Binding DiligenceScore4Rounds}" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
-        <Viewbox Grid.Row="6" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center">
+        <Viewbox Grid.Row="6" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" Grid.ColumnSpan="2">
+            <Label Content="5" Foreground="White" FontSize="14" FontFamily="{StaticResource PressStart2P}"/>
+        </Viewbox>
+        <Viewbox Grid.Row="6" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Center">
             <Label Content="{Binding DiligenceScore5Player}" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
-        <Viewbox Grid.Row="6" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Left">
+        <Viewbox Grid.Row="6" Grid.Column="3" Stretch="Uniform" HorizontalAlignment="Left">
             <Label Content="{Binding DiligenceScore5Rounds}" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
 
-        <Viewbox Grid.Row="7" Grid.Column="1" Stretch="Uniform">
+        <Viewbox Grid.Row="7" Grid.Column="2" Stretch="Uniform">
             <Label Content="--------" Foreground="White" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
-
-        <Viewbox Grid.Row="8" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center">
+        <Viewbox Grid.Row="8" Grid.Column="0" Stretch="Uniform" HorizontalAlignment="Right" Grid.ColumnSpan="2">
+            <Label Content="{Binding Placement}" Foreground="White" FontSize="14" FontFamily="{StaticResource PressStart2P}"/>
+        </Viewbox>
+        <Viewbox Grid.Row="8" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Center">
             <Label Content="{Binding CurrentPlayerName}" Foreground="PaleVioletRed" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
-        <Viewbox Grid.Row="8" Grid.Column="2" Stretch="Uniform" HorizontalAlignment="Left">
+        <Viewbox Grid.Row="8" Grid.Column="3" Stretch="Uniform" HorizontalAlignment="Left">
             <Label Content="{Binding GameRounds}" Foreground="PaleVioletRed" FontSize="24" FontFamily="{StaticResource PressStart2P}"/>
         </Viewbox>
 
-        <Viewbox Grid.Row="10" Grid.Column="1" Stretch="Fill" Margin="5">
+        <Viewbox Grid.Row="10" Grid.Column="2" Stretch="Fill" Margin="5">
             <Button Command="{Binding NewGameBTN}" Content="SPELA IGEN" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Padding="10" FontSize="20" />
         </Viewbox>
-        <Viewbox Grid.Row="10" Grid.Column="2" Stretch="Fill" Margin="5">
+        <Viewbox Grid.Row="10" Grid.Column="3" Stretch="Fill" Margin="5">
             <Button Command="{Binding HighScorePageBTN}" Content="HIGH SCORE" BorderBrush="DimGray" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Padding="10" FontSize="20" />
         </Viewbox>
 

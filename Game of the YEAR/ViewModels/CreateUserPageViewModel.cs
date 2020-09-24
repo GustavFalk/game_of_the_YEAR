@@ -7,6 +7,8 @@ using System.Windows.Input;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 using static Game_of_the_YEAR.Repositories.DBRepo;
 using Npgsql;
+using System.Windows;
+using CredentialManagement;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -52,7 +54,9 @@ namespace Game_of_the_YEAR.ViewModels
             ValuesToUserID();           
             if (CheckIfLetters(NicknameTxt) && CheckIfEmail(EmailTxt))
             {
-               
+
+                String errorMessageEmail = "DIN E-POST ÄR REDAN REGISTRERAD";
+                string titleEmail = "E-POST";
                 Player player = new Player();
                 player.Email = EmailTxt;
                 player.Nickname = NicknameTxt;                              
@@ -68,15 +72,17 @@ namespace Game_of_the_YEAR.ViewModels
                     
                     if(e.ConstraintName == "email_unique")
                     {
-                        ErrorLbl = "din mail är redan registrerad";
+                        DialogResult result = (DialogResult)MessageBox.Show(errorMessageEmail, titleEmail);
+                       
+                        //DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning); //ErrorLbl = "din mail är redan registrerad";
                     }
                     else if(e.ConstraintName == "nickname_unique")
                     {
-                        ErrorLbl = "användarnamnet är redan taget";
+                        MessageBox.Show("ANVÄNDARNAMNET ÄR REDAN TAGET"); // ErrorLbl = "användarnamnet är redan taget";
                     }
                     else 
                     {
-                        ErrorLbl = "fråga Philip vad som är fel";
+                        MessageBox.Show($"KONTAKTA KUNDTJÄNST OCH UPPGE: {e}."); //ErrorLbl = "fråga Philip vad som är fel";
                     }
                    
                     
@@ -86,8 +92,7 @@ namespace Game_of_the_YEAR.ViewModels
             }
             else
             {
-                ErrorLbl = "Se över om din mail är korrekt. " +
-                    "Användarnamnet får bara vara i bokstäver.";
+                MessageBox.Show("SE ÖVER ATT DIN EPOSTADRESS ÄR KORREKT OCH ATT ANVÄNDARNAMNET BARA INNEHÅLLER BOKSTÄVER."); //ErrorLbl = "Se över om din mail är korrekt. Användarnamnet får bara vara i bokstäver.";
             }         
 
         }
@@ -103,6 +108,7 @@ namespace Game_of_the_YEAR.ViewModels
         public string Value3 { get; set; }   
         public string ErrorLbl { get; set; }
         public ICommand CreateUserBtn { get; set; }
+        public object MessageBoxIcon { get; private set; }
 
         #endregion
 

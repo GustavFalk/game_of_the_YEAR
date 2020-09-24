@@ -6,10 +6,9 @@
              xmlns:local="clr-namespace:Game_of_the_YEAR.Views.Drag_and_drop_objects"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
-             AllowDrop="True">
+             AllowDrop="True" Drop="UserControl_Drop" DragEnter="UserControl_DragEnter" DragLeave="UserControl_DragLeave">
+
     <Grid>
-        <Ellipse x:Name="coinCompartmentUI" 
-         Height="250" Width="50"
-         Fill="Black" />
+        
     </Grid>
 </UserControl>

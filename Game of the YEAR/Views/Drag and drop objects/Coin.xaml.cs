@@ -24,9 +24,7 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
         }
         public Coin(Coin c)
         {
-            InitializeComponent();
-            this.coinUI.Height = c.coinUI.Height;
-            this.coinUI.Width = c.coinUI.Height;
+            InitializeComponent();          
             this.coinUI.Fill = c.coinUI.Fill;
         }
 
@@ -37,9 +35,7 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
             {
                 
                 DataObject data = new DataObject();
-                data.SetData(DataFormats.StringFormat, coinUI.Fill.ToString());
-                data.SetData("Double", coinUI.Height);
-                data.SetData("Object", this);                
+                data.SetData(DataFormats.StringFormat, coinUI.Fill.ToString());                
                 DragDrop.DoDragDrop(this, data, DragDropEffects.Copy | DragDropEffects.Move);
             }
         }

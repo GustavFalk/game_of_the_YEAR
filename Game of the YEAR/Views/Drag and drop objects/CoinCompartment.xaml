@@ -7,7 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              AllowDrop="True">
-    <Grid>
+    
+    <Grid>        
         <Ellipse x:Name="coinCompartmentUI" 
          Height="250" Width="50"
          Fill="Black" />

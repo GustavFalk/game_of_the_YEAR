@@ -21,23 +21,40 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
     /// </summary>
     public partial class CoinCompartment : UserControl
     {
+        ImageSource backgroundImage;
         public CoinCompartment()
         {
             InitializeComponent();
+            backgroundImage = new BitmapImage(new Uri(@".\Assets\Images\coindrop1.png", UriKind.Relative));
+            this.Background = new ImageBrush(backgroundImage);
 
         }
-      
 
-        protected override async void OnDrop(DragEventArgs e)
+        
+
+        private async void UserControl_Drop(object sender, DragEventArgs e)
         {
-            base.OnDrop(e);
+            
             MediaPlayerLoad("coindrop.wav");
             MediaPlayerPlay();
             await Task.Delay(2500);
-            GoToLoadingPageTwo();            
+            GoToLoadingPageTwo();
             MediaPlayerLoad("menumusic.wav");
             MediaPlayerPlay();
-            e.Handled = true;
+        }
+
+
+
+        private void UserControl_DragEnter(object sender, DragEventArgs e)
+        {
+            backgroundImage  = new BitmapImage(new Uri(@".\Assets\Images\coindrop2.png", UriKind.Relative));
+            this.Background = new ImageBrush(backgroundImage);
+        }
+
+        private void UserControl_DragLeave(object sender, DragEventArgs e)
+        {
+            backgroundImage = new BitmapImage(new Uri(@".\Assets\Images\coindrop1.png", UriKind.Relative));
+            this.Background = new ImageBrush(backgroundImage);
         }
     }
 }

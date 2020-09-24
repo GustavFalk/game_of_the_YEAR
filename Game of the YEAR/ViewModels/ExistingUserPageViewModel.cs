@@ -8,7 +8,7 @@ using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 using static Game_of_the_YEAR.Repositories.DBRepo;
 using Npgsql;
 using System.Linq.Expressions;
-
+using System.Windows;
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -38,7 +38,14 @@ namespace Game_of_the_YEAR.ViewModels
                  
         public void GetPlayer()
         {
-           if (CheckIfEmail(EmailTxt))
+            String errorMessageEmail = "E-POSTADRESSEN VERKAR INTE FINNAS. FÖRSÖK IGEN!";
+            String titleEmail = "ANVÄNDARUPPGIFTER";
+            String errorMessageSystem = "NÅGOT VERKAR HA GÅTT FEL. VÄNLIGEN KONTAKTA KUNDTJÄNST";
+            String titleSystem = "SYSTEMFEL";
+            String errorMessageBadInput = "E-POSTADRESSEN DU ANGETT ÄR INTE EN GILTIG E-POSTADRESS, FÖRSÖK IGEN!";
+            String titleInput = "E-POST";
+
+            if (CheckIfEmail(EmailTxt))
             {
                 Player player = new Player();
                 player.Email = EmailTxt;
@@ -49,7 +56,7 @@ namespace Game_of_the_YEAR.ViewModels
                     player=GetPlayerFromDB(player.Email);
                     if (player == null)
                     {
-                        ErrorLbl = "E-postadressen verkar inte finnas. Pröva igen";
+                        MessageBox.Show(errorMessageEmail, titleEmail, MessageBoxButton.OK, MessageBoxImage.Exclamation); 
                     }
                     else
                     {
@@ -59,14 +66,13 @@ namespace Game_of_the_YEAR.ViewModels
                 }
                 catch (PostgresException)
                 {
-                    ErrorLbl = "Fråga Philip vad som är fel";
+                    MessageBox.Show(errorMessageSystem, titleSystem, MessageBoxButton.OK, MessageBoxImage.Error); //Har inte testat denna då jag inte vet hur jag ska forcera fram ett sådant fel.
                 }
-                     
-           
+                             
             }
            else
             {
-                ErrorLbl = "E-mail adressen du angett är inte gilitg.";
+                MessageBox.Show(errorMessageBadInput, titleInput, MessageBoxButton.OK, MessageBoxImage.Error);
             }
           
         }

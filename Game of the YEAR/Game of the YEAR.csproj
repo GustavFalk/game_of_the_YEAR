@@ -79,6 +79,7 @@
     <None Remove="Assets\Images\BackgroundBlixt_Test.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CredentialManagement" Version="1.0.2" />
     <PackageReference Include="Npgsql" Version="4.1.4" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.9" />
   </ItemGroup>

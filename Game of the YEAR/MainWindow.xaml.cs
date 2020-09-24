@@ -33,6 +33,7 @@ namespace Game_of_the_YEAR
             Main.Content = page;
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
             DataContext = mainWindowViewModel;
+            
         }       
     }
 }

@@ -33,9 +33,6 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Viewbox Stretch="Uniform" Grid.Column="0" Grid.Row="0">
-                        <Button Content="TILLBAKA" Command="{Binding GoBackCommand}" Padding="8" VerticalAlignment="Top" BorderThickness="1" BorderBrush="DimGray" FontFamily="{StaticResource PressStart2P}" Margin="10,0,0,0"/>
-                    </Viewbox>
                 </Grid>
 
                 <Viewbox Stretch="Uniform" Grid.Column="1" Grid.Row="0">
@@ -71,7 +68,7 @@
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <Label Content="TRYCK PÅ RETUR" Padding="0,20,0,80" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="100" FontFamily="{StaticResource PressStart2P}"/>
+                        <Button Content="   OK   " Command="{Binding GoBackCommand}" Padding="0,20,0,80" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="100" FontFamily="{StaticResource PressStart2P}"/>
                     </Grid>
                 </Viewbox>
             </Grid>

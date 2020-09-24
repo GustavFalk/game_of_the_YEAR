@@ -8,7 +8,8 @@ using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 using static Game_of_the_YEAR.Repositories.DBRepo;
 using Npgsql;
 using System.Windows;
-using CredentialManagement;
+
+
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -51,12 +52,18 @@ namespace Game_of_the_YEAR.ViewModels
 
         public void AddPlayer()
         {
-            ValuesToUserID();           
-            if (CheckIfLetters(NicknameTxt) && CheckIfEmail(EmailTxt))
-            {
+            ValuesToUserID();
+            String errorMessageEmail = "DIN E-POST ÄR REDAN REGISTRERAD.";
+            String titleEmail = "E-POST";
+            String errorMessageUser = "ANVÄNDARNAMNET ÄR REDAN TAGET.";
+            String titleUser = "ANVÄNDARE";
+            String errorMessageSystem = "KONTAKTA KUNDTJÄNST OCH UPPGE:";
+            String titleSystem = "SYSTEMFEL";
+            String errorMessageBadInput = "SE ÖVER ATT DIN E-POSTADRESS ÄR KORREKT OCH ATT ANVÄNDARNAMNET BARA INNEHÅLLER BOKSTÄVER.";
+            String titleInput = "ANVÄNDARUPPGIFTER";
 
-                String errorMessageEmail = "DIN E-POST ÄR REDAN REGISTRERAD";
-                string titleEmail = "E-POST";
+            if (CheckIfLetters(NicknameTxt) && CheckIfEmail(EmailTxt))
+            {                
                 Player player = new Player();
                 player.Email = EmailTxt;
                 player.Nickname = NicknameTxt;                              
@@ -72,27 +79,21 @@ namespace Game_of_the_YEAR.ViewModels
                     
                     if(e.ConstraintName == "email_unique")
                     {
-                        DialogResult result = (DialogResult)MessageBox.Show(errorMessageEmail, titleEmail);
-                       
-                        //DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning); //ErrorLbl = "din mail är redan registrerad";
+                     MessageBox.Show(errorMessageEmail, titleEmail, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     }
-                    else if(e.ConstraintName == "nickname_unique")
+                    else if (e.ConstraintName == "nickname_unique")
                     {
-                        MessageBox.Show("ANVÄNDARNAMNET ÄR REDAN TAGET"); // ErrorLbl = "användarnamnet är redan taget";
+                        MessageBox.Show(errorMessageUser, titleUser, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     }
                     else 
                     {
-                        MessageBox.Show($"KONTAKTA KUNDTJÄNST OCH UPPGE: {e}."); //ErrorLbl = "fråga Philip vad som är fel";
+                        MessageBox.Show(errorMessageSystem + $"{e}", titleSystem, MessageBoxButton.OK, MessageBoxImage.Error); 
                     }
-                   
-                    
                 }          
-
-
             }
             else
             {
-                MessageBox.Show("SE ÖVER ATT DIN EPOSTADRESS ÄR KORREKT OCH ATT ANVÄNDARNAMNET BARA INNEHÅLLER BOKSTÄVER."); //ErrorLbl = "Se över om din mail är korrekt. Användarnamnet får bara vara i bokstäver.";
+                MessageBox.Show(errorMessageBadInput, titleInput, MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }         
 
         }

@@ -7,6 +7,9 @@ using System.Windows.Input;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 using static Game_of_the_YEAR.Repositories.DBRepo;
 using Npgsql;
+using System.Windows;
+
+
 
 namespace Game_of_the_YEAR.ViewModels
 {
@@ -49,10 +52,18 @@ namespace Game_of_the_YEAR.ViewModels
 
         public void AddPlayer()
         {
-            ValuesToUserID();           
+            ValuesToUserID();
+            String errorMessageEmail = "DIN E-POST ÄR REDAN REGISTRERAD.";
+            String titleEmail = "E-POST";
+            String errorMessageUser = "ANVÄNDARNAMNET ÄR REDAN TAGET.";
+            String titleUser = "ANVÄNDARE";
+            String errorMessageSystem = "KONTAKTA KUNDTJÄNST OCH UPPGE:";
+            String titleSystem = "SYSTEMFEL";
+            String errorMessageBadInput = "SE ÖVER ATT DIN E-POSTADRESS ÄR KORREKT OCH ATT ANVÄNDARNAMNET BARA INNEHÅLLER BOKSTÄVER.";
+            String titleInput = "ANVÄNDARUPPGIFTER";
+
             if (CheckIfLetters(NicknameTxt) && CheckIfEmail(EmailTxt))
-            {
-               
+            {                
                 Player player = new Player();
                 player.Email = EmailTxt;
                 player.Nickname = NicknameTxt;                              
@@ -68,26 +79,21 @@ namespace Game_of_the_YEAR.ViewModels
                     
                     if(e.ConstraintName == "email_unique")
                     {
-                        ErrorLbl = "din mail är redan registrerad";
+                     MessageBox.Show(errorMessageEmail, titleEmail, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     }
-                    else if(e.ConstraintName == "nickname_unique")
+                    else if (e.ConstraintName == "nickname_unique")
                     {
-                        ErrorLbl = "användarnamnet är redan taget";
+                        MessageBox.Show(errorMessageUser, titleUser, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     }
                     else 
                     {
-                        ErrorLbl = "fråga Philip vad som är fel";
+                        MessageBox.Show(errorMessageSystem + $"{e}", titleSystem, MessageBoxButton.OK, MessageBoxImage.Error); 
                     }
-                   
-                    
                 }          
-
-
             }
             else
             {
-                ErrorLbl = "Se över om din mail är korrekt. " +
-                    "Användarnamnet får bara vara i bokstäver.";
+                MessageBox.Show(errorMessageBadInput, titleInput, MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }         
 
         }
@@ -103,6 +109,7 @@ namespace Game_of_the_YEAR.ViewModels
         public string Value3 { get; set; }   
         public string ErrorLbl { get; set; }
         public ICommand CreateUserBtn { get; set; }
+        public object MessageBoxIcon { get; private set; }
 
         #endregion
 

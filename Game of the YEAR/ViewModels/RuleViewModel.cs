@@ -12,7 +12,7 @@ namespace Game_of_the_YEAR.ViewModels
         public ICommand GoBackCommand { get; set; }
 
         public string Rules { get; set; } =
-            "Spelregler för Game Of the Year. I Game of the Year ska du på tid gissa på vilket år som söks med hjälp av ledtrådar. Du startar med 99999 poäng och men dessa kommer att kontinuerligt räkna ned så länge spelrundan pågår.Så desto längre tid du tar på dig att svara desto lägre blir din slutpoäng. För varje fel svar så kommer du dock att få ett poängavdrag på 1000 poäng.Så det gäller att både vara snabb men inte så snabb att du blir slarvig. Som hjälp på vägen så kommer du att utöver din första ledtråd för vilket år som gäller få ytterligare två ledtrådar som låses upp steg för steg allt eftersom att tiden går. Dina poäng kommer att sparas så om du gissar tillräckligt bra så kommer du att visas i topp 5 listan i slutet av spelet.Du kommer även att kunna se vilka spelare som har varit flitigast i spelet och har spelat flest rundor.";
+            "Spelet är uppdelat i tio frågeomgångar. \r\n \r\n Du startar med 99999 poäng i varje frågarunda som snabbt räknar ned. \r\n Ju snabbare du svarar desto högre poäng. \r\n Men för varje år du svarar fel så får du poängavdrag på 1000 poäng. \r\n \r\n När tiden går får du ytterligare chans till två ledtrådar om du väntar för länge.";
 
 
         public RuleViewModel()

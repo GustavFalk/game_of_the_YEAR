@@ -6,36 +6,19 @@
        
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="720" Width="1280" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Assets/Images/BackgroundBlixt_Test.png" />
-
         </Grid.Background>
-        <!--<Grid>
-            --><!--<Viewbox Stretch="Uniform" Height="25" Width="25" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <local:MuteControl/>
-            </Viewbox>--><!--
-        </Grid>-->
-
-
-
-
-
-
-
-
-
         <Frame x:Name="Main" NavigationUIVisibility="Hidden">
-
         </Frame>
         <Viewbox Stretch="Uniform" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             <Button x:Name="MuteBtn" Background="Transparent" BorderThickness="0" Command="{Binding MuteCommand}" Margin="700,0,0,0">
                 <Image x:Name="VolumeOn" Source="{Binding MuteImage}"/>
             </Button>                      
-        </Viewbox>
-           
+        </Viewbox>    
         
 
-    </Grid>
+   </Grid>
 </Window>

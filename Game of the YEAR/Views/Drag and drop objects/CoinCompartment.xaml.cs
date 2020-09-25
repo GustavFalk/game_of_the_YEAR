@@ -36,6 +36,7 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
         {
             
             MediaPlayerLoad("coindrop.wav");
+            MediaPlayerVolume(0.2);
             MediaPlayerPlay();
             await Task.Delay(2500);
             GoToLoadingPageTwo();

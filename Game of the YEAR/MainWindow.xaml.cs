@@ -25,6 +25,7 @@ namespace Game_of_the_YEAR
     {
         Page page = new Views.LoadingPageOne();
         public MediaPlayer mediaPlayer = new MediaPlayer();
+
         
 
         public MainWindow()
@@ -33,7 +34,9 @@ namespace Game_of_the_YEAR
             Main.Content = page;
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
             DataContext = mainWindowViewModel;
-            
+            NavigationCommands.BrowseBack.InputGestures.Clear();
+            NavigationCommands.BrowseForward.InputGestures.Clear();
+
         }       
     }
 }

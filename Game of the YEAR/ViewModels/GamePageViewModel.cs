@@ -31,6 +31,7 @@ namespace Game_of_the_YEAR.ViewModels
         public int Answer { get; set; }
         public Visibility NotNumberVisibility { get; set; } = Visibility.Hidden;
         public ICommand OKCommand { get; set; }
+        public string GuessNumber { get; set; }
 
         #endregion
 
@@ -73,6 +74,11 @@ namespace Game_of_the_YEAR.ViewModels
 
         #region Clue Methods/Tasks
 
+        public void CurrentGuessNumber()
+        {
+            GuessNumber = $"{CurrentGame.CurrentQuestion +1}/{CurrentGame.Questions.Count}";
+        }
+
         public async Task TypeClueSlower(int clueIndex)
         {
             Hint = "";
@@ -104,8 +110,8 @@ namespace Game_of_the_YEAR.ViewModels
 
         public async void OpenPage()
         {
+            CurrentGuessNumber();
             await TypeClueSlower(clueIndex);
-
             MediaPlayerPlay();
             CountDownPoints();
         }

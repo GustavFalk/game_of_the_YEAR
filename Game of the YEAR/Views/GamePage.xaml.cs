@@ -38,5 +38,20 @@ namespace Game_of_the_YEAR.Views
                 ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
             }
         }
+
+        private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Back)
+            {
+                if ((sender as TextBox).Text.Length == 0)
+                {
+                    var ue = e.OriginalSource as FrameworkElement;
+                    e.Handled = true;
+                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Previous));
+                    IInputElement focusedControl = Keyboard.FocusedElement;
+                    (focusedControl as TextBox).Clear();
+                }
+            }
+        }
     }
 }

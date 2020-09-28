@@ -62,13 +62,13 @@
                  <TextBox x:Name="txtBox1" TextChanged="TextBox_TextChanged" Text="{Binding Number1}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
              </Viewbox>
              <Viewbox Grid.Row="1" Grid.Column="2" Stretch="Fill" Margin="2">
-                 <TextBox TextChanged="TextBox_TextChanged" Text="{Binding Number2}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
+                <TextBox PreviewKeyDown="TextBox_PreviewKeyDown" TextChanged="TextBox_TextChanged" Text="{Binding Number2}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
              </Viewbox>
              <Viewbox Grid.Row="1" Grid.Column="3" Stretch="Fill" Margin="2">
-                 <TextBox TextChanged="TextBox_TextChanged" Text="{Binding Number3}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
+                <TextBox PreviewKeyDown="TextBox_PreviewKeyDown" TextChanged="TextBox_TextChanged" Text="{Binding Number3}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
              </Viewbox>
              <Viewbox Grid.Row="1" Grid.Column="4" Stretch="Fill" Margin="2">
-                <TextBox TextChanged="TextBox_TextChanged" Text="{Binding Number4}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
+                <TextBox PreviewKeyDown="TextBox_PreviewKeyDown" TextChanged="TextBox_TextChanged" Text="{Binding Number4}" BorderBrush="HotPink" BorderThickness="1" FontFamily="{StaticResource PressStart2P}" Margin="0"  VerticalContentAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" FontSize="22" Padding="8" MaxLength="1"/>
              </Viewbox>
             <Viewbox Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Left"  VerticalAlignment="Center" Stretch="Uniform">
                 <Label Content="DU KAN ENDAST MATA IN SIFFROR!!!" Grid.Column="2" Grid.ColumnSpan="3"  FontFamily="{StaticResource PressStart2P}" Foreground="Red" Visibility="{Binding NotNumberVisibility}" />

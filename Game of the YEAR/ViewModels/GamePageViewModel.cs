@@ -38,7 +38,7 @@ namespace Game_of_the_YEAR.ViewModels
         #region Constructors
         public GamePageViewModel()
         {
-            MediaPlayerLoad("gamemusic.wav");
+            MediaPlayerLoad(sounds.gamemusic);
             OpenPage();
             OKCommand = new RelayCommand(OKButton);
         }

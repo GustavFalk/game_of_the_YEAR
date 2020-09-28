@@ -30,7 +30,7 @@ namespace Game_of_the_YEAR.ViewModels
         }
         public async void StartUpPage()
         {
-            MediaPlayerLoad("321go.mp3");
+            MediaPlayerLoad(sounds._321go);
             await Task.Delay(1000);
             MediaPlayerPlay();
             await StartCountdown();

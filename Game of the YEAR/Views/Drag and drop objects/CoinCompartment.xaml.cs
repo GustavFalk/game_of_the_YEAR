@@ -35,12 +35,12 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
         private async void UserControl_Drop(object sender, DragEventArgs e)
         {
             
-            MediaPlayerLoad("coindrop.wav");
+            MediaPlayerLoad(sounds.coindrop);
             MediaPlayerVolume(0.2);
             MediaPlayerPlay();
             await Task.Delay(2500);
             GoToLoadingPageTwo();
-            MediaPlayerLoad("menumusic.wav");
+            MediaPlayerLoad(sounds.menumusic);
             MediaPlayerPlay();
         }
 

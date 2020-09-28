@@ -66,7 +66,7 @@ namespace Game_of_the_YEAR.ViewModels
 
         public async void ShowOrder()
         {
-            MediaPlayerLoad("bipbopsound.wav");
+            MediaPlayerLoad(sounds.bipbopsound);
             await Task.Delay(1000);
             MediaPlayerPlay();
             VisibilityUserAnswer = Visibility.Visible;
@@ -76,7 +76,7 @@ namespace Game_of_the_YEAR.ViewModels
             await Task.Delay(4000);
             VisibilityFirstView = Visibility.Hidden;
             VisibilitySecondView = Visibility.Visible;
-            MediaPlayerLoad("bipbopsound.wav");
+            MediaPlayerLoad(sounds.bipbopsound);
             await Task.Delay(500);
             MediaPlayerPlay();
             VisibilityTimePoints = Visibility.Visible;
@@ -100,7 +100,7 @@ namespace Game_of_the_YEAR.ViewModels
 
         public async Task FlashLightning()
         {
-            MediaPlayerLoad("lightning.mp3");
+            MediaPlayerLoad(sounds.lightning);
             MediaPlayerPlay();
             for (int i = 0; i < 3; i++)
             {
@@ -115,7 +115,7 @@ namespace Game_of_the_YEAR.ViewModels
 
         public async void ConvertToTotalPoints()
         {
-            MediaPlayerLoad("pointcountdown.wav");
+            MediaPlayerLoad(sounds.pointcoundown);
             MediaPlayerPlay();
             if (PointsGained < 0)
             {

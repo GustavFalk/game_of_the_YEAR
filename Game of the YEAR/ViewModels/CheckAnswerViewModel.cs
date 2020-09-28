@@ -118,14 +118,7 @@ namespace Game_of_the_YEAR.ViewModels
         {
             MediaPlayerLoad("pointcountdown.wav");
             MediaPlayerPlay();
-            if (PointsGained < 0)
-            {
-               await CountTotalPointsNegative();
-            }
-            else
-            {
-                await CountTotalPointsPositive();
-            }
+            await CountTotalPointsPositive();
             MediaPlayerPause();
         }
         public async Task CountTotalPointsPositive()
@@ -151,31 +144,6 @@ namespace Game_of_the_YEAR.ViewModels
                     await Task.Delay(1);
                 }
             }
-        }
-        public async Task CountTotalPointsNegative()
-        {
-            while (PointsGained < 0)
-            {
-                if (PointsGained < -1133)
-                {
-                    PointsGained += 333;
-                    TotalPoints -= 333;
-                    await Task.Delay(1);
-                }
-                else if (PointsGained < -133)
-                {
-                    PointsGained += 133;
-                    TotalPoints -= 133;
-                    await Task.Delay(1);
-                }
-                else
-                {
-                    PointsGained++;
-                    TotalPoints--;
-                    await Task.Delay(1);
-                }
-            }
-        
         }
 
         public void AssignPropertyValues()

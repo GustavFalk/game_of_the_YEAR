@@ -67,33 +67,33 @@ namespace Game_of_the_YEAR.ViewModels
         public async void ShowOrder()
         {
             MediaPlayerLoad("bipbopsound.wav");
-            await Task.Delay(1000);
+            await Task.Delay(300);
             MediaPlayerPlay();
             VisibilityUserAnswer = Visibility.Visible;
-            await Task.Delay(1000);
+            await Task.Delay(300);
             await FlashLightning(); 
             VisibilityCorrectAnswer = Visibility.Visible;
-            await Task.Delay(4000);
+            await Task.Delay(1500);
             VisibilityFirstView = Visibility.Hidden;
             VisibilitySecondView = Visibility.Visible;
             MediaPlayerLoad("bipbopsound.wav");
-            await Task.Delay(500);
+            await Task.Delay(300);
             MediaPlayerPlay();
             VisibilityTimePoints = Visibility.Visible;
-            await Task.Delay(500);
+            await Task.Delay(300);
             MediaPlayerPlayFromZero();
             VisibilityDifferance = Visibility.Visible;
-            await Task.Delay(500);
+            await Task.Delay(300);
             MediaPlayerPlayFromZero();
             VisibilityDeduction = Visibility.Visible;
-            await Task.Delay(500);
+            await Task.Delay(300);
             MediaPlayerPlayFromZero();
             VisibilityPointsGained = Visibility.Visible;
-            await Task.Delay(500);
+            await Task.Delay(300);
             MediaPlayerPlayFromZero();
             VisibilityTotalPoints = Visibility.Visible;
             VisibilityNextQuestion = Visibility.Visible;
-            await Task.Delay(500);
+            await Task.Delay(400);
             ConvertToTotalPoints();
 
         }
@@ -111,20 +111,14 @@ namespace Game_of_the_YEAR.ViewModels
                 BackgroundImage = null;
                 await Task.Delay(100);
             }
+
         }
 
         public async void ConvertToTotalPoints()
         {
             MediaPlayerLoad("pointcountdown.wav");
             MediaPlayerPlay();
-            if (PointsGained < 0)
-            {
-               await CountTotalPointsNegative();
-            }
-            else
-            {
-                await CountTotalPointsPositive();
-            }
+            await CountTotalPointsPositive();
             MediaPlayerPause();
         }
         public async Task CountTotalPointsPositive()
@@ -151,31 +145,6 @@ namespace Game_of_the_YEAR.ViewModels
                 }
             }
         }
-        public async Task CountTotalPointsNegative()
-        {
-            while (PointsGained < 0)
-            {
-                if (PointsGained < -1133)
-                {
-                    PointsGained += 333;
-                    TotalPoints -= 333;
-                    await Task.Delay(1);
-                }
-                else if (PointsGained < -133)
-                {
-                    PointsGained += 133;
-                    TotalPoints -= 133;
-                    await Task.Delay(1);
-                }
-                else
-                {
-                    PointsGained++;
-                    TotalPoints--;
-                    await Task.Delay(1);
-                }
-            }
-        
-        }
 
         public void AssignPropertyValues()
         {
@@ -186,7 +155,7 @@ namespace Game_of_the_YEAR.ViewModels
             TimePoints = CurrentGame.TimePoints;
             PointsGained = CalculateQuestionPoints(Deduction);
             TotalPoints = CurrentGame.TotalPoints;
-            CalculateTotalPoints();
+            CalculateTotalPoints(PointsGained);
             CurrentGame.CurrentQuestion++;
         }
         public void CheckIfLastQuestion()

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Game_of_the_YEAR.Views.Drag_and_drop_objects"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="400" MouseMove="UserControl_MouseMove" PreviewGiveFeedback="UserControl_PreviewGiveFeedback">
+             d:DesignHeight="300" d:DesignWidth="400" MouseMove="UserControl_MouseMove" PreviewGiveFeedback="UserControl_PreviewGiveFeedback" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave">
 
     <Grid>
 

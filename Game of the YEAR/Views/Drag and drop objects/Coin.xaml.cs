@@ -98,5 +98,17 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
             Point relPos = this.PointFromScreen(pointRef.GetPoint(myCoin.CenterOfCoin));
             myCoin.Arrange(new Rect(relPos, myCoin.DesiredSize));
         }
+
+        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BackgroundImage = new BitmapImage(new Uri(@".\Assets\Images\goldpile2.gif", UriKind.Relative));
+            this.Background = new ImageBrush(BackgroundImage);
+        }
+
+        private void UserControl_MouseLeave(object sender, MouseEventArgs e)
+        {
+            BackgroundImage = new BitmapImage(new Uri(@".\Assets\Images\goldpile.gif", UriKind.Relative));
+            this.Background = new ImageBrush(BackgroundImage);
+        }
     }
 }

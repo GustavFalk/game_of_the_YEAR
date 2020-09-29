@@ -1,28 +1,25 @@
 ﻿using Game_of_the_YEAR.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Controls;
 using System.Windows.Input;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 using static Game_of_the_YEAR.Repositories.DBRepo;
 using Npgsql;
-using System.Linq.Expressions;
 using System.Windows;
 
 namespace Game_of_the_YEAR.ViewModels
 {
-    
-      
+       
     class ExistingUserPageViewModel: Base.BaseViewModel
     {
+        #region Properties
         public string EmailTxt { get; set; }
         public string NicknameTxt { get; set; }
 
         public ICommand LogInBtn { get; set; }
-        public string ErrorLbl { get; set; }
-
-        private bool CheckIfEmail(string email)
+        public ICommand ReturnBtn { get; set; }
+        #endregion
+        #region Methods
+        private bool CheckIfValidEmail(string email)
         {
             try
             {
@@ -34,9 +31,8 @@ namespace Game_of_the_YEAR.ViewModels
                 return false;
             }
         }
-
                  
-        public void GetPlayer()
+        public void GetPlayerFromDb()
         {
             String errorMessageEmail = "E-POSTADRESSEN VERKAR INTE FINNAS. FÖRSÖK IGEN!";
             String titleEmail = "ANVÄNDARUPPGIFTER";
@@ -45,7 +41,7 @@ namespace Game_of_the_YEAR.ViewModels
             String errorMessageBadInput = "E-POSTADRESSEN DU ANGETT ÄR INTE EN GILTIG E-POSTADRESS, FÖRSÖK IGEN!";
             String titleInput = "E-POST";
 
-            if (CheckIfEmail(EmailTxt))
+            if (CheckIfValidEmail(EmailTxt))
             {
                 Player player = new Player();
                 player.Email = EmailTxt;
@@ -66,7 +62,7 @@ namespace Game_of_the_YEAR.ViewModels
                 }
                 catch (PostgresException)
                 {
-                    MessageBox.Show(errorMessageSystem, titleSystem, MessageBoxButton.OK, MessageBoxImage.Error); //Har inte testat denna då jag inte vet hur jag ska forcera fram ett sådant fel.
+                    MessageBox.Show(errorMessageSystem, titleSystem, MessageBoxButton.OK, MessageBoxImage.Error); 
                 }
                              
             }
@@ -77,9 +73,14 @@ namespace Game_of_the_YEAR.ViewModels
           
         }
 
+        #endregion
+        #region Constructor
         public ExistingUserPageViewModel()
         {
-            LogInBtn = new RelayCommand(GetPlayer);
+            LogInBtn = new RelayCommand(GetPlayerFromDb);
+            ReturnBtn = new RelayCommand(GoToStartpagePage);
         }
+        #endregion
     }
+
 }

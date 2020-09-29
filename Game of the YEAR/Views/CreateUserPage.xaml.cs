@@ -19,13 +19,15 @@ namespace Game_of_the_YEAR.Views
     /// </summary>
     public partial class CreateUserPage : Page
     {
+        #region Constructor
         public CreateUserPage()
         {
             InitializeComponent();
             CreateUserPageViewModel createUserPageViewModel = new CreateUserPageViewModel();
             DataContext = createUserPageViewModel;
         }
-
+        #endregion
+        #region Methods
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if ((sender as TextBox).MaxLength == (sender as TextBox).Text.Length)
@@ -35,11 +37,7 @@ namespace Game_of_the_YEAR.Views
                 ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
             }
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            GoToStartpagePage();
-        }
+       
 
         private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -67,5 +65,6 @@ namespace Game_of_the_YEAR.Views
                 (focusedControl as TextBox).Clear();
             }
         }
+        #endregion
     }
 }

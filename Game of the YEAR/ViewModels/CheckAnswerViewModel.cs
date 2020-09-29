@@ -111,7 +111,19 @@ namespace Game_of_the_YEAR.ViewModels
                 BackgroundImage = null;
                 await Task.Delay(100);
             }
+            SetBackgroundToAnswerDifferance();
 
+        }
+        public void SetBackgroundToAnswerDifferance()
+        {
+            if (DifferanceAnswers == 0)
+            {
+                BackgroundImage = new BitmapImage(new Uri(@".\Assets\Images\BackgroundBlixt_Test_Green.png", UriKind.Relative));
+            }
+            else
+            {
+                BackgroundImage = new BitmapImage(new Uri(@".\Assets\Images\BackgroundBlixt_Test_Red.png", UriKind.Relative));
+            }
         }
 
         public async void ConvertToTotalPoints()

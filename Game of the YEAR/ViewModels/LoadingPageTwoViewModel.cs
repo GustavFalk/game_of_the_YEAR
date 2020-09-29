@@ -8,27 +8,32 @@ namespace Game_of_the_YEAR.ViewModels
 {
     class LoadingPageTwoViewModel : Base.BaseViewModel
     {
-        public string LoadingText { get; set; }
-
+        #region Properties
+        public string LoadingTxt { get; set; }
+        #endregion
+        #region Methods
         private async void Loading()
         {
-            LoadingText = "LOADING.";
+            LoadingTxt = "LOADING.";
             await Task.Delay(1000);
-            LoadingText = "LOADING..";
+            LoadingTxt = "LOADING..";
             await Task.Delay(1000);
-            LoadingText = "LOADING...";
+            LoadingTxt = "LOADING...";
             await Task.Delay(1000);
-            LoadingText = "LOADING.";
+            LoadingTxt = "LOADING.";
             await Task.Delay(1000);
-            LoadingText = "LOADING..";
+            LoadingTxt = "LOADING..";
             await Task.Delay(1000);
-            LoadingText = "LOADING...";
+            LoadingTxt = "LOADING...";
             await Task.Delay(1000);
             GoToStartpagePage();         
         }
+        #endregion
+        #region Construtror
         public LoadingPageTwoViewModel()
         {
             Loading();
         }
+        #endregion
     }
 }

@@ -16,11 +16,24 @@ namespace Game_of_the_YEAR.ViewModels
     class CreateUserPageViewModel: Base.BaseViewModel
 
     {
-        #region models
-      
+        
+        #region Properties
+        public string EmailTxt { get; set; }
+        public string NicknameTxt { get; set; }
+        public string Value1 { get; set; }
+        public string Value2 { get; set; }
+        public string Value3 { get; set; }   
+        public string ErrorLbl { get; set; }
+        public ICommand CreateUserBtn { get; set; }
+        public object MessageBoxIcon { get; private set; }
+        public ICommand GoBackBtn { get; set; }
+
+        #endregion
+        #region Methods
+
         private bool CheckIfLetters(string text)
         {
-            foreach(char c in text)
+            foreach (char c in text)
             {
                 if (!Char.IsLetter(c))
                 {
@@ -29,8 +42,8 @@ namespace Game_of_the_YEAR.ViewModels
                 }
             }
 
-            return true;     
-        
+            return true;
+
         }
         private bool CheckIfEmail(string text)
         {
@@ -63,61 +76,51 @@ namespace Game_of_the_YEAR.ViewModels
             String titleInput = "ANVÄNDARUPPGIFTER";
 
             if (CheckIfLetters(NicknameTxt) && CheckIfEmail(EmailTxt))
-            {                
+            {
                 Player player = new Player();
                 player.Email = EmailTxt;
-                player.Nickname = NicknameTxt;                              
-                
+                player.Nickname = NicknameTxt;
+
                 try
                 {
-                    player= AddPlayerToDB(player);
+                    player = AddPlayerToDB(player);
                     CurrentGame.CurrentPlayer = player;
-                    GoToStartGamePage();                    
+                    GoToStartGamePage();
                 }
-                catch(PostgresException e)
+                catch (PostgresException e)
                 {
-                    
-                    if(e.ConstraintName == "email_unique")
+
+                    if (e.ConstraintName == "email_unique")
                     {
-                     MessageBox.Show(errorMessageEmail, titleEmail, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(errorMessageEmail, titleEmail, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     }
                     else if (e.ConstraintName == "nickname_unique")
                     {
                         MessageBox.Show(errorMessageUser, titleUser, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     }
-                    else 
+                    else
                     {
-                        MessageBox.Show(errorMessageSystem + $"{e}", titleSystem, MessageBoxButton.OK, MessageBoxImage.Error); 
+                        MessageBox.Show(errorMessageSystem + $"{e}", titleSystem, MessageBoxButton.OK, MessageBoxImage.Error);
                     }
-                }          
+                }
             }
             else
             {
                 MessageBox.Show(errorMessageBadInput, titleInput, MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            }         
+            }
 
         }
 
 
 
         #endregion
-        #region properties
-        public string EmailTxt { get; set; }
-        public string NicknameTxt { get; set; }
-        public string Value1 { get; set; }
-        public string Value2 { get; set; }
-        public string Value3 { get; set; }   
-        public string ErrorLbl { get; set; }
-        public ICommand CreateUserBtn { get; set; }
-        public object MessageBoxIcon { get; private set; }
-
-        #endregion
-
+        #region Contstructor
         public CreateUserPageViewModel() 
         {
             CreateUserBtn = new RelayCommand(AddPlayer);
+            GoBackBtn = new RelayCommand(GoToStartpagePage);
         }
+        #endregion
 
-       
     }
 }

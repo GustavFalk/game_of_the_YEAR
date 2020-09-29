@@ -9,18 +9,22 @@ namespace Game_of_the_YEAR.ViewModels
 {
     class StartPageViewModel : Base.BaseViewModel
     {
+        #region Properties
         public ICommand NewPlayerBtn { get; set; }
         public ICommand ExistingPlayerBtn { get; set; }
-
+        #endregion
+        #region Constructor
         public StartPageViewModel()
         {
             NewPlayerBtn = new RelayCommand(GoToCreateUserPage);
             ExistingPlayerBtn = new RelayCommand(GoToExistingUserPage);
         }
+        #endregion
 
-       
-            
-        
+
+
+
+
     }
-         
+
 }

@@ -20,16 +20,14 @@ namespace Game_of_the_YEAR.Views
     /// </summary>
     public partial class StartGamePage : Page
     {
+        #region Constructor
         public StartGamePage()
         {
             InitializeComponent();
             StartGameViewModel startGameViewModel = new StartGameViewModel();
             DataContext = startGameViewModel;
         }
+        #endregion
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            GoToLoadingPageOne(); 
-        }
     }
 }

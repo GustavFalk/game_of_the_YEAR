@@ -20,22 +20,12 @@ namespace Game_of_the_YEAR.Views
     /// </summary>
     public partial class LoadingPageOne : Page
     {
-        public LoadingPageOne()
-        {
-            InitializeComponent();
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Tick += timer_Tick;
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
-            timer.Start();
-        }
+        #region Properties
         private bool BlinkOn = false;
 
         Brush typGul = (Brush)new BrushConverter().ConvertFromString("#CAC8B1");
-        
-        private static object BrushConverter()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
+        #region Methods
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -48,13 +38,27 @@ namespace Game_of_the_YEAR.Views
             else
             {
                 insertCoinLbl.Foreground = Brushes.Transparent;
-                
+
             }
             BlinkOn = !BlinkOn;
         }
+        #endregion
+        #region Constructor
+        public LoadingPageOne()
+        {
+            InitializeComponent();
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Tick += timer_Tick;
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
+            timer.Start();
+        }
+        #endregion
 
 
 
-       
+
+
+
+
     }
 }

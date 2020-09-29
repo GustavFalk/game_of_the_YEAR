@@ -14,18 +14,20 @@ using System.Windows.Shapes;
 
 namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
 {
-    /// <summary>
-    /// Interaction logic for Coin.xaml
-    /// </summary>
+   
     public partial class Coin : UserControl
     {
+        #region Properties
         ImageSource BackgroundImage { get; set; } = new BitmapImage(new Uri(@".\Assets\Images\goldpile.gif", UriKind.Relative));
+        #endregion
+        #region Constructor
         public Coin()
         {
             InitializeComponent();
             this.Background = new ImageBrush(BackgroundImage);
         }
-        
+        #endregion
+        #region Adorner
         private class DraggableCoin : Adorner
         {
             
@@ -98,5 +100,6 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
             Point relPos = this.PointFromScreen(pointRef.GetPoint(myCoin.CenterOfCoin));
             myCoin.Arrange(new Rect(relPos, myCoin.DesiredSize));
         }
+        #endregion
     }
 }

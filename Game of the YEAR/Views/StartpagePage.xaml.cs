@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 
 namespace Game_of_the_YEAR.Views
 {
-    /// <summary>
-    /// Interaction logic for StartpagePage.xaml
-    /// </summary>
+  
     public partial class StartpagePage : Page
     {
+        #region Constructor
         public StartpagePage()
         {
             InitializeComponent();
             StartPageViewModel startPageViewModel = new StartPageViewModel();
             DataContext = startPageViewModel;            
         }
+        #endregion
     }
 }

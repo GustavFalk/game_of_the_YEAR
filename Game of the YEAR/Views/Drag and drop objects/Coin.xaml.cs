@@ -50,6 +50,8 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
                 drawingContext.DrawRectangle(coinImage, null, coinSize);
             }
         }
+        #endregion
+        #region Methods
         private struct PInPoint
         {
             public int X;
@@ -112,5 +114,6 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
             BackgroundImage = new BitmapImage(new Uri(@".\Assets\Images\goldpile.gif", UriKind.Relative));
             this.Background = new ImageBrush(BackgroundImage);
         }
+        #endregion
     }
 }

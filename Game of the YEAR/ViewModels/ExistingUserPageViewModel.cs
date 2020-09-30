@@ -49,7 +49,7 @@ namespace Game_of_the_YEAR.ViewModels
                 
                 try
                 {                    
-                    player=GetPlayerFromDB(player.Email);
+                    player=GetPlayer(player.Email);
                     if (player == null)
                     {
                         MessageBox.Show(errorMessageEmail, titleEmail, MessageBoxButton.OK, MessageBoxImage.Exclamation); 

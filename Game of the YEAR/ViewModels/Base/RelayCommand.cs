@@ -7,9 +7,11 @@ namespace Game_of_the_YEAR
 {
     public class RelayCommand : ICommand
     {
+        #region Properties
         public event EventHandler CanExecuteChanged;
         private Action action;
-
+        #endregion
+        #region Methods
         public RelayCommand(Action action)
         {
             this.action = action;
@@ -24,5 +26,6 @@ namespace Game_of_the_YEAR
         {
             action();
         }
+        #endregion
     }
 }

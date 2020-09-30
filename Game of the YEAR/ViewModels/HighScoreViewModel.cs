@@ -31,7 +31,6 @@ namespace Game_of_the_YEAR.ViewModels
         public ICommand NewGameBtn { get; set; }
 
         List<Highscore> highscores = new List<Highscore>();
-
         #endregion
 
         #region Clue Methods/Tasks

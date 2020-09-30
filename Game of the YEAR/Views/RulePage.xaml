@@ -52,7 +52,7 @@
                 <ColumnDefinition Width="0.5*"/>
             </Grid.ColumnDefinitions>
             <Viewbox Grid.Column="1" >
-                <Label Content="{Binding Rules}" FontSize="20" Padding="1,1,1,1" Foreground="White" FontFamily="{StaticResource PressStart2P}"/>
+                <Label Content="{Binding Rules}" FontSize="30" Padding="1,1,1,1" Foreground="White" FontFamily="{StaticResource PressStart2P}"/>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="3">
@@ -67,7 +67,7 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Button Content="   OK   " Command="{Binding GoBackCommand}" Padding="0,20,0,80" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="100" FontFamily="{StaticResource PressStart2P}"/>
+                    <Button Content="   OK   " Command="{Binding OkBtn}" Padding="0,20,0,80" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="100" FontFamily="{StaticResource PressStart2P}"/>
                 </Grid>
             </Viewbox>
         </Grid>

@@ -13,9 +13,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.35*"/>
             <RowDefinition Height="0.8*"/>
-            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.45*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -43,7 +43,7 @@
             <Viewbox Grid.Column="1" Stretch="Uniform" VerticalAlignment="Center">
                 <Label x:Name="insertCoinLbl" Content="INSERT COIN" FontFamily="{StaticResource PressStart2P}" Foreground="#CAC8B1"/>
             </Viewbox>
-            <local:Coin/>
+            <local:Coin Margin="3"/>
             
              <local:CoinCompartment Grid.Column="2"/>
             
@@ -53,8 +53,8 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Viewbox Stretch="Uniform">
-                <Label Content="© 2020 Copyright SUP Grupp 11" Padding="0,10,100,3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="White" FontSize="10" FontFamily="{StaticResource PressStart2P}"/>
+            <Viewbox Stretch="Uniform" VerticalAlignment="Bottom">
+                <Label Content="© 2020 Copyright SUP Grupp 11" Padding="2,10,100,3" Grid.Column="0" HorizontalAlignment="Left"  Foreground="White" FontSize="10" FontFamily="{StaticResource PressStart2P}"/>
             </Viewbox>
         </Grid>
 

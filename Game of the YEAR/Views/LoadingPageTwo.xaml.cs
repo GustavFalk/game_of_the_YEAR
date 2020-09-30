@@ -15,17 +15,17 @@ using Game_of_the_YEAR.ViewModels;
 
 namespace Game_of_the_YEAR.Views
 {
-    /// <summary>
-    /// Interaction logic for LoadingPageTwo.xaml
-    /// </summary>
+  
     public partial class LoadingPageTwo : Page
     {
+        #region Constructor
         public LoadingPageTwo()
         {
             InitializeComponent();
             LoadingPageTwoViewModel loadingPageTwoViewModel = new LoadingPageTwoViewModel();
             DataContext = loadingPageTwoViewModel;
         }
-       
+        #endregion
+
     }
 }

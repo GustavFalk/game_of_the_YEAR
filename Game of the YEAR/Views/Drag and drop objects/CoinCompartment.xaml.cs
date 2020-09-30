@@ -16,12 +16,13 @@ using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
 {
-    /// <summary>
-    /// Interaction logic for CoinCompartment.xaml
-    /// </summary>
+  
     public partial class CoinCompartment : UserControl
     {
+        #region Properties
         ImageSource backgroundImage;
+        #endregion
+        #region Constructror
         public CoinCompartment()
         {
             InitializeComponent();
@@ -29,8 +30,9 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
             this.Background = new ImageBrush(backgroundImage);
 
         }
+        #endregion
+        #region Methods
 
-        
 
         private async void UserControl_Drop(object sender, DragEventArgs e)
         {
@@ -57,5 +59,6 @@ namespace Game_of_the_YEAR.Views.Drag_and_drop_objects
             backgroundImage = new BitmapImage(new Uri(@".\Assets\Images\coindrop1.png", UriKind.Relative));
             this.Background = new ImageBrush(backgroundImage);
         }
+        #endregion
     }
 }

@@ -17,7 +17,7 @@ namespace Game_of_the_YEAR.Models
         }
         public static int CalculateDeduction(int answerDifferance)
         {
-            int deduction = answerDifferance * 1000;
+            int deduction = answerDifferance * 2000;
             return deduction;
         }
         public static int CalculateQuestionPoints(int deduction)

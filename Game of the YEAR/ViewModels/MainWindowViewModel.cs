@@ -25,7 +25,8 @@ namespace Game_of_the_YEAR
         {
             MuteCommand = new RelayCommand(ChangeMute);            
         }
-
+        #endregion
+        #region Methods
         public void ChangeMute()
         {
             if (((MainWindow)System.Windows.Application.Current.MainWindow).mediaPlayer.Volume == 0)
@@ -40,6 +41,7 @@ namespace Game_of_the_YEAR
                 
             }
         }
+        #endregion
 
     }
 }

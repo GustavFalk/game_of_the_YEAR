@@ -46,8 +46,7 @@ namespace Game_of_the_YEAR.ViewModels
             DiligenceScore2Rounds = $"{diligenceScores[1].GameRounds}";
             DiligenceScore3Rounds = $"{diligenceScores[2].GameRounds}";
             DiligenceScore4Rounds = $"{diligenceScores[3].GameRounds}";
-            DiligenceScore5Rounds = $"{diligenceScores[4].GameRounds}";           
-
+            DiligenceScore5Rounds = $"{diligenceScores[4].GameRounds}";
         }
         #endregion
 

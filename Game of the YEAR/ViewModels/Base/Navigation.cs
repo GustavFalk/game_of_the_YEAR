@@ -10,7 +10,7 @@ namespace Game_of_the_YEAR.ViewModels.Base
 {
     public static class Navigation
     {
-        #region View navigation
+        #region Methods
         public static void GoToLoadingPageOne()
         {
             Page page = new Views.LoadingPageOne();
@@ -74,7 +74,7 @@ namespace Game_of_the_YEAR.ViewModels.Base
             ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
         }
 
-        #endregion
+        #endregion 
         
     }
 }

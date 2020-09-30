@@ -70,30 +70,30 @@ namespace Game_of_the_YEAR.ViewModels
             await Task.Delay(1000);
             MediaPlayerPlay();
             VisibilityUserAnswer = Visibility.Visible;
-            await Task.Delay(1000);
+            await Task.Delay(300);
             await FlashLightning(); 
             VisibilityCorrectAnswer = Visibility.Visible;
-            await Task.Delay(4000);
+            await Task.Delay(1500);
             VisibilityFirstView = Visibility.Hidden;
             VisibilitySecondView = Visibility.Visible;
             MediaPlayerLoad(sounds.bipbopsound);
             await Task.Delay(500);
             MediaPlayerPlay();
             VisibilityTimePoints = Visibility.Visible;
-            await Task.Delay(500);
+            await Task.Delay(300);
             MediaPlayerPlayFromZero();
             VisibilityDifferance = Visibility.Visible;
-            await Task.Delay(500);
+            await Task.Delay(300);
             MediaPlayerPlayFromZero();
             VisibilityDeduction = Visibility.Visible;
-            await Task.Delay(500);
+            await Task.Delay(300);
             MediaPlayerPlayFromZero();
             VisibilityPointsGained = Visibility.Visible;
-            await Task.Delay(500);
+            await Task.Delay(300);
             MediaPlayerPlayFromZero();
             VisibilityTotalPoints = Visibility.Visible;
             VisibilityNextQuestion = Visibility.Visible;
-            await Task.Delay(500);
+            await Task.Delay(400);
             ConvertToTotalPoints();
 
         }
@@ -111,20 +111,26 @@ namespace Game_of_the_YEAR.ViewModels
                 BackgroundImage = null;
                 await Task.Delay(100);
             }
+            SetBackgroundToAnswerDifferance();
+
+        }
+        public void SetBackgroundToAnswerDifferance()
+        {
+            if (DifferanceAnswers == 0)
+            {
+                BackgroundImage = new BitmapImage(new Uri(@".\Assets\Images\BackgroundBlixt_Test_Green.png", UriKind.Relative));
+            }
+            else
+            {
+                BackgroundImage = new BitmapImage(new Uri(@".\Assets\Images\BackgroundBlixt_Test_Red.png", UriKind.Relative));
+            }
         }
 
         public async void ConvertToTotalPoints()
         {
             MediaPlayerLoad(sounds.pointcoundown);
             MediaPlayerPlay();
-            if (PointsGained < 0)
-            {
-               await CountTotalPointsNegative();
-            }
-            else
-            {
-                await CountTotalPointsPositive();
-            }
+            await CountTotalPointsPositive();
             MediaPlayerPause();
         }
         public async Task CountTotalPointsPositive()
@@ -151,31 +157,6 @@ namespace Game_of_the_YEAR.ViewModels
                 }
             }
         }
-        public async Task CountTotalPointsNegative()
-        {
-            while (PointsGained < 0)
-            {
-                if (PointsGained < -1133)
-                {
-                    PointsGained += 333;
-                    TotalPoints -= 333;
-                    await Task.Delay(1);
-                }
-                else if (PointsGained < -133)
-                {
-                    PointsGained += 133;
-                    TotalPoints -= 133;
-                    await Task.Delay(1);
-                }
-                else
-                {
-                    PointsGained++;
-                    TotalPoints--;
-                    await Task.Delay(1);
-                }
-            }
-        
-        }
 
         public void AssignPropertyValues()
         {
@@ -186,7 +167,7 @@ namespace Game_of_the_YEAR.ViewModels
             TimePoints = CurrentGame.TimePoints;
             PointsGained = CalculateQuestionPoints(Deduction);
             TotalPoints = CurrentGame.TotalPoints;
-            CalculateTotalPoints();
+            CalculateTotalPoints(PointsGained);
             CurrentGame.CurrentQuestion++;
         }
         public void CheckIfLastQuestion()

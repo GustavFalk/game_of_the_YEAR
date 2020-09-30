@@ -15,36 +15,18 @@ using static Game_of_the_YEAR.ViewModels.Base.Navigation;
 
 namespace Game_of_the_YEAR.Views
 {
-    /// <summary>
-    /// Interaction logic for RulePage.xaml
-    /// </summary>
+    
     public partial class RulePage : Page
     {
+        #region Constructor
         public RulePage()
         {
             InitializeComponent();
             RuleViewModel ruleViewModel = new RuleViewModel();
             DataContext = ruleViewModel;
         }
+        #endregion
 
 
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            var window = Window.GetWindow(this);
-            window.KeyDown += HandleKeyPress;
-        }
-        private void HandleKeyPress(object sender, RoutedEventArgs e)
-        {
-            if ((e as KeyEventArgs).Key == Key.Enter)
-            {
-                GoToStartGamePage();                
-            }
-        }
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    GoToStartGamePage();
-        //}
     }
 }

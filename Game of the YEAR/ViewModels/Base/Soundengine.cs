@@ -6,9 +6,11 @@ namespace Game_of_the_YEAR.ViewModels.Base
 {
     public static class Soundengine
     {
+        #region Properties
         public enum sounds { _321go, bipbopsound, coindrop, gamemusic, lightning, menumusic, pointcoundown }
 
-        #region Mediaplayer commands
+        #endregion
+        #region Methods
         public static void MediaPlayerPlay()
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).mediaPlayer.Play();
@@ -51,7 +53,7 @@ namespace Game_of_the_YEAR.ViewModels.Base
 
             }
 
-            public static void MediaPlayerPlayFromZero()
+        public static void MediaPlayerPlayFromZero()
         {
 
             ((MainWindow)System.Windows.Application.Current.MainWindow).mediaPlayer.Position = TimeSpan.Zero;
@@ -62,11 +64,7 @@ namespace Game_of_the_YEAR.ViewModels.Base
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).mediaPlayer.Volume = volume;
         }
-
-        public static void MediaPlayerLoop()
-        {
-
-        }
+        
         #endregion
     }
 }

@@ -24,12 +24,11 @@ namespace Game_of_the_YEAR.ViewModels
         public string HighScore3Points { get; set; }
         public string HighScore4Points { get; set; }
         public string HighScore5Points { get; set; }
-        public int TotalPoints { get; set; }
         public string CurrentPlayerName { get; set; }
-
+        public int TotalPoints { get; set; }
         public Int64 Placement { get; set; }
-        public ICommand DiligenceScorePageBTN { get; set; }
-        public ICommand NewGameBTN { get; set; }
+        public ICommand DiligenceScorePageBtn { get; set; }
+        public ICommand NewGameBtn { get; set; }
 
         List<Highscore> highscores = new List<Highscore>();
 
@@ -47,8 +46,7 @@ namespace Game_of_the_YEAR.ViewModels
             HighScore2Points = $"{highscores[1].Points}";
             HighScore3Points = $"{highscores[2].Points}";
             HighScore4Points = $"{highscores[3].Points}";
-            HighScore5Points = $"{highscores[4].Points}";          
-            
+            HighScore5Points = $"{highscores[4].Points}";
         }
         #endregion
 
@@ -57,8 +55,8 @@ namespace Game_of_the_YEAR.ViewModels
         {
             highscores = GetHighscores();
             InputToOutput();            
-            DiligenceScorePageBTN = new RelayCommand(GoToDiligenceScorePage);
-            NewGameBTN = new RelayCommand(GoToStartGamePage);
+            DiligenceScorePageBtn = new RelayCommand(GoToDiligenceScorePage);
+            NewGameBtn = new RelayCommand(GoToStartGamePage);
             TotalPoints = CurrentGame.TotalPoints;
             CurrentPlayerName = CurrentGame.CurrentPlayer.Nickname;
             Placement = GetPlacement(TotalPoints);

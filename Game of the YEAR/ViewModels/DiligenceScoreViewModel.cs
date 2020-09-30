@@ -27,9 +27,8 @@ namespace Game_of_the_YEAR.ViewModels
         public string CurrentPlayerName { get; set; }
         public Int64 GameRounds { get; set; }
         public Int64 Placement { get; set; }
-
-        public ICommand HighScorePageBTN { get; set; }
-        public ICommand NewGameBTN { get; set; }
+        public ICommand HighScorePageBtn { get; set; }
+        public ICommand NewGameBtn { get; set; }
 
         List<DiligenceScore> diligenceScores = new List<DiligenceScore>();
 
@@ -60,8 +59,8 @@ namespace Game_of_the_YEAR.ViewModels
             CurrentPlayerName = CurrentGame.CurrentPlayer.Nickname;
             GameRounds = GetDiligence(CurrentGame.CurrentPlayer.PlayerID);
             Placement = GetPlacementDiligence(GameRounds);
-            HighScorePageBTN = new RelayCommand(GoToHighScorePage);
-            NewGameBTN = new RelayCommand(GoToStartGamePage);
+            HighScorePageBtn = new RelayCommand(GoToHighScorePage);
+            NewGameBtn = new RelayCommand(GoToStartGamePage);
         }
         #endregion
     }

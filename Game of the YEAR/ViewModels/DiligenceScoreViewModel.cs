@@ -31,7 +31,6 @@ namespace Game_of_the_YEAR.ViewModels
         public ICommand NewGameBtn { get; set; }
 
         List<DiligenceScore> diligenceScores = new List<DiligenceScore>();
-
         #endregion
 
         #region Clue Methods/Tasks

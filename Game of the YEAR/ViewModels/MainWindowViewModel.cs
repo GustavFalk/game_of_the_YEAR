@@ -13,12 +13,14 @@ namespace Game_of_the_YEAR
 {
     public class MainWindowViewModel : Game_of_the_YEAR.ViewModels.Base.BaseViewModel
     {
+        #region Properties
         public int AmountOutput { get; set; }
 
         public ICommand MuteCommand { get; set; }
 
         public ImageSource MuteImage { get; set; } = new BitmapImage(new Uri(@".\Assets\Images\icons8-low-volume-50.png", UriKind.Relative));
-
+        #endregion
+        #region Constructor
         public MainWindowViewModel()
         {
             MuteCommand = new RelayCommand(ChangeMute);            

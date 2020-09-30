@@ -13,6 +13,7 @@ namespace Game_of_the_YEAR.ViewModels
 {
     class DiligenceScoreViewmodel : Base.BaseViewModel
     {
+        #region Properties
         public string DiligenceScore1Player { get; set; }
         public string DiligenceScore2Player { get; set; }
         public string DiligenceScore3Player { get; set; }
@@ -32,6 +33,9 @@ namespace Game_of_the_YEAR.ViewModels
 
         List<DiligenceScore> diligenceScores = new List<DiligenceScore>();
 
+        #endregion
+
+        #region Clue Methods/Tasks
         public void InputToOutput()
         {
             DiligenceScore1Player = $"{diligenceScores[0].PlayerNickName}";
@@ -43,11 +47,12 @@ namespace Game_of_the_YEAR.ViewModels
             DiligenceScore2Rounds = $"{diligenceScores[1].GameRounds}";
             DiligenceScore3Rounds = $"{diligenceScores[2].GameRounds}";
             DiligenceScore4Rounds = $"{diligenceScores[3].GameRounds}";
-            DiligenceScore5Rounds = $"{diligenceScores[4].GameRounds}";
-           
+            DiligenceScore5Rounds = $"{diligenceScores[4].GameRounds}";           
 
         }
+        #endregion
 
+        #region Constructors
         public DiligenceScoreViewmodel()
         {
             diligenceScores = GetDiligenceScores();
@@ -58,6 +63,6 @@ namespace Game_of_the_YEAR.ViewModels
             HighScorePageBTN = new RelayCommand(GoToHighScorePage);
             NewGameBTN = new RelayCommand(GoToStartGamePage);
         }
-
+        #endregion
     }
 }

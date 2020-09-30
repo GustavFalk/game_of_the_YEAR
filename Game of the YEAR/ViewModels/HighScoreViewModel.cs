@@ -13,6 +13,7 @@ namespace Game_of_the_YEAR.ViewModels
 {
     class HighScoreViewModel:Base.BaseViewModel
     {
+        #region Properties
         public string HighScore1Player { get; set; }
         public string HighScore2Player { get; set; }
         public string HighScore3Player { get; set; }
@@ -32,6 +33,9 @@ namespace Game_of_the_YEAR.ViewModels
 
         List<Highscore> highscores = new List<Highscore>();
 
+        #endregion
+
+        #region Clue Methods/Tasks
         public void InputToOutput()
         {
             HighScore1Player = $"{highscores[0].PlayerNickName}";
@@ -43,11 +47,12 @@ namespace Game_of_the_YEAR.ViewModels
             HighScore2Points = $"{highscores[1].Points}";
             HighScore3Points = $"{highscores[2].Points}";
             HighScore4Points = $"{highscores[3].Points}";
-            HighScore5Points = $"{highscores[4].Points}";
-            
+            HighScore5Points = $"{highscores[4].Points}";          
             
         }
+        #endregion
 
+        #region Constructors
         public HighScoreViewModel()
         {
             highscores = GetHighscores();
@@ -58,5 +63,6 @@ namespace Game_of_the_YEAR.ViewModels
             CurrentPlayerName = CurrentGame.CurrentPlayer.Nickname;
             Placement = GetPlacement(TotalPoints);
         }
+        #endregion
     }
 }

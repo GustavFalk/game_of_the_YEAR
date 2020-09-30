@@ -19,15 +19,20 @@ namespace Game_of_the_YEAR.Views
     /// </summary>
     public partial class GamePage : Page
     {
-        GamePageViewModel gamePageViewModel = new GamePageViewModel();
-        
+        #region Variables
 
+        GamePageViewModel gamePageViewModel = new GamePageViewModel();
+
+        #endregion
+        #region Constructor
         public GamePage()
         {
             InitializeComponent();
             DataContext = gamePageViewModel;
             txtBox1.Focus();
         }
+        #endregion
+        #region Methods
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -65,5 +70,6 @@ namespace Game_of_the_YEAR.Views
                 (focusedControl as TextBox).Clear();
             }
         }
+        #endregion
     }
 }

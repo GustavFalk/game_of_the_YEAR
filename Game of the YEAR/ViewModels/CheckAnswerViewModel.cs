@@ -16,7 +16,9 @@ namespace Game_of_the_YEAR.ViewModels
 {
     class CheckAnswerViewModel : Base.BaseViewModel
     {
-        #region Number Properties
+        #region Properties
+
+        #region Input Properties
 
         public int UserAnswer { get; set; } 
         public int CorrectAnswer { get; set; } 
@@ -41,37 +43,35 @@ namespace Game_of_the_YEAR.ViewModels
         public Visibility VisibilityTotalPoints { get; set; } = Visibility.Hidden;
         public Visibility VisibilityNextQuestion { get; set; } = Visibility.Hidden;
 
+        #endregion
+
+        #region UI Properties
+
         public ImageSource BackgroundImage { get; set; }
+        public ICommand NextQuestionBtn { get; set; }
 
         #endregion
-
-        #region ICommand Properties
-
-        public ICommand NextQuestionCommand { get; set; }
-
         #endregion
-
         #region Constructor
 
         public CheckAnswerViewModel()
         {
-            AssignPropertyValues();
-            NextQuestionCommand = new RelayCommand(NextQuestion);
-            ShowOrder();
+            CalculatePoints();
+            NextQuestionBtn = new RelayCommand(NextQuestion);
+            ShowVisibilityOrder();
         }
 
         #endregion
+        #region Methods
 
-        #region Methods/Tasks
-
-        public async void ShowOrder()
+        public async void ShowVisibilityOrder()
         {
             MediaPlayerLoad(sounds.bipbopsound);
             await Task.Delay(1000);
             MediaPlayerPlay();
             VisibilityUserAnswer = Visibility.Visible;
             await Task.Delay(300);
-            await FlashLightning(); 
+            await AnswerAnimationLightning(); 
             VisibilityCorrectAnswer = Visibility.Visible;
             await Task.Delay(1500);
             VisibilityFirstView = Visibility.Hidden;
@@ -97,8 +97,7 @@ namespace Game_of_the_YEAR.ViewModels
             ConvertToTotalPoints();
 
         }
-
-        public async Task FlashLightning()
+        public async Task AnswerAnimationLightning()
         {
             MediaPlayerLoad(sounds.lightning);
             MediaPlayerPlay();
@@ -125,15 +124,14 @@ namespace Game_of_the_YEAR.ViewModels
                 BackgroundImage = new BitmapImage(new Uri(@".\Assets\Images\BackgroundBlixt_Test_Red.png", UriKind.Relative));
             }
         }
-
         public async void ConvertToTotalPoints()
         {
             MediaPlayerLoad(sounds.pointcoundown);
             MediaPlayerPlay();
-            await CountTotalPointsPositive();
+            await CountTotalPoints();
             MediaPlayerPause();
         }
-        public async Task CountTotalPointsPositive()
+        public async Task CountTotalPoints()
         {
             while (PointsGained > 0)
             {
@@ -157,8 +155,7 @@ namespace Game_of_the_YEAR.ViewModels
                 }
             }
         }
-
-        public void AssignPropertyValues()
+        public void CalculatePoints()
         {
             UserAnswer = CurrentGame.UserAnswer;
             CorrectAnswer = CurrentGame.Questions[CurrentGame.CurrentQuestion].Year;
@@ -187,10 +184,7 @@ namespace Game_of_the_YEAR.ViewModels
             MediaPlayerPause();
             CheckIfLastQuestion();
         }
-       
-
 
         #endregion
-
     }
 }

@@ -30,7 +30,7 @@ namespace Game_of_the_YEAR.ViewModels
         public string Number4 { get; set; }
         public int Answer { get; set; }
         public Visibility NotNumberVisibility { get; set; } = Visibility.Hidden;
-        public ICommand OKCommand { get; set; }
+        public ICommand OKBtn { get; set; }
         public string GuessNumber { get; set; }
 
         #endregion
@@ -40,12 +40,12 @@ namespace Game_of_the_YEAR.ViewModels
         {
             MediaPlayerLoad(sounds.gamemusic);
             OpenPage();
-            OKCommand = new RelayCommand(OKButton);
+            OKBtn = new RelayCommand(OKButton);
         }
 
         #endregion
 
-        #region Points Counter Methods
+        #region Methods
 
         public async void CountDownPoints()
         {
@@ -69,10 +69,6 @@ namespace Game_of_the_YEAR.ViewModels
         {
             CountDown = false;
         }
-
-        #endregion
-
-        #region Clue Methods/Tasks
 
         public void CurrentGuessNumber()
         {
@@ -104,9 +100,6 @@ namespace Game_of_the_YEAR.ViewModels
                 _ =TypeClueSlower(clueIndex);
             }
         }
-
-        #endregion
-
 
         public async void OpenPage()
         {
@@ -140,6 +133,7 @@ namespace Game_of_the_YEAR.ViewModels
                 GoToCheckAnswerPage();
             }
         }
-    } 
-           
+        #endregion
+    }
+
 }

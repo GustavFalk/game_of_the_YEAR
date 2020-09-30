@@ -131,7 +131,7 @@
             <!--#endregion--> 
         </Grid>
         <Viewbox  Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform">
-            <Button Content="NÄSTA FRÅGA" Command="{Binding NextQuestionCommand}" FontFamily="{StaticResource PressStart2P}" Margin="50,0,50,0" Visibility="{Binding VisibilityNextQuestion}" Padding="5"/>
+            <Button Content="NÄSTA FRÅGA" Command="{Binding NextQuestionBtn}" FontFamily="{StaticResource PressStart2P}" Margin="50,0,50,0" Visibility="{Binding VisibilityNextQuestion}" Padding="5"/>
         </Viewbox>
         <!--#endregion-->
         

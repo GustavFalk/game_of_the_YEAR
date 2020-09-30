@@ -162,7 +162,7 @@ namespace Game_of_the_YEAR.ViewModels
         {
             UserAnswer = CurrentGame.UserAnswer;
             CorrectAnswer = CurrentGame.Questions[CurrentGame.CurrentQuestion].Year;
-            DifferanceAnswers = CheckAnswerDifferance();
+            DifferanceAnswers = CalculateDifference();
             Deduction = CalculateDeduction(DifferanceAnswers);
             TimePoints = CurrentGame.TimePoints;
             PointsGained = CalculateQuestionPoints(Deduction);

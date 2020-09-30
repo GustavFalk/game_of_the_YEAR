@@ -6,7 +6,8 @@ namespace Game_of_the_YEAR.Models
 {
     public static class GameEngine
     {
-        public static int CheckAnswerDifferance()
+        #region Methods
+        public static int CalculateDifference()
         {
             int differance = CurrentGame.UserAnswer - CurrentGame.Questions[CurrentGame.CurrentQuestion].Year;
             if (differance < 0)
@@ -43,6 +44,7 @@ namespace Game_of_the_YEAR.Models
             CurrentGame.UserAnswer = 0;
             CurrentGame.TimePoints = 0;
         }
+        #endregion
 
     }
 }

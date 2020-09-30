@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RulePage">
-    <UserControl Loaded="UserControl_Loaded">
+    
 
         <Grid>
             <Grid.RowDefinitions>
@@ -73,5 +73,5 @@
                 </Viewbox>
             </Grid>
         </Grid>
-    </UserControl>
+    
 </Page>

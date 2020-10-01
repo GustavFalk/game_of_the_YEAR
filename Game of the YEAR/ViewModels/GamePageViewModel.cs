@@ -72,7 +72,7 @@ namespace Game_of_the_YEAR.ViewModels
 
         public void CurrentGuessNumber()
         {
-            GuessNumber = $"{CurrentGame.CurrentQuestion +1}/{CurrentGame.Questions.Count}";
+            GuessNumber = $"Fråga: {CurrentGame.CurrentQuestion +1}/{CurrentGame.Questions.Count}";
         }
 
         public async Task TypeClueSlower(int clueIndex)

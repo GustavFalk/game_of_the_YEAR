@@ -41,7 +41,7 @@
              <Viewbox Grid.Column="1" Stretch="Uniform">
                  <TextBox BorderBrush="HotPink" BorderThickness="2" Text="{Binding Hint}"  TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" VerticalScrollBarVisibility="Disabled" MinLines="3" Width="600"  FontFamily="{StaticResource PressStart2P}" FontSize="18" Padding="10"/>
              </Viewbox>
-            <Viewbox Grid.Column="2" Stretch="Uniform" VerticalAlignment="Top">
+            <Viewbox Grid.Column="0" Stretch="Uniform" VerticalAlignment="Top">
                 <Label Content="{Binding GuessNumber}" Foreground="White"  FontFamily="{StaticResource PressStart2P}" Margin="5"  FontSize="24"/>
             </Viewbox>
         </Grid>

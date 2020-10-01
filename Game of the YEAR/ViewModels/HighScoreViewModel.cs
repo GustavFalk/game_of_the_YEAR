@@ -13,6 +13,7 @@ namespace Game_of_the_YEAR.ViewModels
 {
     class HighScoreViewModel:Base.BaseViewModel
     {
+        #region Properties
         public string HighScore1Player { get; set; }
         public string HighScore2Player { get; set; }
         public string HighScore3Player { get; set; }
@@ -23,15 +24,16 @@ namespace Game_of_the_YEAR.ViewModels
         public string HighScore3Points { get; set; }
         public string HighScore4Points { get; set; }
         public string HighScore5Points { get; set; }
-        public int TotalPoints { get; set; }
         public string CurrentPlayerName { get; set; }
-
+        public int TotalPoints { get; set; }
         public Int64 Placement { get; set; }
-        public ICommand DiligenceScorePageBTN { get; set; }
-        public ICommand NewGameBTN { get; set; }
+        public ICommand DiligenceScorePageBtn { get; set; }
+        public ICommand NewGameBtn { get; set; }
 
         List<Highscore> highscores = new List<Highscore>();
+        #endregion
 
+        #region Clue Methods/Tasks
         public void InputToOutput()
         {
             HighScore1Player = $"{highscores[0].PlayerNickName}";
@@ -44,19 +46,20 @@ namespace Game_of_the_YEAR.ViewModels
             HighScore3Points = $"{highscores[2].Points}";
             HighScore4Points = $"{highscores[3].Points}";
             HighScore5Points = $"{highscores[4].Points}";
-            
-            
         }
+        #endregion
 
+        #region Constructors
         public HighScoreViewModel()
         {
             highscores = GetHighscores();
             InputToOutput();            
-            DiligenceScorePageBTN = new RelayCommand(GoToDiligenceScorePage);
-            NewGameBTN = new RelayCommand(GoToStartGamePage);
+            DiligenceScorePageBtn = new RelayCommand(GoToDiligenceScorePage);
+            NewGameBtn = new RelayCommand(GoToStartGamePage);
             TotalPoints = CurrentGame.TotalPoints;
             CurrentPlayerName = CurrentGame.CurrentPlayer.Nickname;
             Placement = GetPlacement(TotalPoints);
         }
+        #endregion
     }
 }

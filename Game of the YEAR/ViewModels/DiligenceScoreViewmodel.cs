@@ -13,6 +13,7 @@ namespace Game_of_the_YEAR.ViewModels
 {
     class DiligenceScoreViewmodel : Base.BaseViewModel
     {
+        #region Properties
         public string DiligenceScore1Player { get; set; }
         public string DiligenceScore2Player { get; set; }
         public string DiligenceScore3Player { get; set; }
@@ -26,12 +27,13 @@ namespace Game_of_the_YEAR.ViewModels
         public string CurrentPlayerName { get; set; }
         public Int64 GameRounds { get; set; }
         public Int64 Placement { get; set; }
-
-        public ICommand HighScorePageBTN { get; set; }
-        public ICommand NewGameBTN { get; set; }
+        public ICommand HighScorePageBtn { get; set; }
+        public ICommand NewGameBtn { get; set; }
 
         List<DiligenceScore> diligenceScores = new List<DiligenceScore>();
+        #endregion
 
+        #region Clue Methods/Tasks
         public void InputToOutput()
         {
             DiligenceScore1Player = $"{diligenceScores[0].PlayerNickName}";
@@ -44,10 +46,10 @@ namespace Game_of_the_YEAR.ViewModels
             DiligenceScore3Rounds = $"{diligenceScores[2].GameRounds}";
             DiligenceScore4Rounds = $"{diligenceScores[3].GameRounds}";
             DiligenceScore5Rounds = $"{diligenceScores[4].GameRounds}";
-           
-
         }
+        #endregion
 
+        #region Constructors
         public DiligenceScoreViewmodel()
         {
             diligenceScores = GetDiligenceScores();
@@ -55,9 +57,9 @@ namespace Game_of_the_YEAR.ViewModels
             CurrentPlayerName = CurrentGame.CurrentPlayer.Nickname;
             GameRounds = GetDiligence(CurrentGame.CurrentPlayer.PlayerID);
             Placement = GetPlacementDiligence(GameRounds);
-            HighScorePageBTN = new RelayCommand(GoToHighScorePage);
-            NewGameBTN = new RelayCommand(GoToStartGamePage);
+            HighScorePageBtn = new RelayCommand(GoToHighScorePage);
+            NewGameBtn = new RelayCommand(GoToStartGamePage);
         }
-
+        #endregion
     }
 }

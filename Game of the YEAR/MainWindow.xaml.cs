@@ -26,7 +26,7 @@ namespace Game_of_the_YEAR
         Page page = new Views.LoadingPageOne();
         public MediaPlayer mediaPlayer = new MediaPlayer();
         #endregion
-        #region Contructor
+        #region Constructor
         public MainWindow()
         {
             InitializeComponent();

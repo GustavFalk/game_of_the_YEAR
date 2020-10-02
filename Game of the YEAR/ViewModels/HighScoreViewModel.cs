@@ -32,8 +32,7 @@ namespace Game_of_the_YEAR.ViewModels
 
         List<Highscore> highscores = new List<Highscore>();
         #endregion
-
-        #region Clue Methods/Tasks
+        #region Methods
         public void InputToOutput()
         {
             HighScore1Player = $"{highscores[0].PlayerNickName}";
@@ -48,7 +47,6 @@ namespace Game_of_the_YEAR.ViewModels
             HighScore5Points = $"{highscores[4].Points}";
         }
         #endregion
-
         #region Constructors
         public HighScoreViewModel()
         {

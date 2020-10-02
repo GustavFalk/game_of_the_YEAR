@@ -45,6 +45,5 @@ namespace Game_of_the_YEAR.Models
             CurrentGame.TimePoints = 0;
         }
         #endregion
-
     }
 }

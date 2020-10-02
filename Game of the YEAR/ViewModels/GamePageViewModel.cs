@@ -18,7 +18,6 @@ namespace Game_of_the_YEAR.ViewModels
         private int clueIndex = 0;
 
         #endregion
-
         #region Properties
 
         public int TimePoints { get; set; } = 99999;
@@ -34,7 +33,6 @@ namespace Game_of_the_YEAR.ViewModels
         public string GuessNumber { get; set; }
 
         #endregion
-
         #region Constructors
         public GamePageViewModel()
         {
@@ -44,7 +42,6 @@ namespace Game_of_the_YEAR.ViewModels
         }
 
         #endregion
-
         #region Methods
 
         public async void CountDownPoints()

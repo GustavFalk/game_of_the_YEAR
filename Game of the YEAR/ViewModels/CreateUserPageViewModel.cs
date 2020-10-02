@@ -14,9 +14,7 @@ using System.Windows;
 namespace Game_of_the_YEAR.ViewModels
 {
     class CreateUserPageViewModel: Base.BaseViewModel
-
-    {
-        
+    {  
         #region Properties
         public string EmailTxt { get; set; }
         public string NicknameTxt { get; set; }
@@ -121,6 +119,5 @@ namespace Game_of_the_YEAR.ViewModels
             GoBackBtn = new RelayCommand(GoToStartpagePage);
         }
         #endregion
-
     }
 }

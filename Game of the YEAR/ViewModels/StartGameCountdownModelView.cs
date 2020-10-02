@@ -12,13 +12,19 @@ namespace Game_of_the_YEAR.ViewModels
 {
     public class StartGameCountdownModelView : Base.BaseViewModel
     {
+        #region Properties
+
         public int Countdown { get; set; } = 3;
+        #endregion
+        #region Constructor
         public StartGameCountdownModelView()
         {
             StartUpPage();
             LoadQuestionsToGame();
             
         }
+        #endregion
+        #region Methods
         public async Task StartCountdown()
         {
             while (Countdown >= 1)
@@ -43,5 +49,6 @@ namespace Game_of_the_YEAR.ViewModels
             CurrentGame.Questions = GetQuestions();
             CurrentGame.CurrentQuestion = 0;
         }
+        #endregion
     }
 }

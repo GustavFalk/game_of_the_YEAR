@@ -24,6 +24,11 @@ namespace Game_of_the_YEAR.ViewModels
             MediaPlayerLoad(sounds._321go);
             GoToStartGameCountdownPage();
         }
+        public void LogOut()
+        {
+            MediaPlayerPause();
+            GoToLoadingPageOne();
+        }
         #endregion
         #region Constructor
         public StartGameViewModel()
@@ -31,7 +36,7 @@ namespace Game_of_the_YEAR.ViewModels
             GameEngine.ResetGame();
             StartGameBtn = new RelayCommand(StartGame);
             RulesBtn = new RelayCommand(GoToRulePage);
-            LogOutBtn = new RelayCommand(GoToLoadingPageOne);
+            LogOutBtn = new RelayCommand(LogOut);
         }
         #endregion
 

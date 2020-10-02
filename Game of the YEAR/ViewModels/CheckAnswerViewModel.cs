@@ -177,6 +177,8 @@ namespace Game_of_the_YEAR.ViewModels
             {
                 AddGameRoundToDB();
                 GoToHighScorePage();
+                MediaPlayerLoad(sounds.menumusic);
+                MediaPlayerPlayFromZero();
             }
         }
         public void NextQuestion()

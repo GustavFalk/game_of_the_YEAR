@@ -14,7 +14,7 @@ namespace Game_of_the_YEAR.ViewModels
        
 
         public string Rules { get; set; } =
-            "Spelet är uppdelat i tio frågeomgångar. \r\n \r\n Du startar med 99999 poäng i varje frågarunda som snabbt räknar ned. \r\n \r\n Ju snabbare du svarar desto högre poäng. \r\n \r\n Men för varje år du svarar fel så får du poängavdrag på 1000 poäng. \r\n \r\n När tiden går får du ytterligare chans till två ledtrådar om du väntar för länge.";
+            "Spelet är uppdelat i tio frågeomgångar. \r\n \r\n Du startar med 99999 poäng i varje frågarunda som snabbt räknar ned. \r\n \r\n Ju snabbare du svarar desto högre poäng. \r\n \r\n Men för varje år du svarar fel så får du poängavdrag på 2000 poäng. \r\n \r\n När tiden går får du ytterligare chans till två ledtrådar om du väntar för länge.";
 
         #endregion
         #region Constructor

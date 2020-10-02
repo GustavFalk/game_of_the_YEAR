@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static Game_of_the_YEAR.Repositories.DBRepo;
 using static Game_of_the_YEAR.ViewModels.Base.Navigation;
+using static Game_of_the_YEAR.ViewModels.Base.Soundengine;
 
 
 namespace Game_of_the_YEAR
@@ -33,7 +34,7 @@ namespace Game_of_the_YEAR
             Main.Content = page;
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
             DataContext = mainWindowViewModel;
-            
+            MediaPlayerVolume(0.2);
         }       
     }
 }

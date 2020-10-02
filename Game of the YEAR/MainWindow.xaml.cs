@@ -19,15 +19,14 @@ using static Game_of_the_YEAR.ViewModels.Base.Soundengine;
 
 namespace Game_of_the_YEAR
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+   
     public partial class MainWindow : Window
     {
-        Page page = new Views.LoadingPageOne(); //LoadingPageTwo();
+        #region Properies
+        Page page = new Views.LoadingPageOne();
         public MediaPlayer mediaPlayer = new MediaPlayer();
-        
-
+        #endregion
+        #region Contructor
         public MainWindow()
         {
             InitializeComponent();
@@ -35,6 +34,7 @@ namespace Game_of_the_YEAR
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
             DataContext = mainWindowViewModel;
             MediaPlayerVolume(0.2);
-        }       
+        }
+        #endregion
     }
 }

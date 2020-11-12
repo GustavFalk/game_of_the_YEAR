@@ -8,7 +8,7 @@ using System.Text;
 namespace Game_of_the_YEAR.Repositories
 {
     public static class DBRepo
-    {
+    {// CRUD
         private static string connectionString = ConfigurationManager.ConnectionStrings["connectDb"].ConnectionString;
         #region CREATE
         public static Player  AddPlayerToDB (Player player) 
